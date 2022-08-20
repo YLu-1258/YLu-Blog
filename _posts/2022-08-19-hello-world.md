@@ -4,6 +4,7 @@ layout: post
 description: My first blog post, hobbies + some code!
 categories: [markdown]
 title: Hello World!
+author: Alex Lu
 ---
 # Hello World! 🌎
 
