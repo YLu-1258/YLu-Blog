@@ -22,7 +22,7 @@ I have many hobbies that I do to pass my time, here are just a few of them:
 - And many more!
 
 ## Have some code!
-Ayo is that a recursive function? [^1]
+Ayo is that a recursive function?
 ```python
 def fibo(n):
     if n == 1:
