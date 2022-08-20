@@ -15,12 +15,12 @@ This is my first blog post! I'm Alex Lu, and I'm excited to learn more about how
 
 I have many hobbies that I do to pass my time, here are just a few of them:
 
-- Reading
-- Programming
-- Playing tennis
-- Playing video games
-- Watching youtube videos
-- And many more!
+> * Reading
+> * Programming
+> * Playing tennis
+> * Playing video games
+> * Watching youtube videos
+> * And many more!
 
 ## Have some code! 💻
 Ayo is that a recursive function?
