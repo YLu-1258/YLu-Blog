@@ -1,16 +1,16 @@
 ---
 toc: true
 layout: post
-description: My first blog post
+description: My first blog post, hobbies + some code!
 categories: [markdown]
 title: Hello World!
 ---
-# Hello World!
+# Hello World! 🌎
 
-This is my first blog post! I'm exicted to learn more about how to build and develop my blog.
+This is my first blog post! I'm Alex Lu, and I'm excited to learn more about how to build and develop my blog.
 
 
-## My Hobbies
+## My Hobbies 🎾
 
 I have many hobbies that I do to pass my time, here are just a few of them:
 
@@ -21,8 +21,8 @@ I have many hobbies that I do to pass my time, here are just a few of them:
 - Watching youtube videos
 - And many more!
 
-## Have some code!
-Ayo is that a recursive function? [^1]
+## Have some code! 💻
+Ayo is that a recursive function?
 ```python
 def fibo(n):
     if n == 1:
@@ -34,3 +34,6 @@ def fibo(n):
 print(fibo(10)) # prints 34
 ```
 That was sick!
+
+## Thanks for visiting 🥳
+Have a cookie 🍪
