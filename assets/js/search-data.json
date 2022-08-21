@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Let's Print Something!",
-            "content": "Jupyter Notebook Demonstration . My first Jupyter notebook on my blog! . toc:true- author: Alex Lu | badges: true | comments: true | categories: [jupyter] | . var = &quot;World!&quot; print(&quot;Hello &quot; + var) . Hello World! . Let&#39;s Print some more! . Loops are really fun sometimes . for i in range(5): print(&quot;Hello &quot; + var) . Hello World! Hello World! Hello World! Hello World! Hello World! . Have a Bogosort algorithm! . from random import shuffle as sh def sorted(arr): length = len(arr) for i in range(0, length-1): if (arr[i] &gt; arr[i+1] ): return False return True def shuffle(arr): sh(arr) def Bogosort(arr): while not sorted(arr): shuffle(arr) return arr array = [1,6,4,8] print(Bogosort(array)) . [1, 4, 6, 8] .",
-            "url": "https://ylu-1258.github.io/YLu-Blog/2022/08/20/example-post.html",
-            "relUrl": "/2022/08/20/example-post.html",
+            "title": "First Jupyter Notebook",
+            "content": "Let&#39;s Print Something! . Allow me to demonstrate the print() function in python! . var = &quot;World!&quot; print(&quot;Hello &quot; + var) . Hello World! . Let&#39;s Print some more! . Loops are really fun sometimes, let&#39;s say it a couple more times 🔁 . for i in range(5): print(&quot;Hello &quot; + var) . Hello World! Hello World! Hello World! Hello World! Hello World! . Have a Bogosort algorithm! . The real question is what time complexity this algorithm has 🤔 . from random import shuffle as sh def sorted(arr): length = len(arr) for i in range(0, length-1): if (arr[i] &gt; arr[i+1] ): return False return True def shuffle(arr): sh(arr) def Bogosort(arr): while not sorted(arr): shuffle(arr) return arr array = [1,6,4,8] print(Bogosort(array)) . [1, 4, 6, 8] .",
+            "url": "https://ylu-1258.github.io/YLu-Blog/jupyter/2022/08/20/example-post.html",
+            "relUrl": "/jupyter/2022/08/20/example-post.html",
             "date": " • Aug 20, 2022"
         }
         
