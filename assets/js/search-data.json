@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "Example Jupyter Notebook .",
+            "title": "Let's Print Something!",
+            "content": "Jupyter Notebook Demonstration . My first Jupyter notebook on my blog! . toc:true- author: Alex Lu | badges: true | comments: true | categories: [jupyter] | . var = &quot;World!&quot; print(&quot;Hello &quot; + var) . Hello World! . Let&#39;s Print some more! . Loops are really fun sometimes . for i in range(5): print(&quot;Hello &quot; + var) . Hello World! Hello World! Hello World! Hello World! Hello World! . Have a Bogosort algorithm! . from random import shuffle as sh def sorted(arr): length = len(arr) for i in range(0, length-1): if (arr[i] &gt; arr[i+1] ): return False return True def shuffle(arr): sh(arr) def Bogosort(arr): while not sorted(arr): shuffle(arr) return arr array = [1,6,4,8] print(Bogosort(array)) . [1, 4, 6, 8] .",
             "url": "https://ylu-1258.github.io/YLu-Blog/2022/08/20/example-post.html",
             "relUrl": "/2022/08/20/example-post.html",
             "date": " • Aug 20, 2022"
