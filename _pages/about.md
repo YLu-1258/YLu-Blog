@@ -9,7 +9,7 @@ permalink: /about/
 # Hello There!
 My name is **Alex Lu** and if you want to reach out to me about anything, you can contact me through the methods below!
 > - **Discord**: Eris29#2693             🎮
-> - **Email**:   [maodou1258@gmail.com](maodou1258@gmail.com)    📧
+> - **Email**:   [maodou1258@gmail.com](mailto:maodou1258@gmail.com)    📧
 > - **Phone**:   (858)-688-4567          📱
 
 
