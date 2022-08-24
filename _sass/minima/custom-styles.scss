@@ -9,3 +9,447 @@
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
 @import "minima/fastpages-dracula-highlight"; 
+body {
+    background-color: rgba(6,1,82,1);
+    margin: 0;
+    padding:0px;
+    font-family: Rogerex;
+    scroll-behavior: smooth;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    overflow-x: hidden;
+    /* cursor: url("../static/icons8-cursor-64.png"),auto; */
+}
+
+
+.navbar {
+  opacity:100%; 
+  overflow: hidden;
+  position: fixed !important; 
+  width: 100%;
+  left: 0%;
+  margin: 20px;
+  }
+  
+/* Style the links inside the navigation bar */
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin-left: 1.75%;
+    margin-right: 2%;
+    font-size: 1.4rem;
+    font-family: roboto;
+    -webkit-animation:navbartext 4s infinite alternate
+}
+
+/* Change the color of links on hover */
+@keyframes navbartext {
+    0%   {color: #e1f549;}
+    25%  {color: #29d0be;}
+    50%  {color: #6cd8ea;}
+    100% {color: #ff5959;}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+}
+
+.navbar a:hover {
+    background-color: rgb(22, 56, 193);
+    border-radius: 25px;
+    font-family: roboto;
+    transition: all .2s ease-in;
+    
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1 linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);;
+    }
+}
+    
+
+  
+  /* Add a color to the active/current link */
+.navbar a.active {
+  background-color: rgb(22, 56, 193);
+  border-radius: 25px;
+  font-family: roboto;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-in;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: blue;
+  }
+  10% {
+    color: #8e44ad;
+  }
+  20% {
+    color: #1abc9c;
+  }
+  30% {
+    color: #d35400;
+  }
+  40% {
+    color: blue;
+  }
+  50% {
+    color: #34495e;
+  }
+  60% {
+    color: blue;
+  }
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #f1c40f;
+  }
+  90% {
+    color: #2980b9;
+  }
+  100% {
+    color: pink;
+  }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-track {
+    background: rgb(0, 174, 255);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+
+.main {
+    background-color: rgba(6,1,82,1);
+    margin: 0 auto;
+    padding-top: 22rem;
+    height: 100vh;
+    box-sizing: border-box;
+    line-height: 0.5;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+.main h1 {
+    font-family: Rogerex;
+    font-size: 6rem;
+    color:white;
+    margin: auto;
+    text-align: center;
+}
+  
+
+.main h2 {
+    font-family: Rogerex;
+    font-size: 2rem;
+    color:rgb(212, 0, 255);
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+}
+  
+.main a {
+    background: 
+      linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+      linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+  
+.main a:hover,
+.main a:focus {
+    background-size: 0 0.2em, 100% 0.2em;
+}
+
+.about_us {
+    background-color: rgb(25, 25, 25);
+    min-height: 100vh;
+    padding-top: 3rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.about_us h1 {
+  font-family: Rogerex;
+  font-size: 5rem;
+  position: relative;
+  top: 2%;
+  background-image: linear-gradient(90deg, rgba(148,103,44,1) 0%, rgba(239,228,148,1) 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  margin-top:20px;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: 
+    typing 3.5s steps(40, end),
+    cursor .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes cursor {
+  from, to { border-color: white }
+  50% { border-color: rgb(255, 0, 0); }
+}
+
+.about_us h2 {
+  font-family: Rogerex;
+  font-size: 2rem;
+  color:rgb(212, 0, 255);
+  margin: auto;
+  text-align: center;
+  line-height: 2;
+}
+
+.container {
+  position: relative;
+  top: 60%;  
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px 0;
+ 
+}
+
+.card {
+  position: relative;
+  width: 450px;
+  height: 600px;
+  background: rgba(255,255,255,0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  transition: 0.5%;
+}
+
+.card .content .pfp {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgba(0, 247, 255, 0.25);
+}
+
+.card .content .pfp img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.card .content .contentBx h3{
+  color: #fff;
+  opacity: 200%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+.card .content .contentBx h3 span{
+  text-transform: initial;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.card .sci {
+  position: absolute;
+  bottom: 75px;
+  display: flex;
+  left: 50%;
+  top: 80%;
+  transform: translate(-58%, -50%);
+}
+
+.card .sci li{
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+}
+
+.card .sci li a{
+  color: #fff;
+  font-size: 36px;
+}
+
+
+.slides {
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: center;
+}
+
+
+.fa-linkedin{
+  transition: 0.2s ease-in-out;
+}
+
+.fa-discord{
+  transition: 0.2s ease-in-out;
+}
+
+.fa-github{
+  transition: 0.2s ease-in-out;
+}
+
+.fa-envelope{
+  transition: 0.2s ease-in-out;
+}
+
+
+.fa-linkedin:hover{
+  color:#0087ca;
+}
+
+.fa-discord:hover{
+  color:#5865F2;
+}
+
+.fa-github:hover{
+  color:#8c00ff;
+  
+}
+
+.fa-envelope:hover{
+  color:#ca0000;
+}
+
+
+
+#Top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(63, 74, 79);
+    color: white;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    padding: 15px;
+    width: 3rem;
+    height: 3rem;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    
+  }
+  
+#Top:hover {
+    background-color: rgb(0, 221, 255);
+}
+
+@font-face {
+    font-family: 'Rogerex';
+    src: url('../static/Rogerex-Regular.woff2') format('woff2'),
+        url('../static/Rogerex-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
