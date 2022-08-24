@@ -18,7 +18,7 @@ class Colors:
 class Quiz():
     # Main class for the quiz
     def __init__(self):
-        # Quiz "constructor", initiates list of questions and arrays and other settings.
+        # Quiz "constructor", initiates list of questions and answers and other settings.
         self.ques = []
         self.ans = []
         self.colors = Colors()
@@ -73,7 +73,6 @@ class Quiz():
         print(self.colors.LILAC + "Congratulations! you got " + self.colors.GREEN + '{0:.2f}'.format(self.percentage(self.correct, self.total)) + "%" + self.colors.LILAC + " and {0} questions skipped on this quiz!".format(self.colors.YELLOW + str(self.skipped) + self.colors.LILAC)) 
 
 
-
 # Creating our quiz
 q1 = Quiz()
 
@@ -84,5 +83,9 @@ q1.addQues("What keyword in python is used to describe a function?", "def")
 q1.addQues("What command is used to include other functions that were previously developed?", "import")
 q1.addQues("What command is used to evaluate correct or incorrect response in this quiz?", "if")
 q1.addQues("Each 'if' command contains an '_________' to determine a true or false condition?", "expression")
+q1.addQues("What is an input to a function or method called?", "parameter")
+q1.addQues("If Input is data the computer receives, what is the data that the computer sends back?", "output")
+q1.addQues("What is a reusable block of code called?", "function")
+q1.addQues("What operator is used for string concatenation in Python?", "+")
 
 q1.playQuiz()
