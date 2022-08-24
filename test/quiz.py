@@ -89,3 +89,5 @@ q1.addQues("What is a reusable block of code called?", "function")
 q1.addQues("What operator is used for string concatenation in Python?", "+")
 
 q1.playQuiz()
+
+
