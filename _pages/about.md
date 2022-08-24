@@ -13,6 +13,7 @@ My name is **Alex Lu** and if you want to reach out to me about anything, you ca
 > - **Phone**:   (858)-688-4567          📱
 
 
+
 ## About Me 📓:
 I am currently a **Junior** at **Del Norte High School** taking the **APCSP** course, I hope to major in computer science in the future and also pursue it as a prospective carreer path in the future
 
