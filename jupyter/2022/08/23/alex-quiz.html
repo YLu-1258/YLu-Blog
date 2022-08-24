@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -258,7 +258,6 @@ window.onload = wrap_img;
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LILAC</span> <span class="o">+</span> <span class="s2">"Congratulations! you got "</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s1">'</span><span class="si">{0:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percentage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">correct</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"%"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LILAC</span> <span class="o">+</span> <span class="s2">" and </span><span class="si">{0}</span><span class="s2"> questions skipped on this quiz!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skipped</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LILAC</span><span class="p">))</span> 
 
 
-
 <span class="c1"># Creating our quiz</span>
 <span class="n">q1</span> <span class="o">=</span> <span class="n">Quiz</span><span class="p">()</span>
 
@@ -269,6 +268,10 @@ window.onload = wrap_img;
 <span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"What command is used to include other functions that were previously developed?"</span><span class="p">,</span> <span class="s2">"import"</span><span class="p">)</span>
 <span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"What command is used to evaluate correct or incorrect response in this quiz?"</span><span class="p">,</span> <span class="s2">"if"</span><span class="p">)</span>
 <span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"Each 'if' command contains an '_________' to determine a true or false condition?"</span><span class="p">,</span> <span class="s2">"expression"</span><span class="p">)</span>
+<span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"What is an input to a function or method called?"</span><span class="p">,</span> <span class="s2">"parameter"</span><span class="p">)</span>
+<span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"If Input is data the computer receives, what is the data that the computer sends back?"</span><span class="p">,</span> <span class="s2">"output"</span><span class="p">)</span>
+<span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"What is a reusable block of code called?"</span><span class="p">,</span> <span class="s2">"function"</span><span class="p">)</span>
+<span class="n">q1</span><span class="o">.</span><span class="n">addQues</span><span class="p">(</span><span class="s2">"What operator is used for string concatenation in Python?"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">)</span>
 
 <span class="n">q1</span><span class="o">.</span><span class="n">playQuiz</span><span class="p">()</span>
 </pre></div>
@@ -287,16 +290,24 @@ window.onload = wrap_img;
 </span><span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">Name the Python output command mentioned in this lesson?</span>
 <span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">print</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">If you see many lines of code in order, what would College Board call it?</span>
-<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">sequence</span> is correct!
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">sequence</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What keyword in python is used to describe a function?</span>
-<span class="ansi-red-intense-fg">Response 'class' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">def</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">def</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What command is used to include other functions that were previously developed?</span>
-<span class="ansi-red-intense-fg">Response 'include' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">import</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">import</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What command is used to evaluate correct or incorrect response in this quiz?</span>
-<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">if</span> is correct!
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">if</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">Each 'if' command contains an '_________' to determine a true or false condition?</span>
-<span class="ansi-yellow-intense-fg">Skipping....</span>
-<span class="ansi-blue-intense-fg">Congratulations! you got </span><span class="ansi-green-intense-fg">50.00%</span><span class="ansi-blue-intense-fg"> and </span><span class="ansi-yellow-intense-fg">1</span><span class="ansi-blue-intense-fg"> questions skipped on this quiz!
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">expression</span>
+<span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What is an input to a function or method called?</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">parameter</span>
+<span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">If Input is data the computer receives, what is the data that the computer sends back?</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">output</span>
+<span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What is a reusable block of code called?</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">function</span>
+<span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What operator is used for string concatenation in Python?</span>
+<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">+</span>
+<span class="ansi-blue-intense-fg">Congratulations! you got </span><span class="ansi-green-intense-fg">10.00%</span><span class="ansi-blue-intense-fg"> and </span><span class="ansi-yellow-intense-fg">0</span><span class="ansi-blue-intense-fg"> questions skipped on this quiz!
 </span></pre>
 </div>
 </div>
