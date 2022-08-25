@@ -40,6 +40,8 @@ baseurl: "/YLu-Blog" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     github: YLu-1258
+    linkedin: Yixuan Lu
+    youtube_channel: UC87lKneqnsE-4jpvQ_wpxRw
 
 # Set this to true to get LaTeX math equation support
 use_math: 
