@@ -87,7 +87,23 @@ window.onload = wrap_img;
 
 <p>When working with others, always <strong>pull</strong> before you make any additions, this ensures that we are on the latest version and that there are no difference conflicts.</p>
 
-<p>There are multiple “<strong>shells</strong>” installed on a linux machine, such as <strong>bash</strong>, <strong>dash</strong> and <strong>zsh</strong>.</p>
+<p>There are multiple “<strong>shells</strong>” installed on a linux machine, such as <strong>bash</strong>, <strong>dash</strong> and <strong>zsh</strong>. The commands that we enter into terminal are like a pseudo-language. We can create bash scripts to automate actions in terminal for us.</p>
+
+<h3 id="bash---analyzing-part-1">Bash - Analyzing part 1</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$project</span> <span class="c">#cd means "Change Directory", $project is a variable named project</span>
+<span class="nb">ls</span>          <span class="c"># lists directory</span>
+<span class="nb">ls</span> <span class="nt">-a</span>       <span class="c"># lists directory with hidden files</span>
+<span class="nb">ls</span> <span class="nt">-al</span>      <span class="c"># lists directory with hidden files in long format</span>
+</code></pre></div></div>
+
+<p>By using bash we can easily create scripts that automate terminal operations for us</p>
+
+<h3 id="the-cloud">The Cloud</h3>
+<p>The cloud contains all git repositories. Individual computers can clone repositories from the cloud and down to our own SSD. This creates a <em>link</em> between our local repository and the remote repository.</p>
+
+<p>A <strong>pull action</strong> will pull any new updates made to the repository down to our local repository and update it with the latest changes.</p>
+
+<p>A <strong>push action</strong> will push any new updates from our local repository up to our remote directory in the cloud and contribute to the git repository.</p>
 
   </div>
 
