@@ -482,28 +482,4 @@ pre code { font-size: 15px !important; }
 
 p code { font-size: 19px; }
 
-.hover-underline-animation { display: inline-block; position: relative; color: #0087ca; }
-
-.hover-underline-animation:after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959); transform-origin: bottom right; transition: transform 0.5s ease-in; }
-
-.hover-underline-animation:hover:after { transform: scaleX(1); transform-origin: bottom left; }
-
-@-webkit-keyframes colorchange { 0% { color: blue; }
-  10% { color: #8e44ad; }
-  20% { color: #1abc9c; }
-  30% { color: #d35400; }
-  40% { color: blue; }
-  50% { color: #34495e; }
-  60% { color: blue; }
-  70% { color: #2980b9; }
-  80% { color: #f1c40f; }
-  90% { color: #2980b9; }
-  100% { color: pink; } }
-
-body::-webkit-scrollbar { width: 12px; }
-
-body::-webkit-scrollbar-track { background: #00aeff; }
-
-body::-webkit-scrollbar-thumb { background-color: white; border-radius: 20px; border: 5px solid black; }
-
 /*# sourceMappingURL=style.css.map */
