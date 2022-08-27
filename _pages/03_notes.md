@@ -8,7 +8,7 @@ permalink: /notes/
 
 # What is this page?
 
-This page contains all of the notes I've taken during Mr. Mortensen's lectures, this might be useful while I'm trouble shooting my blog or other bugs in my code.
+This page contains all of the notes I've taken during Mr. Mortensen's lectures, this might be useful while I'm trouble shooting my blog or other bugs in my code. If ur another APCSP student, feel free to use this page to further your knowledge or review any points you missed in class!
 
 ## Lecture - 08/25/2022
 
@@ -26,7 +26,7 @@ ls -a       # lists directory with hidden files
 ls -al      # lists directory with hidden files in long format
 ```
 
-By using bash we can easily create scripts that automate terminal operations for us
+By using bash we can easily create scripts that automate terminal operations for us.
 
 ### The Cloud
 The cloud contains all git repositories. Individual computers can clone repositories from the cloud and down to our own SSD. This creates a *link* between our local repository and the remote repository.
