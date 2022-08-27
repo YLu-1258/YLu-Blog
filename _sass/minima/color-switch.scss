@@ -1,16 +1,41 @@
-$naval-blue: rgba(6,1,82,1);
+
 
 body, html {
-    background-color: rgba(6,1,82,1);
-    margin: 0;
-    padding: 0px;
-    scroll-behavior: smooth;
-    background-repeat: no-repeat;
-    min-height: 100%;
-    overflow-x: hidden;
+    color: white !important;
+    background-color: rgba(6,1,82,1) !important;
+}
+
+h1, h2, p, h3, h4 {
+    color:rgb(255, 255, 255) !important;      
+}
+
+
+.site-title, .site-nav, .page-link {
+    color: rgb(166, 255, 0) !important;
+}
+
+a {
+    color: rgb(0, 255, 255)!important;
+}
+
+
+a:hover {
+    color: rgb(255, 187, 0) !important;
 }
 
 .site-nav {
-    background-color: rgba(6,1,82,1);
-    border-color: white;
+    background-color: rgba(6,1,82,1) !important;
+    border-color: white !important;
+}
+
+.page-description {
+    color: rgb(180, 180, 180) !important;
+}
+
+.post-meta {
+    color: rgb(87, 87, 87)  !important;
+}
+
+.post-content p, .post-content li {
+    color: rgb(180, 180, 180) !important;
 }
