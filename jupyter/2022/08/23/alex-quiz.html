@@ -230,7 +230,10 @@ window.onload = wrap_img;
             <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">"YOU ARE CORRECT!"</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ENDC</span> <span class="o">+</span> <span class="s2">" Response "</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="n">rsp</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ENDC</span> <span class="o">+</span> <span class="s2">" is correct!"</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">elif</span> <span class="n">rsp</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"/s"</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Skipping...."</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ENDC</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">showans</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Skipping...."</span> <span class="o">+</span> <span class="s2">" The right answer was "</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ENDC</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Skipping...."</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ENDC</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">showans</span><span class="p">:</span>
@@ -290,24 +293,24 @@ window.onload = wrap_img;
 </span><span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">Name the Python output command mentioned in this lesson?</span>
 <span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">print</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">If you see many lines of code in order, what would College Board call it?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">sequence</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">sequence</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What keyword in python is used to describe a function?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">def</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">def</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What command is used to include other functions that were previously developed?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">import</span>
+<span class="ansi-red-intense-fg">Response 'include' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">import</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What command is used to evaluate correct or incorrect response in this quiz?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">if</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">if</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">Each 'if' command contains an '_________' to determine a true or false condition?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">expression</span>
+<span class="ansi-yellow-intense-fg">Skipping.... The right answer was </span><span class="ansi-cyan-intense-fg">expression</span>
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What is an input to a function or method called?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">parameter</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">parameter</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">If Input is data the computer receives, what is the data that the computer sends back?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">output</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">output</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What is a reusable block of code called?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">function</span>
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">function</span> is correct!
 <span class="ansi-magenta-intense-fg">QUESTION: </span><span class="ansi-bold">What operator is used for string concatenation in Python?</span>
-<span class="ansi-red-intense-fg">Response '' is incorrect.</span> The right answer was <span class="ansi-cyan-intense-fg">+</span>
-<span class="ansi-blue-intense-fg">Congratulations! you got </span><span class="ansi-green-intense-fg">10.00%</span><span class="ansi-blue-intense-fg"> and </span><span class="ansi-yellow-intense-fg">0</span><span class="ansi-blue-intense-fg"> questions skipped on this quiz!
+<span class="ansi-green-intense-fg">YOU ARE CORRECT!</span> Response <span class="ansi-cyan-intense-fg">+</span> is correct!
+<span class="ansi-blue-intense-fg">Congratulations! you got </span><span class="ansi-green-intense-fg">80.00%</span><span class="ansi-blue-intense-fg"> and </span><span class="ansi-yellow-intense-fg">1</span><span class="ansi-blue-intense-fg"> questions skipped on this quiz!
 </span></pre>
 </div>
 </div>
