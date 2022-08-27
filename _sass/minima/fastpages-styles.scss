@@ -207,19 +207,16 @@ table {
 }
 
 // customize scrollbars
-::-webkit-scrollbar {
-  width: 14px;
-  height: 18px;
+body::-webkit-scrollbar {
+  width: 12px;
 }
-::-webkit-scrollbar-thumb {
-  background-clip: padding-box;
-  -webkit-border-radius: 7px;
-  background-color: rgb(255, 255, 255);
-  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
-}
-
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: rgb(0, 174, 255);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: 5px solid rgb(0, 0, 0);
 }
 
 ::-webkit-scrollbar-button {
