@@ -8,7 +8,7 @@ permalink: /notes/
 
 # What is this page?
 
-This page contains all of the notes I've taken during Mr. Mortensen's lectures, this might be useful while I'm trouble shooting my blog or other bugs in my code. If ur another APCSP student, feel free to use this page to further your knowledge or review any points you missed in class!
+This page contains all of the notes I've taken during Mr. Mortensen's lectures, this might be useful while I'm trouble shooting my blog or other bugs in my code. If your another APCSP student, feel free to use this page to further your knowledge or review any points you missed in class!
 
 ## Lectures TOC
 
