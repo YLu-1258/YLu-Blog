@@ -439,9 +439,9 @@ a:hover { color: #ffbb00 !important; }
 
 .site-nav { background-color: #030031 !important; border-color: white !important; }
 
-.page-description { color: #b4b4b4 !important; }
+.page-description { color: #979797 !important; }
 
-.post-meta { color: #575757 !important; }
+.post-meta { color: #c9c9c9 !important; }
 
 .post-content p, .post-content li { color: #b4b4b4 !important; }
 
@@ -449,13 +449,13 @@ btn { background-color: #0e00cc !important; color: #f0f0f0 !important; border-co
 
 .btn:hover { background-color: #0350e0 !important; }
 
-.post-list > li > div { box-shadow: none !important; background-color: #050233; border: #0a0096 !important; }
+.post-list > li > div { box-shadow: none !important; background-color: #003274; border: #0a0096 !important; }
 
 li .post-meta-description { color: gray !important; }
 
 table th { background-color: #030031; border-color: #73ff00; color: #7c7c7c; }
 
-table td { background-color: #0a009b; border-color: #73ff00; color: gainsboro; }
+table td { background-color: #08007c; border-color: #73ff00; color: gainsboro; }
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
