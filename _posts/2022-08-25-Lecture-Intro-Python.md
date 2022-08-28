@@ -6,6 +6,7 @@ categories: [markdown, notes]
 title: 08/25/2022 Lecture
 author: Alex Lu
 show_tags: true
+hide: true
 comments: true
 ---
 

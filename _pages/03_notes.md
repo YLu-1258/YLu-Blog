@@ -10,27 +10,9 @@ permalink: /notes/
 
 This page contains all of the notes I've taken during Mr. Mortensen's lectures, this might be useful while I'm trouble shooting my blog or other bugs in my code. If ur another APCSP student, feel free to use this page to further your knowledge or review any points you missed in class!
 
-## Lecture - 08/25/2022
+## Lectures TOC
 
-To build up a relationshhip with my partner, I should comment in his <a href="https://chewyboba10.github.io/sushi-burrito/"><mark>blog</mark></a> and also open up review tickets to communicate with him
-
-When working with others, always **pull** before you make any additions, this ensures that we are on the latest version and that there are no difference conflicts.
-
-There are multiple "**shells**" installed on a linux machine, such as **bash**, **dash** and **zsh**. The commands that we enter into terminal are like a pseudo-language. We can create bash scripts to automate actions in terminal for us.
-
-### Bash - Analyzing part 1
-```bash
-cd $project #cd means "Change Directory", $project is a variable named project
-ls          # lists directory
-ls -a       # lists directory with hidden files
-ls -al      # lists directory with hidden files in long format
-```
-
-By using bash we can easily create scripts that automate terminal operations for us.
-
-### The Cloud
-The cloud contains all git repositories. Individual computers can clone repositories from the cloud and down to our own SSD. This creates a *link* between our local repository and the remote repository.
-
-A **pull action** will pull any new updates made to the repository down to our local repository and update it with the latest changes.
-
-A **push action** will push any new updates from our local repository up to our remote directory in the cloud and contribute to the git repository.
+| Date | Link and subject |
+|-|-|
+| 08 - 25 - 2022 | [Bash and Cloud Lecture]({{site.baseurl}}markdown/notes/2022/08/25/Lecture-Intro-Python.html) |
+| 08 - 24 - 2022 | [Blog posting and configuration Lecture]({{site.baseurl}}markdown/notes/2022/08/24/Lecture-site-organization-and-configuration.html) |
