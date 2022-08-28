@@ -9,6 +9,9 @@ show_tags: true
 hide: true
 comments: true
 ---
+<style>
+    code {display: block; white-space: pre-wrap;}
+</style>
 
 ## Lecture - 08/24/2022
 
@@ -22,6 +25,7 @@ Each markdown or jupyter post contains a set configurations at the head of the f
 Front-matter settings are seperated into two main groups, **keys**, and **values**.
 > **keys**: The name of the configuration or setting we wish to edit
 > **value**: The value or data we grant to a specific configuration
+
 **IMPORTANT**: It is crucial to always pair a key with a value, a blank value on the key overwrites the default value, making the key take on a null value and breaking the front-matter
 To define front matter in *markdown*, use the following format
 <code>

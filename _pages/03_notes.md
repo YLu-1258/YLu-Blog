@@ -14,5 +14,5 @@ This page contains all of the notes I've taken during Mr. Mortensen's lectures, 
 
 | Date | Link and subject |
 |-|-|
-| 08 - 25 - 2022 | [Bash and Cloud Lecture]({{site.baseurl}}markdown/notes/2022/08/25/Lecture-Intro-Python.html) |
-| 08 - 24 - 2022 | [Blog posting and configuration Lecture]({{site.baseurl}}markdown/notes/2022/08/24/Lecture-site-organization-and-configuration.html) |
+| 08 - 25 - 2022 | [Bash and Cloud Lecture]({{site.baseurl}}/markdown/notes/2022/08/25/Lecture-Intro-Python.html) |
+| 08 - 24 - 2022 | [Blog posting and configuration Lecture]({{site.baseurl}}/markdown/notes/2022/08/24/Lecture-site-organization-and-configuration.html) |
