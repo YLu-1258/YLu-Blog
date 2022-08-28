@@ -16,7 +16,7 @@ comments: true
 ## Lecture - 08/24/2022
 
 ### Using documents as blog posts
-To import past assignemnts and documents from document-based editors such as word and google docs, we can import such files a `.docx` documents and place them under the `_word` subdirectory in our blog. 
+To import past assignemnts and documents from document-based editors such as word and google docs, we can import such files as `.docx` documents and place them under the `_word` subdirectory in our blog. 
 
 NOTE: Doing so **does not** keep the formatting of the document, any font colors, size, styling is not preserved, additionall work with CSS is required for original effects.
 
