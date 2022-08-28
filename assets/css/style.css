@@ -427,6 +427,36 @@ pre code { font-size: 15px !important; }
 
 .youtube-iframe-wrapper iframe, .youtube-iframe-wrapper object, .youtube-iframe-wrapper embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+body, html { color: white !important; background-color: #030031 !important; }
+
+h1, h2, p, h3, h4 { color: white !important; }
+
+.site-title, .site-nav, .page-link { color: #a6ff00 !important; }
+
+a { color: cyan !important; }
+
+a:hover { color: #ffbb00 !important; }
+
+.site-nav { background-color: #030031 !important; border-color: white !important; }
+
+.page-description { color: #b4b4b4 !important; }
+
+.post-meta { color: #575757 !important; }
+
+.post-content p, .post-content li { color: #b4b4b4 !important; }
+
+btn { background-color: #0e00cc !important; color: #f0f0f0 !important; border-color: none !important; }
+
+.btn:hover { background-color: #0350e0 !important; }
+
+.post-list > li > div { box-shadow: none !important; background-color: #050233; border: #0a0096 !important; }
+
+li .post-meta-description { color: gray !important; }
+
+table th { background-color: #030031; border-color: #73ff00; color: #7c7c7c; }
+
+table td { background-color: #0a009b; border-color: #73ff00; color: gainsboro; }
+
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 .language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }
