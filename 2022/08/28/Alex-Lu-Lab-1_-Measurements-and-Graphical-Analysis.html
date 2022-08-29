@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Alex Lu Lab #1_ Measurements And Graphical Analysis | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Alex Lu Lab #1_ Measurements And Graphical Analysis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lab #1: Measurements and Graphical Analysis" />
+<meta property="og:description" content="Lab #1: Measurements and Graphical Analysis" />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/2022/08/28/Alex-Lu-Lab-1_-Measurements-and-Graphical-Analysis.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/2022/08/28/Alex-Lu-Lab-1_-Measurements-and-Graphical-Analysis.html" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-28T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Alex Lu Lab #1_ Measurements And Graphical Analysis" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-28T00:00:00-05:00","datePublished":"2022-08-28T00:00:00-05:00","description":"Lab #1: Measurements and Graphical Analysis","headline":"Alex Lu Lab #1_ Measurements And Graphical Analysis","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/2022/08/28/Alex-Lu-Lab-1_-Measurements-and-Graphical-Analysis.html"},"url":"https://ylu-1258.github.io/YLu-Blog/2022/08/28/Alex-Lu-Lab-1_-Measurements-and-Graphical-Analysis.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Alex Lu   Lab #1_ Measurements And Graphical Analysis</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-28T00:00:00-05:00" itemprop="datePublished">
+        Aug 28, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>Lab #1: Measurements and Graphical Analysis</strong></p>
+
+<p><strong>Alex Lu</strong></p>
+
+<p><strong>Purpose:</strong></p>
+
+<p>Given disks of different radii, determine the relationship between the mass and the radius of the disks through graphical method and calculate the uncertainty associated with the measured value. We will learn about linearization and use it to create a mathematical model.</p>
+
+<p><strong>Materials and Equipment:</strong></p>
+
+<p>Balance</p>
+
+<p>Meter stick</p>
+
+<p>Circular disks (identical thickness and uniform density but different radii)</p>
+
+<p>Graphic Calculator or online graphing tool</p>
+
+<p><strong>Procedure:</strong></p>
+
+<ol>
+  <li>
+    <blockquote>
+      <p>Substitute equations to get a relationship between mass and radius.</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Use the relationship between mass and radius to determine what variable should be processed to linearize the data</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Measure the radius (in cm) of the cylinder with the ruler with one end of the ruler at the center of the disk and the other on the edge.</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Zero out the balance and then measure the mass (in grams) of the cylinder.</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Stack the metal cylinders and measure the collective height of all cylinders. Divide by the total number of cylinders multiplied by 2 to the power of the number of folds to find the height of each individual cylinder.</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Organize the collected data into a data table</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Plot the original radius and mass</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Plot the processed radius and mass</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Plug height and other constants to create a relationship between mass and radius.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p><strong>Equations and calculations:</strong></p>
+
+<p><strong>Let:</strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>(\rho) be density</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>(m) be mass</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>(v) be volume</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>(a) be the surface area of the cylinder</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>(r) be the radii of the cylinder</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>(h) be the height of the cylinder</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Thus:</strong></p>
+
+<p>If (\rho = \ \frac{m}{v}) and (v\  = \ ah) then</p>
+
+<p>(m\  = \ \rho v)</p>
+
+<p>(m\  = \ \rho\text{ah})</p>
+
+<p>If (a = \pi r^{2}), then</p>
+
+<p>(m = \rho\pi r^{2}h)</p>
+
+<p>Since both (\rho) and (\pi) are constants and (h) is negligible, ∴ (m\  \propto \ r^{2})</p>
+
+<p>Since mass is directly proportional to radius squared, the graph could be linearized if (r^{2}) is plotted instead.</p>
+
+<p><strong>Precision and Uncertainty</strong></p>
+
+<ol>
+  <li>
+    <blockquote>
+      <p>The balanced used to measure the mass of the metal disks was accurate up to a hundredth of a gram, while the ruler used to measure the radius and height of the disks was accurate up to 1 millimeter (0.1 cm). As such, the radius was measured to the nearest hundredth of a centimeter or a tenth of a millimeter.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p><strong>Data Tables</strong></p>
+
+<p>m = mass</p>
+
+<p>r = radii</p>
+
+<p>H = height</p>
+
+<p><strong>Mass in Grams, Radius and height in cm, and Radius Squared of Each Metal Disk</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Disk</strong></th>
+      <th><strong>m (g)</strong></th>
+      <th><strong>h (cm)</strong></th>
+      <th><strong>r (cm)</strong></th>
+      <th> </th>
+      <th><strong>r^2 (cm^2)</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0.07</td>
+      <td>0.0025</td>
+      <td>2.30</td>
+      <td> </td>
+      <td>5.29</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.14</td>
+      <td>0.0025</td>
+      <td>3.00</td>
+      <td> </td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.25</td>
+      <td>0.0025</td>
+      <td>4.30</td>
+      <td> </td>
+      <td>18.49</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.37</td>
+      <td>0.0025</td>
+      <td>4.90</td>
+      <td> </td>
+      <td>24.01</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0.73</td>
+      <td>0.0025</td>
+      <td>7.10</td>
+      <td> </td>
+      <td>50.41</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Graph of Non-Linearized Data:</strong></p>
+
+<p><img src="https://YLu-1258.github.io/YLu-Blog/assets/img/2022-08-28-Alex-Lu---Lab-#1_-Measurements-and-Graphical-Analysis-/media/image2.png" alt="" /></p>
+
+<p><strong>Equation:</strong> (y\  = \ 0.0133921x^{2} + 0.112825x - 0.0238674)</p>
+
+<p><strong>R<sup>2</sup> :</strong> (0.9967)</p>
+
+<p>This graph has <strong>non-linear data</strong> as it’s represented by a <strong>quadratic</strong> model.</p>
+
+<p><strong>Graph of Linearized Data:</strong></p>
+
+<p><img src="https://YLu-1258.github.io/YLu-Blog/assets/img/2022-08-28-Alex-Lu---Lab-#1_-Measurements-and-Graphical-Analysis-/media/image1.png" alt="" /></p>
+
+<p><strong>Line of the best fit equation:</strong> (y = 0.0145569x - 0.000100527)</p>
+
+<p><strong>r =</strong> (0.9983)</p>
+
+<p><strong>r<sup>2</sup> =</strong> (0.9966\ )</p>
+
+<p>This graph has <strong>linear</strong> data as it’s represented by a <strong>linear</strong> model.</p>
+
+<p><strong>Analysis Questions:</strong></p>
+
+<p><strong>1) What is the independent variable in your y = mx +b formula?</strong></p>
+
+<p>Considering the mathematic relationship between disk radius r and disk mass m, the independent variable from my line of best fit represents the radius of the disk squared.</p>
+
+<p><strong>2) What does the slope represent in your y = mx +b formula? Show dimensionally that indeed that is what your slope represents and that the formula is valid dimensionally.</strong></p>
+
+<p>Using the (m = \rho v) equation and the volume relationship, we can express the disk’s mass in terms of the radius and the height in this relationship: (m = \rho\pi r^{2}h). Since density ((\rho)) and (\pi) are constants, and height ((h)) is negligible, we can essentially group these 3 constants into one value serving as the coefficient to the radius squared term. Thus, the slope is the product of the density, height, and (\pi). Since height has its units expressed in cm, density has units expressed in g/cm³, and (\pi) is a constant wth no units, the slope is a combination of all 3 constants and has units of <strong>g/cm<sup>2</sup></strong>.</p>
+
+<p>Because our slope has units of g/cm<sup>2</sup>, and x represents the radius squared expressed by cm<sup>2</sup>, and since our desired output ((y)) is mass in grams (g), the y-intercept ((b)) must have a unit of <strong>grams (g)</strong> in order for both sides of the equation to have the same units (grams).</p>
+
+<p>(g\  = \ \frac{g}{cm^{2}} \cdot cm^{2} + g)</p>
+
+<p>(g = g + g)</p>
+
+<p>(g = g)</p>
+
+<p><strong>3) Should the “b” in your y = mx + b formula be zero? Explain your answer.</strong></p>
+
+<p>The y-intercept ((b)) in my (y\  = \ mx\  + \ b) formula shouldn’t be zero unless the data naturally generates a line of best fit that passes through the origin. Forcing the y-intercept to pass through the origin would either alter the slope ((m)) or remove the y-intercept completely. This would result in an inaccurate interpretation of the model as the line is no longer set evenly between the data points. Thus we cannot guarantee the model’s integrity for future data points, rendering our model useless.</p>
+
+<p><strong>4) Measure/estimate the “thickness” of your cylinders. Use that value to find the experimental density of your cylinders. Find a percent difference between your found density and the actual density. The actual material is aluminum.</strong></p>
+
+<p>(y = 0.0145569x - 0.000100527)</p>
+
+<p>(slope\  = \ \pi\rho h)</p>
+
+<p>(\rho\  = \ density)</p>
+
+<p>(\rho\  = \ \frac{\text{slope}}{h\pi} = \frac{0.0145569\ \frac{g}{cm^{2}}}{\pi(0.0025cm)} = 1.85\frac{g}{cm^{3}})</p>
+
+<p>The density of the metal disks according to my linear model is (1.85\frac{g}{cm^{3}}) , Since the metal used in the disk is Aluminum (density = (2.70\frac{g}{cm^{3}})) we can use the following calculations to determine our percent error</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>(\%\ Error\  = \left</td>
+      <td>\frac{Actual\  - \ Expected}{\text{Expected}} \right</td>
+      <td>*100\%\ )</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>(\%\ Error\  = \ \left</td>
+      <td>\frac{1.85\frac{g}{cm^{3}} - 2.70\frac{g}{cm^{3}}}{2.70\frac{g}{cm^{3}}} \right</td>
+      <td>*100\%\  = 31.5\%\ )</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>∴ Percent difference = 31.5%</p>
+
+<p><strong>5) Errors. Make sure you explain why your number is bigger or smaller than (if positive or negative difference.)</strong></p>
+
+<p>The number that I obtained is smaller than the actual value (31.5% error) because the instruments that we used to measure the disks’ dimensions had inaccuracies. The ruler that we used to measure the disks’ radius is only precise up to millimeters, and the balanced used to measure mass is only accurate up to the hundredth’s place, while actual instruments used to measure the actual value are much more precise. Additionally, the method I used to measure the height of the disks also had inherent inaccuracies, as folding the aluminum disks over each other may create tiny air pockets that add additional magnitude to my measured height, resulting in an inaccurate height measurement. The uncertainty of the ruler and also the inaccurate way of measuring height may have contributed to a greater height value than the actual value, resulting in a lower density value when I divided. Lastly, the disks weren’t in a perfectly circular shape, thus the direction that I measured the disk in might also have affected the end result, as measuring in different directions would produce different radii.</p>
+
+<p><strong>Synthesis Questions:</strong></p>
+
+<p><strong>1) In this experiment, if we had used disks with a greater thickness, would the slope of your best fit line have been different? Would your experimental value for density be the same? Explain.</strong></p>
+
+<p>Since slope represents the product of thickness, (\pi), and density, having a greater measured thickness would result in a much larger slope value. However, our experimental value of density would still be around the same, as an increase in thickness would also result in a proportionally large increase in mass, which will offset the thickness increase.</p>
+
+<p><strong>2. How would your graph of m versus r2 be different if you had used disks of the same</strong></p>
+
+<p><strong>thickness but made out of steel? Draw a second line on your m versus r2 plot that</strong></p>
+
+<p><strong>represents disks made of steel.</strong></p>
+
+<p>The graph would be of m versus r<sup>2</sup> would be different in that the slope of the graph would be much greater, this is because steel has a much higher density of (7.85\ \frac{g}{cm^{3}}) compared to aluminum’s (2.7\ \frac{g}{cm^{3}})</p>
+
+<p><img src="https://YLu-1258.github.io/YLu-Blog/assets/img/2022-08-28-Alex-Lu---Lab-#1_-Measurements-and-Graphical-Analysis-/media/image3.png" alt="" /></p>
+
+<p>(Note: The blue line is a rough sketch of what the line of best fit would look like on the same scale as the aluminum graph is steel was used instead. This is not an accurate representation, just an approximation)</p>
+
+<p><strong>3. Another group of students has acquired data for the exact same experiment; however, their disks are made of an unknown material that they are trying to determine. The group’s m versus r2 data produced a line of best fit with slope equal to 122 kg/m2. Each disk they measured had the same 0.5 cm thickness. Calculate the density of the unknown material and use the table below to help determine what material their disks are made of.</strong></p>
+
+<p>Work:</p>
+
+<p>(Slope\  = \ 122kg/m^{2}\ ,\ h\  = \ 0.5cm,\ slope\  = \ \rho\pi h)</p>
+
+<p>(slope\  = 122\frac{\text{kg}}{m^{2}}<em>(\frac{1000g}{1kg})</em>(\frac{1m}{100cm})^{2} = 12.2\frac{g}{cm^{2}}\  = \ \rho\pi h)</p>
+
+<p>(\rho = \frac{\text{slope}}{\pi h} = \frac{12.2\frac{g}{cm^{2}}}{\pi*0.5cm} = 7.77\frac{g}{cm^{3}})</p>
+
+<p>The closet material to a density of (7.77\frac{g}{cm^{3}}) is iron, which has a density of (7.8\frac{g}{cm^{3}}). The disks are most likely made out of iron.</p>
+
+<p><strong>Multiple Choice Questions:</strong></p>
+
+<p><strong>1. You perform the same experiment, but this time you plot a linear relationship between mass and the circumference of the disks rather than the radius. What is the slope of the linear plot?</strong></p>
+
+<p>Work:</p>
+
+<p>(slope\  = \ \rho\pi h)</p>
+
+<p>(m\  = \ \rho v = \rho\pi r^{2}h)</p>
+
+<p>(v = \pi r^{2}h)</p>
+
+<p>Let (c) be circumference</p>
+
+<p>(c\  = \ 2\pi r)</p>
+
+<p>(c^{2} = 4\pi^{2}r^{2})</p>
+
+<p>(r^{2} = \frac{c^{2}}{4\pi^{2}})</p>
+
+<p>(m = \rho\pi h(\frac{c^{2}}{4\pi^{2}}) = \frac{\rho hc^{2}}{4\pi} = (\frac{\rho h}{4\pi})c^{2})</p>
+
+<p>()</p>
+
+<p>Since (\rho) (density), h (height), and (4\pi) are all constants, these 3 values could be combined to form the slope for the linear plot, which is ((\frac{\text{ph}}{4\pi})), Hence, <strong>E</strong> is the correct answer choice.</p>
+
+<p><strong>2. Skipped</strong></p>
+
+<p><strong>3. Consider an experiment in which a student measures the mass and diameter of 10</strong></p>
+
+<p><strong>different-sized spheres, all made of the same material of uniform density ρ. For this</strong></p>
+
+<p><strong>student to create a linear graph relating the mass of the sphere to its radius r, the</strong></p>
+
+<p><strong>student would need to plot mass m versus which quantity:</strong></p>
+
+<p>(\text{let\ v\ be\ the\ volume\ of\ a\ sphere})</p>
+
+<p>(v = \frac{4}{3}\pi r^{3})</p>
+
+<p>(m\  = \ pv = (\frac{4p\pi}{3})r^{3})</p>
+
+<p>Since ((\frac{4p\pi}{3})) is a constant, the student must plot a linear graph relating m versus the quality of radius cubed. Hence, option <strong>C</strong> is correct.</p>
+
+  </div><a class="u-url" href="/YLu-Blog/2022/08/28/Alex-Lu-Lab-1_-Measurements-and-Graphical-Analysis.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/YLu-1258" target="_blank" title="YLu-1258"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/Yixuan+Lu" target="_blank" title="Yixuan Lu"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UC87lKneqnsE-4jpvQ_wpxRw" target="_blank" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
