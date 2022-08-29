@@ -439,7 +439,7 @@ a { color: cyan !important; }
 
 a:hover { color: #ffbb00 !important; }
 
-.site-nav { background-color: #030031 !important; border-color: white !important; }
+.site-nav { background-color: #01001d !important; border-color: white !important; }
 
 .page-description { color: #979797 !important; }
 
@@ -455,7 +455,7 @@ btn { background-color: #0e00cc !important; color: #f0f0f0 !important; border-co
 
 li .post-meta-description { color: gray !important; }
 
-table th { background-color: #030031; border-color: #73ff00; color: #7c7c7c; }
+table th { background-color: #01001d; border-color: #73ff00; color: #7c7c7c; }
 
 table td { background-color: #08007c; border-color: #73ff00; color: gainsboro; }
 
