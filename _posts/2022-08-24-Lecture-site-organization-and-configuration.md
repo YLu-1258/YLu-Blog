@@ -23,7 +23,7 @@ Front-matter settings are seperated into two main groups, **keys**, and **values
 
 **IMPORTANT**: It is crucial to always pair a key with a value, a blank value on the key overwrites the default value, making the key take on a null value and breaking the front-matter
 To define front matter in *markdown*, use the following format
-<code style="display: block; white-space: pre-wrap;">---
+<code style="display: block; white-space: pre-wrap;">   ---
     toc: true
     layout: post
     description: APCSP Lecture 2
@@ -38,7 +38,7 @@ To define front matter in *markdown*, use the following format
 </code> 
 
 To define front-matter in *computational notebooks*, use the following format
-<code style="display: block; white-space: pre-wrap;"># Jupyter Notebook Demonstration
+<code style="display: block; white-space: pre-wrap;">   # Jupyter Notebook Demonstration
     > My first Jupyter notebook on my blog!
     - toc: true
     - title: First Jupyter Notebook
