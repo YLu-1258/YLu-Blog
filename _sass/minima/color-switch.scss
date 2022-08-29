@@ -2,9 +2,15 @@ h1, h2, p, h3, h4 {
     color:rgb(255, 255, 255) !important;      
 }
 
-body, html, input, textarea, select, button {
+html, input, textarea, select, button {
     color: white !important;
     background-color: rgb(1, 0, 29) !important;
+}
+
+body {
+    color: white !important;
+    background-color: rgb(1, 0, 29) !important;
+    cursor: url("https://www.flaticon.com/free-icons/cursor"),auto;
 }
 
 
