@@ -459,7 +459,7 @@ table td { background-color: #08007c; border-color: #73ff00; color: gainsboro; }
 
 canvas { filter: invert(100%); }
 
-pre, code { border-color: gainsboro; background-color: #969696; }
+pre, code { border-color: gainsboro; background-color: #464646; }
 
 .flash { color: #464646 !important; filter: brightness(80%); }
 
