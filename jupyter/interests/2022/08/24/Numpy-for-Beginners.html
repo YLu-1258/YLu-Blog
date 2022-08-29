@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Intro to Numpy | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Intro to Numpy" />
+<meta name="author" content="Alex Lu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Alex Lu with Love" />
+<meta property="og:description" content="From Alex Lu with Love" />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/jupyter/interests/2022/08/24/Numpy-for-Beginners.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/jupyter/interests/2022/08/24/Numpy-for-Beginners.html" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-24T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Intro to Numpy" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex Lu"},"dateModified":"2022-08-24T00:00:00-05:00","datePublished":"2022-08-24T00:00:00-05:00","description":"From Alex Lu with Love","headline":"Intro to Numpy","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/jupyter/interests/2022/08/24/Numpy-for-Beginners.html"},"url":"https://ylu-1258.github.io/YLu-Blog/jupyter/interests/2022/08/24/Numpy-for-Beginners.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Intro to Numpy</h1><p class="page-description">From Alex Lu with Love</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-24T00:00:00-05:00" itemprop="datePublished">
+        Aug 24, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Alex Lu</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#interests">interests</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/YLu-1258/YLu-Blog/tree/master/_notebooks/2022-08-24-Numpy-for-Beginners.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/YLu-Blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/YLu-1258/YLu-Blog/master?filepath=_notebooks%2F2022-08-24-Numpy-for-Beginners.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/YLu-1258/YLu-Blog/blob/master/_notebooks/2022-08-24-Numpy-for-Beginners.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FYLu-1258%2FYLu-Blog%2Fblob%2Fmaster%2F_notebooks%2F2022-08-24-Numpy-for-Beginners.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#NumPy">NumPy </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Vectorization-in-NumPy">Vectorization in NumPy </a></li>
+<li class="toc-entry toc-h3"><a href="#Explore-the-numerical-dataset">Explore the numerical dataset </a></li>
+<li class="toc-entry toc-h3"><a href="#Get-the-Frequency-Table-of-taxis-based-on-the-Pickup-Location">Get the Frequency Table of taxis based on the Pickup Location </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-24-Numpy-for-Beginners.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="NumPy">
+<a class="anchor" href="#NumPy" aria-hidden="true"><span class="octicon octicon-link"></span></a>NumPy<a class="anchor-link" href="#NumPy"> </a>
+</h2>
+<p>NumPy is the fundamental package for scientific computing with Python.</p>
+<p>At the core of the NumPy package, is the <code>ndarray</code> object or n-dimensional array. In programming, array describes a collection of elements, similar to a list. The word n-dimensional refers to the fact that ndarrays can have one or more dimensions.</p>
+<p>Here we directly convert a list to an ndarray using the <code>numpy.array()</code> constructor. To create a 1D ndarray, we can pass in a single list</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1">#using the alias np</span>
+<span class="n">array_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">array_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">array_data</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1 2 3 4]
+&lt;class 'numpy.ndarray'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's often useful to know the number of rows and columns in a ndarray. we can use the <code>ndarray.shape</code> attribute.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">array_2D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_2D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(2, 3)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Vectorization-in-NumPy">
+<a class="anchor" href="#Vectorization-in-NumPy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vectorization in NumPy<a class="anchor-link" href="#Vectorization-in-NumPy"> </a>
+</h3>
+<p>The NumPy library takes advantage of a processor feature called <em>Single Instruction Multiple Data (SIMD)</em> to process data faster. SIMD allows a processor to perform the same operation on multiple data points in a single processor cycle.</p>
+<p>We call the concept of replacing for loops with operations applied to multiple data points at once <strong>vectorization</strong>, and ndarrays make vectorization possible.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[6, 5]
+[1, 3]
+[5, 6]
+[1, 4]
+[3, 7]
+[5, 8]
+[3, 5]
+[8, 4]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+  <span class="n">row_sum</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_sum</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[11, 4, 11, 5, 10, 13, 8, 12]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Convert the list of lists to an ndarray</span>
+<span class="n">np_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="n">sums</span> <span class="o">=</span> <span class="n">np_numbers</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np_numbers</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[11  4 11  5 10 13  8 12]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we selected each column, we used the syntax <code>ndarray[:,c]</code> where c is the column index we wanted to select. The colon selects all rows.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#print(np_numbers)</span>
+<span class="c1">#print(np_numbers[1])</span>
+<span class="c1">#print(np_numbers[2:])</span>
+
+<span class="c1">#print(np_numbers[3,1])</span>
+<span class="c1">#print(np_numbers[:,1])</span>
+
+<span class="c1"># Select specific row</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_numbers</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[6 5]
+ [5 6]
+ [3 7]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Explore-the-numerical-dataset">
+<a class="anchor" href="#Explore-the-numerical-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explore the numerical dataset<a class="anchor-link" href="#Explore-the-numerical-dataset"> </a>
+</h3>
+<p>To explore two-dimensional (2D) ndarrays, we'll analyze New York City taxi trip data released by the city of New York.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="o">-</span><span class="n">nc</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">datasets21</span><span class="o">.</span><span class="n">s3</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">1.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nyc_taxis</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/content/: Scheme missing.
+File ‘nyc_taxis.csv’ already there; not retrieving.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>GNU Wget 1.19.4, a non-interactive network retriever.
+Usage: wget [OPTION]... [URL]...
+
+Mandatory arguments to long options are mandatory for short options too.
+
+Startup:
+  -V,  --version                   display the version of Wget and exit
+  -h,  --help                      print this help
+  -b,  --background                go to background after startup
+  -e,  --execute=COMMAND           execute a `.wgetrc'-style command
+
+Logging and input file:
+  -o,  --output-file=FILE          log messages to FILE
+  -a,  --append-output=FILE        append messages to FILE
+  -d,  --debug                     print lots of debugging information
+  -q,  --quiet                     quiet (no output)
+  -v,  --verbose                   be verbose (this is the default)
+  -nv, --no-verbose                turn off verboseness, without being quiet
+       --report-speed=TYPE         output bandwidth as TYPE.  TYPE can be bits
+  -i,  --input-file=FILE           download URLs found in local or external FILE
+  -F,  --force-html                treat input file as HTML
+  -B,  --base=URL                  resolves HTML input-file links (-i -F)
+                                     relative to URL
+       --config=FILE               specify config file to use
+       --no-config                 do not read any config file
+       --rejected-log=FILE         log reasons for URL rejection to FILE
+
+Download:
+  -t,  --tries=NUMBER              set number of retries to NUMBER (0 unlimits)
+       --retry-connrefused         retry even if connection is refused
+  -O,  --output-document=FILE      write documents to FILE
+  -nc, --no-clobber                skip downloads that would download to
+                                     existing files (overwriting them)
+       --no-netrc                  don't try to obtain credentials from .netrc
+  -c,  --continue                  resume getting a partially-downloaded file
+       --start-pos=OFFSET          start downloading from zero-based position OFFSET
+       --progress=TYPE             select progress gauge type
+       --show-progress             display the progress bar in any verbosity mode
+  -N,  --timestamping              don't re-retrieve files unless newer than
+                                     local
+       --no-if-modified-since      don't use conditional if-modified-since get
+                                     requests in timestamping mode
+       --no-use-server-timestamps  don't set the local file's timestamp by
+                                     the one on the server
+  -S,  --server-response           print server response
+       --spider                    don't download anything
+  -T,  --timeout=SECONDS           set all timeout values to SECONDS
+       --dns-timeout=SECS          set the DNS lookup timeout to SECS
+       --connect-timeout=SECS      set the connect timeout to SECS
+       --read-timeout=SECS         set the read timeout to SECS
+  -w,  --wait=SECONDS              wait SECONDS between retrievals
+       --waitretry=SECONDS         wait 1..SECONDS between retries of a retrieval
+       --random-wait               wait from 0.5*WAIT...1.5*WAIT secs between retrievals
+       --no-proxy                  explicitly turn off proxy
+  -Q,  --quota=NUMBER              set retrieval quota to NUMBER
+       --bind-address=ADDRESS      bind to ADDRESS (hostname or IP) on local host
+       --limit-rate=RATE           limit download rate to RATE
+       --no-dns-cache              disable caching DNS lookups
+       --restrict-file-names=OS    restrict chars in file names to ones OS allows
+       --ignore-case               ignore case when matching files/directories
+  -4,  --inet4-only                connect only to IPv4 addresses
+  -6,  --inet6-only                connect only to IPv6 addresses
+       --prefer-family=FAMILY      connect first to addresses of specified family,
+                                     one of IPv6, IPv4, or none
+       --user=USER                 set both ftp and http user to USER
+       --password=PASS             set both ftp and http password to PASS
+       --ask-password              prompt for passwords
+       --use-askpass=COMMAND       specify credential handler for requesting 
+                                     username and password.  If no COMMAND is 
+                                     specified the WGET_ASKPASS or the SSH_ASKPASS 
+                                     environment variable is used.
+       --no-iri                    turn off IRI support
+       --local-encoding=ENC        use ENC as the local encoding for IRIs
+       --remote-encoding=ENC       use ENC as the default remote encoding
+       --unlink                    remove file before clobber
+       --xattr                     turn on storage of metadata in extended file attributes
+
+Directories:
+  -nd, --no-directories            don't create directories
+  -x,  --force-directories         force creation of directories
+  -nH, --no-host-directories       don't create host directories
+       --protocol-directories      use protocol name in directories
+  -P,  --directory-prefix=PREFIX   save files to PREFIX/..
+       --cut-dirs=NUMBER           ignore NUMBER remote directory components
+
+HTTP options:
+       --http-user=USER            set http user to USER
+       --http-password=PASS        set http password to PASS
+       --no-cache                  disallow server-cached data
+       --default-page=NAME         change the default page name (normally
+                                     this is 'index.html'.)
+  -E,  --adjust-extension          save HTML/CSS documents with proper extensions
+       --ignore-length             ignore 'Content-Length' header field
+       --header=STRING             insert STRING among the headers
+       --max-redirect              maximum redirections allowed per page
+       --proxy-user=USER           set USER as proxy username
+       --proxy-password=PASS       set PASS as proxy password
+       --referer=URL               include 'Referer: URL' header in HTTP request
+       --save-headers              save the HTTP headers to file
+  -U,  --user-agent=AGENT          identify as AGENT instead of Wget/VERSION
+       --no-http-keep-alive        disable HTTP keep-alive (persistent connections)
+       --no-cookies                don't use cookies
+       --load-cookies=FILE         load cookies from FILE before session
+       --save-cookies=FILE         save cookies to FILE after session
+       --keep-session-cookies      load and save session (non-permanent) cookies
+       --post-data=STRING          use the POST method; send STRING as the data
+       --post-file=FILE            use the POST method; send contents of FILE
+       --method=HTTPMethod         use method "HTTPMethod" in the request
+       --body-data=STRING          send STRING as data. --method MUST be set
+       --body-file=FILE            send contents of FILE. --method MUST be set
+       --content-disposition       honor the Content-Disposition header when
+                                     choosing local file names (EXPERIMENTAL)
+       --content-on-error          output the received content on server errors
+       --auth-no-challenge         send Basic HTTP authentication information
+                                     without first waiting for the server's
+                                     challenge
+
+HTTPS (SSL/TLS) options:
+       --secure-protocol=PR        choose secure protocol, one of auto, SSLv2,
+                                     SSLv3, TLSv1, TLSv1_1, TLSv1_2 and PFS
+       --https-only                only follow secure HTTPS links
+       --no-check-certificate      don't validate the server's certificate
+       --certificate=FILE          client certificate file
+       --certificate-type=TYPE     client certificate type, PEM or DER
+       --private-key=FILE          private key file
+       --private-key-type=TYPE     private key type, PEM or DER
+       --ca-certificate=FILE       file with the bundle of CAs
+       --ca-directory=DIR          directory where hash list of CAs is stored
+       --crl-file=FILE             file with bundle of CRLs
+       --pinnedpubkey=FILE/HASHES  Public key (PEM/DER) file, or any number
+                                   of base64 encoded sha256 hashes preceded by
+                                   'sha256//' and separated by ';', to verify
+                                   peer against
+       --random-file=FILE          file with random data for seeding the SSL PRNG
+
+HSTS options:
+       --no-hsts                   disable HSTS
+       --hsts-file                 path of HSTS database (will override default)
+
+FTP options:
+       --ftp-user=USER             set ftp user to USER
+       --ftp-password=PASS         set ftp password to PASS
+       --no-remove-listing         don't remove '.listing' files
+       --no-glob                   turn off FTP file name globbing
+       --no-passive-ftp            disable the "passive" transfer mode
+       --preserve-permissions      preserve remote file permissions
+       --retr-symlinks             when recursing, get linked-to files (not dir)
+
+FTPS options:
+       --ftps-implicit                 use implicit FTPS (default port is 990)
+       --ftps-resume-ssl               resume the SSL/TLS session started in the control connection when
+                                         opening a data connection
+       --ftps-clear-data-connection    cipher the control channel only; all the data will be in plaintext
+       --ftps-fallback-to-ftp          fall back to FTP if FTPS is not supported in the target server
+WARC options:
+       --warc-file=FILENAME        save request/response data to a .warc.gz file
+       --warc-header=STRING        insert STRING into the warcinfo record
+       --warc-max-size=NUMBER      set maximum size of WARC files to NUMBER
+       --warc-cdx                  write CDX index files
+       --warc-dedup=FILENAME       do not store records listed in this CDX file
+       --no-warc-digests           do not calculate SHA1 digests
+       --no-warc-keep-log          do not store the log file in a WARC record
+       --warc-tempdir=DIRECTORY    location for temporary files created by the
+                                     WARC writer
+
+Recursive download:
+  -r,  --recursive                 specify recursive download
+  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for infinite)
+       --delete-after              delete files locally after downloading them
+  -k,  --convert-links             make links in downloaded HTML or CSS point to
+                                     local files
+       --convert-file-only         convert the file part of the URLs only (usually known as the basename)
+       --backups=N                 before writing file X, rotate up to N backup files
+  -K,  --backup-converted          before converting file X, back up as X.orig
+  -m,  --mirror                    shortcut for -N -r -l inf --no-remove-listing
+  -p,  --page-requisites           get all images, etc. needed to display HTML page
+       --strict-comments           turn on strict (SGML) handling of HTML comments
+
+Recursive accept/reject:
+  -A,  --accept=LIST               comma-separated list of accepted extensions
+  -R,  --reject=LIST               comma-separated list of rejected extensions
+       --accept-regex=REGEX        regex matching accepted URLs
+       --reject-regex=REGEX        regex matching rejected URLs
+       --regex-type=TYPE           regex type (posix|pcre)
+  -D,  --domains=LIST              comma-separated list of accepted domains
+       --exclude-domains=LIST      comma-separated list of rejected domains
+       --follow-ftp                follow FTP links from HTML documents
+       --follow-tags=LIST          comma-separated list of followed HTML tags
+       --ignore-tags=LIST          comma-separated list of ignored HTML tags
+  -H,  --span-hosts                go to foreign hosts when recursive
+  -L,  --relative                  follow relative links only
+  -I,  --include-directories=LIST  list of allowed directories
+       --trust-server-names        use the name specified by the redirection
+                                     URL's last component
+  -X,  --exclude-directories=LIST  list of excluded directories
+  -np, --no-parent                 don't ascend to the parent directory
+
+Mail bug reports and suggestions to &lt;bug-wget@gnu.org&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<span class="c1">#Load data into the notebook</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'nyc_taxis.csv'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">taxis_file</span><span class="p">:</span>
+  <span class="n">taxis</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">(</span><span class="n">taxis_file</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">taxis</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">taxis</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2014
+15
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np_taxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">taxis</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">np_taxis</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[['pickup_year' 'pickup_month' 'pickup_day' 'pickup_dayofweek'
+  'pickup_time' 'pickup_location_code' 'dropoff_location_code'
+  'trip_distance' 'trip_length' 'fare_amount' 'fees_amount'
+  'tolls_amount' 'tip_amount' 'total_amount' 'payment_type']
+ ['2016' '1' '1' '5' '0' '2' '4' '21.00' '2037' '52.00' '0.80' '5.54'
+  '11.65' '69.99' '1']
+ ['2016' '1' '1' '5' '0' '2' '1' '16.29' '1520' '45.00' '1.30' '0.00'
+  '8.00' '54.30' '1']]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(2014, 15)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll only work with a subset of the real data — approximately 90,000 yellow taxi trips to and from New York City airports between January and June 2016. This data set includes a 1/50th random sample.
+Below is information about selected columns from the dataset:</p>
+<ul>
+<li>pickup_year: the year of the trip
+pickup_month: the month of the trip (January is 1, December is 12)</li>
+<li>pickup_day: the day of the month of the trip</li>
+<li>pickup_location_code: the airport or borough where the trip started</li>
+<li>dropoff_location_code: the airport or borough where the trip ended</li>
+<li>trip_distance: the distance of the trip in miles</li>
+<li>trip_length: the length of the trip in seconds</li>
+<li>fare_amount: the base fare of the trip, in dollars</li>
+<li>total_amount: the total amount charged to the passenger, including all fees, tolls and tips</li>
+</ul>
+<p>Detailed information on all columns could be found <a href="https://s3.amazonaws.com/dq-content/289/nyc_taxi_data_dictionary.md">here</a>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Access the column by names</span>
+<span class="n">np_taxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">'nyc_taxis.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>References:</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.genfromtxt.html0">NumPy genfromtxt function - API Reference</a></p>
+<p><a href="https://www.pythonpool.com/numpy-genfromtxt/">Tutorial for genfromtxt</a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="s1">'pickup_location_code'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">np_taxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">'nyc_taxis.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[:,</span><span class="n">cols</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Get-the-Frequency-Table-of-taxis-based-on-the-Pickup-Location">
+<a class="anchor" href="#Get-the-Frequency-Table-of-taxis-based-on-the-Pickup-Location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get the Frequency Table of taxis based on the Pickup Location<a class="anchor-link" href="#Get-the-Frequency-Table-of-taxis-based-on-the-Pickup-Location"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[:,</span><span class="mi">6</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[:,</span><span class="mi">6</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np_taxis</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Calculate the mph of each trip</span>
+<span class="n">trip_distance_miles</span> <span class="o">=</span> <span class="n">np_taxis</span><span class="p">[:,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">trip_length_seconds</span> <span class="o">=</span> <span class="n">np_taxis</span><span class="p">[:,</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="n">trip_length_hours</span> <span class="o">=</span> <span class="n">trip_length_seconds</span> <span class="o">/</span> <span class="mi">3600</span> <span class="c1"># 3600 seconds is one hour</span>
+
+<span class="n">trip_mph</span> <span class="o">=</span> <span class="n">trip_distance_miles</span> <span class="o">/</span> <span class="n">trip_length_hours</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trip_mph</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">total_amount</span> <span class="o">=</span> <span class="n">np_taxis</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># measures of central tendency</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+<span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+  
+<span class="c1"># measures of dispersion</span>
+<span class="nb">min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+<span class="nb">max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+<span class="nb">range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+<span class="n">varience</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">total_amount</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Descriptive analysis"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Measures of Central Tendency"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mean ="</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Median ="</span><span class="p">,</span> <span class="n">median</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Measures of Dispersion"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Minimum ="</span><span class="p">,</span> <span class="nb">min</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Maximum ="</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Range ="</span><span class="p">,</span> <span class="nb">range</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Varience ="</span><span class="p">,</span> <span class="n">varience</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Standard Deviation ="</span><span class="p">,</span> <span class="n">sd</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="YLu-1258/YLu-Blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/YLu-Blog/jupyter/interests/2022/08/24/Numpy-for-Beginners.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/YLu-1258" target="_blank" title="YLu-1258"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/Yixuan+Lu" target="_blank" title="Yixuan Lu"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UC87lKneqnsE-4jpvQ_wpxRw" target="_blank" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
