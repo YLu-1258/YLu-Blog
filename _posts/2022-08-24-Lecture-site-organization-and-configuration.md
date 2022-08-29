@@ -2,11 +2,10 @@
 toc: true
 layout: post
 description: APCSP Lecture 2
-categories: [markdown, notes]
+categories: [markdown, APCSP]
 title: 08/24/2022 Lecture
 author: Alex Lu
 show_tags: true
-hide: true
 comments: true
 ---
 ## Lecture - 08/24/2022
