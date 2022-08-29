@@ -14,7 +14,7 @@ Questions and answers from CS alumni panel.
 ## Questions
 ### Q: How did you realize whant you wanted to do as your major?
 A: 
-- Colein :Realized that one can code pretty well, other friends and family members suggested to learn compsci. Comp-sci is a competitive field that's about perspective. 
+- Colein: Realized that one can code pretty well, other friends and family members suggested to learn compsci. Comp-sci is a competitive field that's about perspective. 
 - Anthony: Did programing from a young age, found it interesting and kept doing it.
 - Andrew: Took Intro to CS and really liked it and liked the techy and teamwork aspect of cs.
 - Maybel: Didn't really like the cs class or subject, new that it was important to learn. Interned with northrop with their respective tasks. You are still going have to learn scripting and programming even if transitiong into another field.
@@ -60,7 +60,25 @@ A:
 - Colein: In mechanical engineering, used computer science to mirror components to create mechanical parts. A lot of manipulation for commands. Simulations are useful, Computer Science can help with that. Set up servers to run the processes.
 - Anthony: Made a project for basketball teams.
 - Andrew: Companies will look for personal projects to see that you actually know what you are doing. Just 3 or 4 could go the extra mile of making the job. Good way to show off knowledge about algorithms and data structures. Pathfinding algorithms, graph theory, and also sorting algorithms. Data visualization is a really big field. 
-- Maybel: Triton AI
+- Maybel: Triton AI, improve autonomous tracking abilities.
+- Allison: -
+- Nitya:   -
+
+### Q: Clubs at Del Norte
+- Colein: CS in people managing, organizastion skills are very important
+- Anthony: 
+- Andrew: 
+- Maybel: School and robotics.
 - Allison: 
 - Nitya: 
+
+### Q: Tips for internships and jobs
+- Colein:
+- Anthony: Do not look at other people's linkedin, huge demoralizer.
+- Andrew: Build a good network of people in order to get refferals from others. Really important if you want to get into a FAANG company. Make a lot of connectons on LinkedIn. 
+- Maybel: Have a resume, get a list of your achievements. Know when to find your internships, starts hiring from Sept-November, when most of the interns there are finishing their internships. Get a resume done by early september for summer internships. Have proof of work that you have done. Call a bunch of engineers to decide what to do. Personal projects and teams are important, differentiates you from other students. MORE THAN JUST GPA AND MAJOR. SKILLS > NUMBERS. Ask local and smaller companies about internships, ask about high school internships and such. Find stuff you are interested in. Referrels are really important in the filtering process.
+- Allison: 
+- Nitya: 
+
+
 
