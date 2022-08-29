@@ -23,7 +23,7 @@ Front-matter settings are seperated into two main groups, **keys**, and **values
 
 **IMPORTANT**: It is crucial to always pair a key with a value, a blank value on the key overwrites the default value, making the key take on a null value and breaking the front-matter
 To define front matter in *markdown*, use the following format
-<code>
+<code style="display: block; white-space: pre-wrap;">
     ---
     toc: true
     layout: post
@@ -39,7 +39,7 @@ To define front matter in *markdown*, use the following format
 </code> 
 
 To define front-matter in *computational notebooks*, use the following format
-<code>
+<code style="display: block; white-space: pre-wrap;">
     # Jupyter Notebook Demonstration
     > My first Jupyter notebook on my blog!
     - toc: true
@@ -61,6 +61,7 @@ If we ever find the need to add a special page on the top of our site in the nav
 Most of the blog's default keys and values are defined within the `_config.yml` configuration file in the base directory of the blog.
 The values under `_config.yml` are in the standard `key: value` syntax prevalent in most `.yml` files.
 NOTABLE KEYS:
+
 | Key | function |
 | - | - |
 | title | Title of site in upper left hand corner |
