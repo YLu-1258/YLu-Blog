@@ -9,10 +9,6 @@ show_tags: true
 hide: true
 comments: true
 ---
-<style>
-    code {display: block; white-space: pre-wrap;}
-</style>
-
 ## Lecture - 08/24/2022
 
 ### Using documents as blog posts
