@@ -15,5 +15,5 @@ The Vocab should be oriented in this fashion
 
 | Vocab | Definition | Example |
 |-|-|-|
-| Output | Data that is returned by the computer to the user | print("Hello world!") |
-| Input | Data that is taken in by the computer from the user | input("What is your age") |
+| **Output** | Data that is returned by the computer to the user | print("Hello world!") |
+| **Input** | Data that is taken in by the computer from the user | input("What is your age") |
