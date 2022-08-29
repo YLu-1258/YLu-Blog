@@ -1,12 +1,10 @@
-
-
-body, html {
-    color: white !important;
-    background-color: rgb(3, 0, 49) !important;
-}
-
 h1, h2, p, h3, h4 {
     color:rgb(255, 255, 255) !important;      
+}
+
+body, html, input, textarea, select, button {
+    color: white !important;
+    background-color: rgb(3, 0, 49) !important;
 }
 
 
@@ -72,3 +70,16 @@ table td{
     color: rgb(220, 220, 220);
 }
 
+canvas {
+    filter: invert(100%);
+}
+
+pre, code {
+    border-color: rgb(220,220,220);
+    background-color: rgb(150,150,150);
+}
+
+.flash {
+    color: rgb(70,70,70) !important;
+    filter: brightness(80%);
+}
