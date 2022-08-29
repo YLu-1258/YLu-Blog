@@ -435,7 +435,7 @@ body { color: white !important; background-color: #01001d !important; cursor: ur
 
 .site-title, .site-nav, .page-link { color: rgba(0, 0, 0, 0.2) !important; background-color: black; background-color: rgba(0, 0, 0, 0.2); background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff); -webkit-background-clip: text; background-clip: text; color: transparent; animation: rainbow_animation 6s ease-in-out infinite; background-size: 400% 100%; }
 
-a { color: cyan !important; }
+a { color: rgba(0, 0, 0, 0.2) !important; background-color: black; background-color: rgba(0, 0, 0, 0.2); background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff); -webkit-background-clip: text; background-clip: text; color: transparent; animation: rainbow_animation 6s ease-in-out infinite; background-size: 400% 100%; }
 
 a:hover { color: #ffbb00 !important; }
 
