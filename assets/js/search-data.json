@@ -97,7 +97,7 @@
   
       ,"page2": {
           "title": "Vocab",
-          "content": "Vocab . The Vocab should be oriented in this fashion . Vocab Definition Example . ## Week 0 Vocab | Vocab | Definition | Example | |-|-|-| | Output | Data that is returned by the computer to the user | print(&quot;Hello world!&quot;) | | Input | Data that is taken in by the computer from the user | input(&quot;What is your age&quot;) |",
+          "content": "Vocab . The Vocab should be oriented in this fashion . Vocab | Definition | Example | . Week 0 Vocab . Vocab Definition Example . Output | Data that is returned by the computer to the user | print(“Hello world!”) | . Input | Data that is taken in by the computer from the user | input(“What is your age”) | .",
           "url": "https://ylu-1258.github.io/YLu-Blog/vocab/",
           "relUrl": "/vocab/",
           "date": ""
