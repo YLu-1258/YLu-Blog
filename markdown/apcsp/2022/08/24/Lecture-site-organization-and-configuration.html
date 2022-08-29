@@ -130,7 +130,7 @@ Front-matter settings are seperated into two main groups, <strong>keys</strong>,
 
 <p><strong>IMPORTANT</strong>: It is crucial to always pair a key with a value, a blank value on the key overwrites the default value, making the key take on a null value and breaking the front-matter
 To define front matter in <em>markdown</em>, use the following format
-<code>
+<code style="display: block; white-space: pre-wrap;">
     ---
     toc: true
     layout: post
@@ -146,7 +146,7 @@ To define front matter in <em>markdown</em>, use the following format
 </code></p>
 
 <p>To define front-matter in <em>computational notebooks</em>, use the following format
-<code>
+<code style="display: block; white-space: pre-wrap;">
     # Jupyter Notebook Demonstration
     &gt; My first Jupyter notebook on my blog!
     - toc: true
@@ -169,13 +169,34 @@ To define front matter in <em>markdown</em>, use the following format
 <a class="anchor" href="#_configyml" aria-hidden="true"><span class="octicon octicon-link"></span></a>_config.yml</h3>
 <p>Most of the blog’s default keys and values are defined within the <code class="language-plaintext highlighter-rouge">_config.yml</code> configuration file in the base directory of the blog.
 The values under <code class="language-plaintext highlighter-rouge">_config.yml</code> are in the standard <code class="language-plaintext highlighter-rouge">key: value</code> syntax prevalent in most <code class="language-plaintext highlighter-rouge">.yml</code> files.
-NOTABLE KEYS:
-| Key | function |
-| - | - |
-| title | Title of site in upper left hand corner |
-| baseurl | The url path to the blog |
-| show_description | Display brief description of blog post uner blog lists |
-| show_image | Display image on post card |</p>
+NOTABLE KEYS:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>Title of site in upper left hand corner</td>
+    </tr>
+    <tr>
+      <td>baseurl</td>
+      <td>The url path to the blog</td>
+    </tr>
+    <tr>
+      <td>show_description</td>
+      <td>Display brief description of blog post uner blog lists</td>
+    </tr>
+    <tr>
+      <td>show_image</td>
+      <td>Display image on post card</td>
+    </tr>
+  </tbody>
+</table>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
