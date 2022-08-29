@@ -8,13 +8,8 @@ permalink: /vocab/
 
 # Vocab
 The Vocab should be oriented in this fashion
-<table>
-    <tr>
-     <th>Vocab</th>
-     <th>Definition</th>
-     <th>Example</th>
-    </tr>
-<table>
+
+| Vocab | Definition | Example |
     
 ## Week 0 Vocab
 
