@@ -433,7 +433,7 @@ html, input, textarea, select, button { color: white !important; background-colo
 
 body { color: white !important; background-color: #01001d !important; cursor: url("https://www.flaticon.com/free-icons/cursor"), auto; }
 
-.site-title, .site-nav, .page-link { color: #a6ff00 !important; }
+.site-title, .site-nav, .page-link { color: #a6ff00 !important; background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3) !important; background-size: 1800% 1800% !important; -webkit-animation: rainbow 18s ease infinite !important; -z-animation: rainbow 18s ease infinite !important; -o-animation: rainbow 18s ease infinite !important; animation: rainbow 18s ease infinite !important; }
 
 a { color: cyan !important; }
 
@@ -464,6 +464,22 @@ canvas { filter: invert(100%); }
 pre, code { border-color: gainsboro; background-color: #464646; }
 
 .flash { color: #464646 !important; filter: brightness(80%); }
+
+@-webkit-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@-moz-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@-o-keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
+
+@keyframes rainbow { 0% { background-position: 0% 82%; }
+  50% { background-position: 100% 19%; }
+  100% { background-position: 0% 82%; } }
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
