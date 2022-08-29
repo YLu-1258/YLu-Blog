@@ -17,3 +17,4 @@ The Vocab should be oriented in this fashion
 |-|-|-|
 | **Output** | Data that is returned by the computer to the user | print("Hello world!") |
 | **Input** | Data that is taken in by the computer from the user | input("What is your age") |
+| **Sequence** | Any block of code that contains more than one singular line| #include <bits/stdc++.h> using name space std; int main() { cout <<"Hello World"; return 0} |
