@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -137,6 +137,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#Variables">Variables </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#Python-Lists">Python Lists </a></li>
+<li class="toc-entry toc-h3"><a href="#Dictionaries">Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#More-Data-Abstraction-in-Python">More Data Abstraction in Python </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -175,9 +181,336 @@ window.onload = wrap_img;
 <h4 id="Variables">
 <a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
 </h4>
+<p>Variables are contianers of data. They are the most primative and basic structure of data containing only a reference and a value, the value of the variable can be dynamic, and the value can be referenced to by the name of the variable. There are many primative data types in the python programing language, but a unique characteristic of python is that variables are given a data type at assignment.</p>
+<ol>
+<li>Some primative data types are integers, floats, strings (array of chars), chars, etc.</li>
+</ol>
+
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python-Lists">
+<a class="anchor" href="#Python-Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Lists<a class="anchor-link" href="#Python-Lists"> </a>
+</h3>
+<p>Lists are sequential containers of data that could store multiple values per key. Lists in python are denoted by brackets. We can check that our list is of the list data type with the <code>type()</code> function</p>
+<p>Always be precise and detailed when noting down variable names.</p>
+<p>Each list has a length attribute that denotes how big or long the list is. in python, this is achieved via the <code>len()</code> function</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">langs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cpp"</span><span class="p">,</span> <span class="s2">"python"</span><span class="p">,</span> <span class="s2">"html"</span><span class="p">,</span> <span class="s2">"css"</span><span class="p">,</span> <span class="s2">"java"</span><span class="p">,</span> <span class="s2">"javascript"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">langs</span><span class="p">)</span>
+<span class="c1"># Getting the data type</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
+<span class="c1"># Printing the length</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
+<span class="c1"># Printing the 3rd element</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">langs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['cpp', 'python', 'html', 'css', 'java', 'javascript']
+&lt;class 'list'&gt;
+6
+html
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dictionaries">
+<a class="anchor" href="#Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionaries<a class="anchor-link" href="#Dictionaries"> </a>
+</h3>
+<p>Dictionaries are sequential containers of data that are similar to lists but contain pairs of keys and values. Dictionaries in python are denoted by curly braces.</p>
+<p>We can access the keys of the dictionary with the <code>.keys()</code> method, and we can access the values of the dictionary with the <code>.values()</code> method. Additionally, we can also use the <code>.get()</code> method to get a value from a key.</p>
+<p>Dictionaries are very similar to a JSON in how it stores its data.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Alex Lu"</span><span class="p">,</span>
+    <span class="s2">"age"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">"score"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"langs"</span><span class="p">:</span> <span class="s2">"cpp"</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"info: "</span><span class="p">,</span>  <span class="n">info</span><span class="p">,</span> <span class="s2">"type: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">info</span><span class="p">)),</span> <span class="s2">"Length: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--------- Now using .get()"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>info:  {'name': 'Alex Lu', 'age': 15, 'score': 3, 'langs': 'cpp'} type: &lt;class 'dict'&gt; Length: 4
+name
+age
+score
+langs
+---------
+Alex Lu
+15
+3
+cpp
+--------- Now using .get()
+name: Alex Lu
+age: 15
+score: 3
+langs: cpp
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="More-Data-Abstraction-in-Python">
+<a class="anchor" href="#More-Data-Abstraction-in-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Data Abstraction in Python<a class="anchor-link" href="#More-Data-Abstraction-in-Python"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To add to a list, we can use the <code>.append()</code> method to add in more inputs to the list.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># InfoDB is a data structure with expected Keys and Values</span>
+
+<span class="c1"># Append to List a Dictionary of key/values related to a person and cars</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"FirstName"</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
+    <span class="s2">"LastName"</span><span class="p">:</span> <span class="s2">"Mortensen"</span><span class="p">,</span>
+    <span class="s2">"DOB"</span><span class="p">:</span> <span class="s2">"October 21"</span><span class="p">,</span>
+    <span class="s2">"Residence"</span><span class="p">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
+    <span class="s2">"Email"</span><span class="p">:</span> <span class="s2">"jmortensen@powayusd.com"</span><span class="p">,</span>
+    <span class="s2">"Fav_Color"</span><span class="p">:</span> <span class="s2">"Blue"</span><span class="p">,</span>
+    <span class="s2">"Owns_Cars"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"2015-Fusion"</span><span class="p">,</span> <span class="s2">"2011-Ranger"</span><span class="p">,</span> <span class="s2">"2003-Excursion"</span><span class="p">,</span> <span class="s2">"1997-F350"</span><span class="p">,</span> <span class="s2">"1969-Cadillac"</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Append to List a 2nd Dictionary of key/values</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"FirstName"</span><span class="p">:</span> <span class="s2">"Sunny"</span><span class="p">,</span>
+    <span class="s2">"LastName"</span><span class="p">:</span> <span class="s2">"Naidu"</span><span class="p">,</span>
+    <span class="s2">"DOB"</span><span class="p">:</span> <span class="s2">"August 2"</span><span class="p">,</span>
+    <span class="s2">"Residence"</span><span class="p">:</span> <span class="s2">"Temecula"</span><span class="p">,</span>
+    <span class="s2">"Email"</span><span class="p">:</span> <span class="s2">"snaidu@powayusd.com"</span><span class="p">,</span>
+    <span class="s2">"Fav_Color"</span><span class="p">:</span> <span class="s2">"Green"</span><span class="p">,</span>
+    <span class="s2">"Owns_Cars"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"4Runner"</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"FirstName"</span><span class="p">:</span> <span class="s2">"Alex"</span><span class="p">,</span>
+    <span class="s2">"LastName"</span><span class="p">:</span> <span class="s2">"Lu"</span><span class="p">,</span>
+    <span class="s2">"DOB"</span><span class="p">:</span> <span class="s2">"November 29"</span><span class="p">,</span>
+    <span class="s2">"Residence"</span><span class="p">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
+    <span class="s2">"Email"</span><span class="p">:</span> <span class="s2">"maodou1258@gmail.com"</span><span class="p">,</span>
+    <span class="s2">"Fav_Color"</span><span class="p">:</span> <span class="s2">"White"</span><span class="p">,</span>
+    <span class="s2">"Owns_Cars"</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+
+<span class="c1"># Print the data structure</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{'FirstName': 'John', 'LastName': 'Mortensen', 'DOB': 'October 21', 'Residence': 'San Diego', 'Email': 'jmortensen@powayusd.com', 'Fav_Color': 'Blue', 'Owns_Cars': ['2015-Fusion', '2011-Ranger', '2003-Excursion', '1997-F350', '1969-Cadillac']}, {'FirstName': 'Sunny', 'LastName': 'Naidu', 'DOB': 'August 2', 'Residence': 'Temecula', 'Email': 'snaidu@powayusd.com', 'Fav_Color': 'Green', 'Owns_Cars': ['4Runner']}, {'FirstName': 'Alex', 'LastName': 'Lu', 'DOB': 'November 29', 'Residence': 'San Diego', 'Email': 'maodou1258@gmail.com', 'Fav_Color': 'White', 'Owns_Cars': []}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Formatting and printing the data in the list</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">d_rec</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">"FirstName"</span><span class="p">],</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"LastName"</span><span class="p">])</span>  <span class="c1"># using comma puts space between values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Residence:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Residence"</span><span class="p">])</span> <span class="c1"># \t is a tab indent</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Birth Day:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"DOB"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Email:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Email"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Favorite Color:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Fav_Color"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Cars: "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>  <span class="c1"># end="" make sure no return occurs</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">"Owns_Cars"</span><span class="p">]))</span>  <span class="c1"># join allows printing a string list with separator</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># for loop algorithm iterates on length of InfoDb</span>
+<span class="k">def</span> <span class="nf">for_loop</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"For loop output</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">:</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+
+<span class="n">for_loop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>For loop output
+
+John Mortensen
+	 Residence: San Diego
+	 Birth Day: October 21
+	 Email: jmortensen@powayusd.com
+	 Favorite Color: Blue
+	 Cars: 2015-Fusion, 2011-Ranger, 2003-Excursion, 1997-F350, 1969-Cadillac
+
+Sunny Naidu
+	 Residence: Temecula
+	 Birth Day: August 2
+	 Email: snaidu@powayusd.com
+	 Favorite Color: Green
+	 Cars: 4Runner
+
+Alex Lu
+	 Residence: San Diego
+	 Birth Day: November 29
+	 Email: maodou1258@gmail.com
+	 Favorite Color: White
+	 Cars: 
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
