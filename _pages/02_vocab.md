@@ -11,10 +11,10 @@ The Vocab should be oriented in this fashion
 
 | Vocab | Definition | Example |
     
-## Week 0 Vocab
+
 
 | Vocab | Definition | Example |
 |-|-|-|
-| **Output** | Data that is returned by the computer to the user | print("Hello world!") |
-| **Input** | Data that is taken in by the computer from the user | input("What is your age") |
-| **Sequence** | Any block of code that contains more than one singular line| #include <bits/stdc++.h> using name space std; int main() { cout <<"Hello World"; return 0} |
+| **Pseudo-Code**| A mere representation of actual code, used as a blue print of something we wish to write | DISPLAY(msg) |
+| **Sequence** | Any block of code that contains more than one singular line| #include <bits/stdc++.h>; using name space std; int main() { cout <<"Hello World"; return 0 } |
+| **Procedural Extraction and Data Extraction** | taking little parts of code and putting them into different files and locations to be used as part of a whole | Index.html and other html fragments |
