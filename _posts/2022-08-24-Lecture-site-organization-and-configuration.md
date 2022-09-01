@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: APCSP Lecture 2
 categories: [markdown, APCSP]
-title: 08/24/2022 Lecture
+title: Site Organization and Configuration Lecture
 author: Alex Lu
 show_tags: true
 comments: true

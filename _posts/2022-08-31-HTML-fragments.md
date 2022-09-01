@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: What are HTML fragments and what do they do?
+description: 2022-08-31 Lecture - What are HTML fragments and what do they do? 
 categories: [markdown, APCSP]
 title: HTML Fragments
 author: Alex Lu

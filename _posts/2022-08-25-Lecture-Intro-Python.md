@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: APCSP Lecture 3
 categories: [markdown, APCSP]
-title: 08/25/2022 Lecture
+title: Intro to Python Lecture
 author: Alex Lu
 show_tags: true
 comments: true
