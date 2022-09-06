@@ -14,7 +14,7 @@ This page contains all of the notes I've taken during Mr. Mortensen's lectures, 
 
 | Date | Link and subject |
 |-|-|
-| 08 - 31 - 2022 | [HTML Fragments]({{site.baseurl}}/markdown/apcsp/2022/08/31/HTML-fragments.html)
-| 08 - 29 - 2022 | [Data Abstraction in Python]({{site.baseurl}}/jupyter/apcsp/2022/08/29/Lecture-Data-Abstraction.html)
-| 08 - 25 - 2022 | [Bash and Cloud Lecture]({{site.baseurl}}/markdown/apcsp/2022/08/25/Lecture-Intro-Python.html) |
-| 08 - 24 - 2022 | [Blog posting and configuration Lecture]({{site.baseurl}}/markdown/apcsp/2022/08/24/Lecture-site-organization-and-configuration.html) |
+| 08 - 31 - 2022 | [HTML Fragments]({{site.baseurl}}/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html)
+| 08 - 29 - 2022 | [Data Abstraction in Python]({{site.baseurl}}/jupyter/apcsp/week%202/2022/08/29/Lecture-Data-Abstraction.html)
+| 08 - 25 - 2022 | [Bash and Cloud Lecture]({{site.baseurl}}/markdown/apcsp/week%201/2022/08/25/Lecture-Intro-Python.html) |
+| 08 - 24 - 2022 | [Blog posting and configuration Lecture]({{site.baseurl}}/markdown/apcsp/week%201/2022/08/24/Lecture-site-organization-and-configuration.html) |
