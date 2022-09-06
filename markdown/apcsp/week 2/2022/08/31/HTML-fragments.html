@@ -4,22 +4,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>HTML writeup | Alex Lu</title>
+<title>HTML Fragments | Alex Lu</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="HTML writeup" />
+<meta property="og:title" content="HTML Fragments" />
 <meta name="author" content="Alex Lu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="HTML write up on changing Jekyll theme" />
-<meta property="og:description" content="HTML write up on changing Jekyll theme" />
-<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" />
-<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" />
+<meta name="description" content="2022-08-31 Lecture - What are HTML fragments and what do they do?" />
+<meta property="og:description" content="2022-08-31 Lecture - What are HTML fragments and what do they do?" />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html" />
 <meta property="og:site_name" content="Alex Lu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-09-03T00:00:00-05:00" />
+<meta property="article:published_time" content="2022-08-31T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="HTML writeup" />
+<meta property="twitter:title" content="HTML Fragments" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex Lu"},"dateModified":"2022-09-03T00:00:00-05:00","datePublished":"2022-09-03T00:00:00-05:00","description":"HTML write up on changing Jekyll theme","headline":"HTML writeup","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html"},"url":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex Lu"},"dateModified":"2022-08-31T00:00:00-05:00","datePublished":"2022-08-31T00:00:00-05:00","description":"2022-08-31 Lecture - What are HTML fragments and what do they do?","headline":"HTML Fragments","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html"},"url":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -74,8 +74,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">HTML writeup</h1><p class="page-description">HTML write up on changing Jekyll theme</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-03T00:00:00-05:00" itemprop="datePublished">
-        Sep 3, 2022
+    <h1 class="post-title p-name" itemprop="name headline">HTML Fragments</h1><p class="page-description">2022-08-31 Lecture - What are HTML fragments and what do they do?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-31T00:00:00-05:00" itemprop="datePublished">
+        Aug 31, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Alex Lu</span></span>
@@ -93,6 +93,9 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/YLu-Blog/categories/#APCSP">APCSP</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#week 2">week 2</a>
         
       
       </p>
@@ -102,24 +105,36 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#changing-theme-to-jekyll-midnight">Changing theme to Jekyll Midnight</a></li>
-</ul><h1 id="changing-theme-to-jekyll-midnight">
-<a class="anchor" href="#changing-theme-to-jekyll-midnight" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing theme to Jekyll Midnight</h1>
-<p>The overall theme of the blog could be changed under the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in the home directory of the blog. One can either edit the <code class="language-plaintext highlighter-rouge">theme</code> key pair value, or the <code class="language-plaintext highlighter-rouge">remote_theme</code> keypair value. However, the latter option must have the value <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> defined under the <code class="language-plaintext highlighter-rouge">plugins</code> key. I decided to use the midnight theme becuase it looks cool as heck.</p>
+<li class="toc-entry toc-h1"><a href="#html-fragments-and-markdown">HTML Fragments and Markdown</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#web-page-layout">Web Page Layout</a></li>
+</ul>
+</li>
+</ul><h1 id="html-fragments-and-markdown">
+<a class="anchor" href="#html-fragments-and-markdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML Fragments and Markdown</h1>
+<p>HTML fragments are just a part of the total HTML source on our site.</p>
 
-<p>However, the first major problem I ran into was a porblem with my jekyll build, looking closer at the error message, I realized that there was a “Download Error”, presumably some problems occured while trying to install the new midnight theme.</p>
+<p><strong>Table Fragments</strong>
+Fastpages allows to build tables in HTML or Markdown. Everything on the site is built in HTML, the markdown is converted into individual HTML fragments which are assembled to form webpage. Tables that we create and use in markdown are also read, interpreted and turned into html tables.</p>
 
-<p><img src="/YLu-Blog/images/Jekyll_midnight_error.png" alt="" title="Download Error"></p>
+<p>tl;dr EVERYTHING ON THE WEBPAGE IS IN HTML</p>
 
-<p>However, after doing some more research, I realized that the version of the theme must be specified with the <code class="language-plaintext highlighter-rouge">@</code> at the end of the value, I initially didn’t supply this value, and thus received the error. After specifying the latest version, The Jekyll build passed, and my blog looked like this:</p>
+<p><strong>images</strong>
+“<img>” element in HTML
+allows us to specify cetain image parameters, more flexible than markdown method.</p>
 
-<p>Top half of blog:
-<img src="/YLu-Blog/images/Midnight_theme.png" alt="" title="Midnight theme top half"></p>
+<p><strong>links</strong>
+“<a>” element with href in HTML</a></p>
 
-<p>Bottom half of blog:
-<img src="/YLu-Blog/images/Jekyll_midnight_bot_theme.png" alt="" title="Midnight theme bottom half"></p>
+<h2 id="web-page-layout">
+<a class="anchor" href="#web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web Page Layout</h2>
+<p>Design themes and layouts of the page.</p>
 
-<p>One immediate problems I noticed was that the chagne in theme completely removed parts of my blog’s navigation bar, as the tags and lecutre notes tab were no longer present at the top. This finding shows that other Jekyll themes are not fully compatible with the fastpages backend, and that the <code class="language-plaintext highlighter-rouge">minima</code> theme is prefered for compatibility.</p>
+<p>In the <code>_config.yml</code> page, The theme can be changed with the <code> remote_theme: </code>, which could change the coloration of the text</p>
+
+<p>NOTE: <strong>Fastpages only works with the Jekyll/minima theme, and not with any other theme</strong></p>
+
+<p>Additional coloration and customization could be attained with the <code>sass</code> (sassy)</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
@@ -129,7 +144,7 @@ window.onload = wrap_img;
         theme="photon-dark"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" hidden></a>
+</script><a class="u-url" href="/YLu-Blog/markdown/apcsp/week%202/2022/08/31/HTML-fragments.html" hidden></a>
 </article>
 
       </div>

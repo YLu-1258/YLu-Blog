@@ -90,6 +90,12 @@ window.onload = wrap_img;
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
         <a class="category-tags-link" href="/YLu-Blog/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#APCSP">APCSP</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#week 1">week 1</a>
         
       
       </p>
@@ -161,12 +167,12 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">RED</span><span class="o">=</span><span class="s1">'\033[0;31m'</span>
-<span class="nv">GREEN</span><span class="o">=</span><span class="s1">'\033[0;32m'</span>
-<span class="nv">BLUE</span><span class="o">=</span><span class="s1">'\033[0;34m'</span>
-<span class="nv">MAGENTA</span><span class="o">=</span><span class="s1">'\033[0;35m'</span>
-<span class="nv">CYAN</span><span class="o">=</span><span class="s1">'\033[0;36m'</span>
-<span class="nv">NC</span><span class="o">=</span><span class="s1">'\033[0;0m'</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">RED</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;31m'</span>
+<span class="n">GREEN</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;32m'</span>
+<span class="n">BLUE</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;34m'</span>
+<span class="n">MAGENTA</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;35m'</span>
+<span class="n">CYAN</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;36m'</span>
+<span class="n">NC</span><span class="o">=</span><span class="s1">'</span><span class="se">\033</span><span class="s1">[0;0m'</span>
 </pre></div>
 
     </div>
@@ -192,17 +198,17 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="k">function</span> CheckPythonInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">BLUE</span><span class="si">}</span><span class="s2">Checking python version</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>python --version<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">pyversion</span><span class="o">=</span><span class="k">$(</span>python --version <span class="p">|</span> cut -d<span class="s2">" "</span> -f2<span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - Python version </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$pyversion</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> has been installed! </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">function</span> <span class="n">CheckPythonInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{BLUE}</span><span class="s2">Checking python version$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">pyversion</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span><span class="s2">" "</span> <span class="o">-</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - Python version $</span><span class="si">{MAGENTA}</span><span class="s2">$pyversion$</span><span class="si">{GREEN}</span><span class="s2"> has been installed! $</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - Python not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - Python not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-CheckPythonInstall
+<span class="n">CheckPythonInstall</span>
 <span class="c1">#python --version</span>
 <span class="c1">#python3 --version</span>
 </pre></div>
@@ -245,28 +251,28 @@ CheckPythonInstall
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="k">function</span> CheckJavaInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2">Checking java version</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>java --version<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">javaversion</span><span class="o">=</span><span class="k">$(</span>java --version <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> cut -d<span class="s2">" "</span> -f2<span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - Java version </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$javaversion</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> has been installed! </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">function</span> <span class="n">CheckJavaInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{CYAN}</span><span class="s2">Checking java version$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">java</span> <span class="o">--</span><span class="n">version</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">javaversion</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">java</span> <span class="o">--</span><span class="n">version</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span><span class="s2">" "</span> <span class="o">-</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - Java version $</span><span class="si">{MAGENTA}</span><span class="s2">$javaversion$</span><span class="si">{GREEN}</span><span class="s2"> has been installed! $</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - Java not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - Java not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-<span class="k">function</span> CheckJavaCInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2">Checking java compiler version</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>javac --version<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">javacversion</span><span class="o">=</span><span class="k">$(</span>javac --version <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> cut -d<span class="s2">" "</span> -f2<span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - JavaC version </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$javacversion</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> has been installed! </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">function</span> <span class="n">CheckJavaCInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{CYAN}</span><span class="s2">Checking java compiler version$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">javac</span> <span class="o">--</span><span class="n">version</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">javacversion</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">javac</span> <span class="o">--</span><span class="n">version</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span><span class="s2">" "</span> <span class="o">-</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - JavaC version $</span><span class="si">{MAGENTA}</span><span class="s2">$javacversion$</span><span class="si">{GREEN}</span><span class="s2"> has been installed! $</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - JavaC not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - JavaC not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-CheckJavaInstall
-CheckJavaCInstall
+<span class="n">CheckJavaInstall</span>
+<span class="n">CheckJavaCInstall</span>
 </pre></div>
 
     </div>
@@ -309,17 +315,17 @@ CheckJavaCInstall
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="k">function</span> CheckJupyterInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2">Checking anaconda version</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>conda --version<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">condaversion</span><span class="o">=</span><span class="k">$(</span>conda --version <span class="p">|</span> cut -d<span class="s2">" "</span> -f2<span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - Anaconda version </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$condaversion</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> has been installed! </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">function</span> <span class="n">CheckJupyterInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{CYAN}</span><span class="s2">Checking anaconda version$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">condaversion</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span> <span class="o">|</span> <span class="n">cut</span> <span class="o">-</span><span class="n">d</span><span class="s2">" "</span> <span class="o">-</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - Anaconda version $</span><span class="si">{MAGENTA}</span><span class="s2">$condaversion$</span><span class="si">{GREEN}</span><span class="s2"> has been installed! $</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - Anaconda not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - Anaconda not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-CheckJupyterInstall
+<span class="n">CheckJupyterInstall</span>
 </pre></div>
 
     </div>
@@ -360,17 +366,17 @@ CheckJupyterInstall
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="k">function</span> CheckCondaPackageInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2">Checking jupyter package version</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>conda list <span class="p">|</span> grep <span class="nv">$1</span><span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">packageversion</span><span class="o">=</span><span class="k">$(</span>conda list <span class="p">|</span> grep <span class="nv">$1</span> <span class="p">|</span> awk <span class="s1">'{print $2}'</span><span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - Conda pacakge </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$1</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> version </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$packageversion</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> has been installed! </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">function</span> <span class="n">CheckCondaPackageInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{CYAN}</span><span class="s2">Checking jupyter package version$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">conda</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="mi">1</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">packageversion</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">conda</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="mi">1</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">'{print $2}'</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - Conda pacakge $</span><span class="si">{MAGENTA}</span><span class="s2">$1$</span><span class="si">{GREEN}</span><span class="s2"> version $</span><span class="si">{MAGENTA}</span><span class="s2">$packageversion$</span><span class="si">{GREEN}</span><span class="s2"> has been installed! $</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - Conda package </span><span class="nv">$1</span><span class="s2"> not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - Conda package $1 not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-CheckCondaPackageInstall <span class="s2">"nodejs"</span>
+<span class="n">CheckCondaPackageInstall</span> <span class="s2">"nodejs"</span>
 </pre></div>
 
     </div>
@@ -411,20 +417,20 @@ CheckCondaPackageInstall <span class="s2">"nodejs"</span>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="k">function</span> CheckJupyterKernelInstall<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2">Checking jupyter </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$1</span><span class="si">${</span><span class="nv">CYAN</span><span class="si">}</span><span class="s2"> kernel installation</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>jupyter kernelspec list <span class="p">|</span> grep <span class="nv">$1</span><span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">kernelpath</span><span class="o">=</span><span class="k">$(</span>jupyter kernelspec list <span class="p">|</span> grep <span class="nv">$1</span> <span class="p">|</span> awk <span class="s1">'{print $2}'</span><span class="k">)</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2">    - Jupyter </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$1</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> kernel has been found at </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$kernelpath</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">function</span> <span class="n">CheckJupyterKernelInstall</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{CYAN}</span><span class="s2">Checking jupyter $</span><span class="si">{MAGENTA}</span><span class="s2">$1$</span><span class="si">{CYAN}</span><span class="s2"> kernel installation$</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="p">[[</span> <span class="err">$</span><span class="p">(</span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="mi">1</span><span class="p">)</span> <span class="p">]];</span> <span class="n">then</span>
+        <span class="n">kernelpath</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="mi">1</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">'{print $2}'</span><span class="p">)</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{GREEN}</span><span class="s2">    - Jupyter $</span><span class="si">{MAGENTA}</span><span class="s2">$1$</span><span class="si">{GREEN}</span><span class="s2"> kernel has been found at $</span><span class="si">{MAGENTA}</span><span class="s2">$kernelpath$</span><span class="si">{NC}</span><span class="s2">"</span>
     <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">"</span><span class="si">${</span><span class="nv">RED</span><span class="si">}</span><span class="s2">    - Jupyter </span><span class="si">${</span><span class="nv">MAGENTA</span><span class="si">}</span><span class="nv">$1</span><span class="si">${</span><span class="nv">GREEN</span><span class="si">}</span><span class="s2"> kernel not found </span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+        <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">"$</span><span class="si">{RED}</span><span class="s2">    - Jupyter $</span><span class="si">{MAGENTA}</span><span class="s2">$1$</span><span class="si">{GREEN}</span><span class="s2"> kernel not found $</span><span class="si">{NC}</span><span class="s2">"</span>
+    <span class="n">fi</span>
+<span class="p">}</span>
 
-<span class="nv">kernels</span><span class="o">=</span><span class="s2">"bash javascript python3"</span>
-<span class="k">for</span> i in <span class="nv">$kernels</span><span class="p">;</span> <span class="k">do</span>
-    CheckJupyterKernelInstall <span class="nv">$i</span>
-<span class="k">done</span>
+<span class="n">kernels</span><span class="o">=</span><span class="s2">"bash javascript python3"</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="err">$</span><span class="n">kernels</span><span class="p">;</span> <span class="n">do</span>
+    <span class="n">CheckJupyterKernelInstall</span> <span class="err">$</span><span class="n">i</span>
+<span class="n">done</span>
 </pre></div>
 
     </div>
