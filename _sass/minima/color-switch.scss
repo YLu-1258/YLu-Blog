@@ -26,7 +26,13 @@ body {
     background-size: 400% 100%;
     position: sticky;
 }
-    
+
+.page-link:hover{
+    border-radius: 25px;
+    background-color: rgb(255,255,255);
+    transition: all .2s ease-in;
+}
+
 a {
     color: rgba(0, 0, 0, 0.2) !important;
     background-color: rgb(0, 0, 0);
@@ -42,6 +48,7 @@ a {
 
 a:hover {
     color: rgb(255, 187, 0) !important;
+    text-decoration: none;
 }
 
 .site-nav {
