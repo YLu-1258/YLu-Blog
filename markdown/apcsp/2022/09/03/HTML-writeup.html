@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>HTML writeup | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="HTML writeup" />
+<meta name="author" content="Alex Lu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="HTML write up on changing Jekyll theme" />
+<meta property="og:description" content="HTML write up on changing Jekyll theme" />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-03T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="HTML writeup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex Lu"},"dateModified":"2022-09-03T00:00:00-05:00","datePublished":"2022-09-03T00:00:00-05:00","description":"HTML write up on changing Jekyll theme","headline":"HTML writeup","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html"},"url":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/YLu-Blog/assets/css/style.css?v=">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/YLu-Blog/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/YLu-Blog/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#353535">
+<meta name="msapplication-navbutton-color" content="#353535">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <ul>
+            <li class="fork"><a href="">View On GitHub</a></li>
+            
+          </ul>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Alex Lu</h1>
+          <p>Alex's personal blogging site</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href=""></a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+        </div>
+
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">HTML writeup</h1><p class="page-description">HTML write up on changing Jekyll theme</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-03T00:00:00-05:00" itemprop="datePublished">
+        Sep 3, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Alex Lu</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#markdown">markdown</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#APCSP">APCSP</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#changing-theme-to-jekyll-midnight">Changing theme to Jekyll Midnight</a></li>
+</ul><h1 id="changing-theme-to-jekyll-midnight">
+<a class="anchor" href="#changing-theme-to-jekyll-midnight" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing theme to Jekyll Midnight</h1>
+<p>The overall theme of the blog could be changed under the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in the home directory of the blog. One can either edit the <code class="language-plaintext highlighter-rouge">theme</code> key pair value, or the <code class="language-plaintext highlighter-rouge">remote_theme</code> keypair value. However, the latter option must have the value <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> defined under the <code class="language-plaintext highlighter-rouge">plugins key</code>. I decided to use the midnight theme becuase it looks cool as heck.</p>
+
+<p>However, the first major problem I ran into was a porblem with my jekyll build, looking closer at the error message, I realized that there was a “Download Error”, presumably some problems occured while trying to install the new midnight theme.</p>
+
+<p><img src="/YLu-Blog/images/Jekyll_midnight_error.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+
+<p>However, after doing some more research, I realized that the version of the theme must be specified with the <code class="language-plaintext highlighter-rouge">@</code> at the end of the value, I initially didn’t supply this value, and thus received the error. After specifying the latest version, The Jekyll build passed, and my blog looked like this:</p>
+
+<p>Top half of blog:
+<img src="/YLu-Blog/images/Midnight_theme.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+
+<p>Bottom half of blog:
+<img src="/YLu-Blog/images/Jekyll_midnight_bot_theme.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+
+<p>One immediate problems I noticed was that the chagne in theme completely removed parts of my blog’s navigation bar, as the tags and lecutre notes tab were no longer present at the top. This finding shows that other Jekyll themes are not fully compatible with the fastpages backend, and that the <code class="language-plaintext highlighter-rouge">minima</code> theme is prefered for compatibility.</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="YLu-1258/YLu-Blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/YLu-Blog/markdown/apcsp/2022/09/03/HTML-writeup.html" hidden></a>
+</article>
+
+
+      </section>
+
+    </div>
+  </body>
+</html>
