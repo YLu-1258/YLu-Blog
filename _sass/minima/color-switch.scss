@@ -13,7 +13,9 @@ body {
     cursor: url("https://www.flaticon.com/free-icons/cursor"),auto;
 }
 
-
+.site-header {
+    position: sticky;
+}
 .site-title, .site-nav, .page-link {
     color: rgba(0, 0, 0, 0.2) !important;
     background-color: rgb(0, 0, 0);
