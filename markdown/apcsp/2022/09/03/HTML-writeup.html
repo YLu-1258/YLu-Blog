@@ -105,19 +105,19 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#changing-theme-to-jekyll-midnight">Changing theme to Jekyll Midnight</a></li>
 </ul><h1 id="changing-theme-to-jekyll-midnight">
 <a class="anchor" href="#changing-theme-to-jekyll-midnight" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing theme to Jekyll Midnight</h1>
-<p>The overall theme of the blog could be changed under the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in the home directory of the blog. One can either edit the <code class="language-plaintext highlighter-rouge">theme</code> key pair value, or the <code class="language-plaintext highlighter-rouge">remote_theme</code> keypair value. However, the latter option must have the value <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> defined under the <code class="language-plaintext highlighter-rouge">plugins key</code>. I decided to use the midnight theme becuase it looks cool as heck.</p>
+<p>The overall theme of the blog could be changed under the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in the home directory of the blog. One can either edit the <code class="language-plaintext highlighter-rouge">theme</code> key pair value, or the <code class="language-plaintext highlighter-rouge">remote_theme</code> keypair value. However, the latter option must have the value <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> defined under the <code class="language-plaintext highlighter-rouge">plugins</code> key. I decided to use the midnight theme becuase it looks cool as heck.</p>
 
 <p>However, the first major problem I ran into was a porblem with my jekyll build, looking closer at the error message, I realized that there was a “Download Error”, presumably some problems occured while trying to install the new midnight theme.</p>
 
-<p><img src="/YLu-Blog/images/Jekyll_midnight_error.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+<p><img src="/YLu-Blog/images/Jekyll_midnight_error.png" alt="" title="Download Error"></p>
 
 <p>However, after doing some more research, I realized that the version of the theme must be specified with the <code class="language-plaintext highlighter-rouge">@</code> at the end of the value, I initially didn’t supply this value, and thus received the error. After specifying the latest version, The Jekyll build passed, and my blog looked like this:</p>
 
 <p>Top half of blog:
-<img src="/YLu-Blog/images/Midnight_theme.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+<img src="/YLu-Blog/images/Midnight_theme.png" alt="" title="Midnight theme top half"></p>
 
 <p>Bottom half of blog:
-<img src="/YLu-Blog/images/Jekyll_midnight_bot_theme.png" alt="" title="https://github.com/YLu-1258/YLu-Blog/"></p>
+<img src="/YLu-Blog/images/Jekyll_midnight_bot_theme.png" alt="" title="Midnight theme bottom half"></p>
 
 <p>One immediate problems I noticed was that the chagne in theme completely removed parts of my blog’s navigation bar, as the tags and lecutre notes tab were no longer present at the top. This finding shows that other Jekyll themes are not fully compatible with the fastpages backend, and that the <code class="language-plaintext highlighter-rouge">minima</code> theme is prefered for compatibility.</p>
 
