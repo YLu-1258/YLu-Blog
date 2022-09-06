@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: HTML write up on changing Jekyll theme 
-categories: [markdown, APCSP]
+categories: [markdown, APCSP, week 2]
 title: HTML writeup
 author: Alex Lu
 show_tags: true

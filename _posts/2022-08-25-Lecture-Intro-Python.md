@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: APCSP Lecture 3
-categories: [markdown, APCSP]
+categories: [markdown, APCSP, week 1]
 title: Intro to Python Lecture
 author: Alex Lu
 show_tags: true

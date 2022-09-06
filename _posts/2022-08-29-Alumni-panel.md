@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Asking questions, learning about the cs major + extra credit.
-categories: [markdown, APCSP]
+categories: [markdown, APCSP, week 2]
 title: 2022 08 29 Alumni Panel
 author: Alex Lu
 show_tags: true

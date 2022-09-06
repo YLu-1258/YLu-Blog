@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: 2022-08-31 Lecture - What are HTML fragments and what do they do? 
-categories: [markdown, APCSP]
+categories: [markdown, APCSP, week 2]
 title: HTML Fragments
 author: Alex Lu
 show_tags: true

@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: APCSP Lecture 2
-categories: [markdown, APCSP]
+categories: [markdown, APCSP, week 1]
 title: Site Organization and Configuration Lecture
 author: Alex Lu
 show_tags: true
