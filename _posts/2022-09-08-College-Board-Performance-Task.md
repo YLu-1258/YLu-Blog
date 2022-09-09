@@ -41,3 +41,9 @@ Ex: The percentage of the score in the quiz was an example of an algorithm
 ## Row 6: Testing
 > Assesses students’ ability to investigate the situation, context, or task.
 Testing is running over all the processes in a program and ensuring that everything works. The ability to find, detect, and fix any bugs apparent in the program.
+
+
+## How to Get a Five
+Use Khan academy to review on the topics that might show up on the exam.
+
+Some problems that can be found on the internet, research on my own.
