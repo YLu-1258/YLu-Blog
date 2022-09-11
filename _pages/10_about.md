@@ -36,7 +36,3 @@ I am interested in anything related to computers, I am currently working on vari
 > - **Image processing** 🖼️
 > - **Webscraping**      🌐
 > - **Cyber Security**   🐱‍💻
-
-### Dino Game :)
-<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="33%" height="33%" loading="lazy"></iframe>
-<style type="text/css"> iframe { position: fixed; width: 33%; height: 33%; z-index: 999; }</style>
