@@ -39,3 +39,4 @@ I am interested in anything related to computers, I am currently working on vari
 
 ### Dino Game :)
 <iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="33%" height="33%" loading="lazy"></iframe>
+<style type="text/css"> iframe { width: 33%; height: 33% }</style>
