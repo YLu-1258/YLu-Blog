@@ -29,7 +29,7 @@ The purpose of this game is to create a word guessing game, where the user guess
 > Assesses students’ ability to use abstraction to manage complexity in a program.
 The Abstraction and storage of data in a generalized container, e.g. variables, lists, dictionaries
 
-The hangman game will predominantly use lists and variables to store the necessary data for the game. The variables could hold the different "stages" of the hangman ascii-art. On the otherhand, lists could be used to keep track of the already used letters and the letters 
+The hangman game will predominantly use lists and variables to store the necessary data for the game. The variables could hold the different "stages" of the hangman ascii-art. On the otherhand, lists could be used to keep track of the already used letters, the target word, and the letters that were found in the target word. DOing so would allow for easy manipulation of the data stored and processed by the user.
 
 ## Row 3: Managing Complexity
 > Assesses students’ ability to explain how abstraction manages complexity.
@@ -37,21 +37,27 @@ The `print_data` function in the InfoDb project helps to reduce the amount of co
 
 Helps to reduce complexity in the code as everything is compartmentalized.
 
+Individual functions and classes could be created to compartmentalize certain processes to reduce the clutter and repitition in the code. One function could be used to verify the prescence of a letter in a word, another function could be used to check if the game has been won, and a final main function could be made with a loop that runs the overall game.
+
 ## Row 4: Prodecural Abstraction
 > Assesses students’ ability to use abstraction to manage complexity in a program.
 The `print_data` function used in the InfoDb project was abstracted into the various for loops that the program used.
+
+The many functions and classes used in the hangman game could be abstracted in the program to manage the overall complexity of the game.
 
 ## Row 5: Algorithm Implementation
 > Assesses students’ ability to implement and apply an algorithm.
 An algorithm is a methodology or a logical path that a computer follows to properly, 
 
 Ex: The percentage of the score in the quiz was an example of an algorithm
+Some algorithms that could be implemented in this project could be a way of keeping track of total number of attempts taken or checking if a game has been won, (e.g. all of the spaces have been filled out with letters)
 
 ## Row 6: Testing
 > Assesses students’ ability to investigate the situation, context, or task.
 Testing is running over all the processes in a program and ensuring that everything works. The ability to find, detect, and fix any bugs apparent in the program.
 
+Some testing that could be done on the project could be testing for accepting inputs from the user (subsituting a letter in when it's found to be correct), or testing the proper game end and game start events.
 
 ## How to Get a Five
 ### REVIEW PAST NOTES FROM CLASS
-Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then
+Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then consult the internet. If the problems still remains unsolved, consult the teacher about it. 
