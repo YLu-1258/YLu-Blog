@@ -13,7 +13,7 @@ comments: true
 
 
 ## Plan and Ideas
-A calculator program to calculate a student's GPA
+A program that creates a hang-man game for the user.
 
 ## Row 1: Program Purpose and Function
 > Assesses students’ ability to explain how a code segment or program functions.
