@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -148,7 +148,7 @@ The purpose of <strong>InfoDb</strong>:           To store and access user infor
 The Abstraction and storage of data in a generalized container, e.g. variables, lists, dictionaries</p>
 </blockquote>
 
-<p>The hangman game will predominantly use lists and variables to store the necessary data for the game. The variables could hold the different “stages” of the hangman ascii-art. On the otherhand, lists could be used to keep track of the already used letters and the letters</p>
+<p>The hangman game will predominantly use lists and variables to store the necessary data for the game. The variables could hold the different “stages” of the hangman ascii-art. On the otherhand, lists could be used to keep track of the already used letters, the target word, and the letters that were found in the target word. DOing so would allow for easy manipulation of the data stored and processed by the user.</p>
 
 <h2 id="row-3-managing-complexity">
 <a class="anchor" href="#row-3-managing-complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Row 3: Managing Complexity</h2>
@@ -159,12 +159,16 @@ The <code class="language-plaintext highlighter-rouge">print_data</code> functio
 
 <p>Helps to reduce complexity in the code as everything is compartmentalized.</p>
 
+<p>Individual functions and classes could be created to compartmentalize certain processes to reduce the clutter and repitition in the code. One function could be used to verify the prescence of a letter in a word, another function could be used to check if the game has been won, and a final main function could be made with a loop that runs the overall game.</p>
+
 <h2 id="row-4-prodecural-abstraction">
 <a class="anchor" href="#row-4-prodecural-abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Row 4: Prodecural Abstraction</h2>
 <blockquote>
   <p>Assesses students’ ability to use abstraction to manage complexity in a program.
 The <code class="language-plaintext highlighter-rouge">print_data</code> function used in the InfoDb project was abstracted into the various for loops that the program used.</p>
 </blockquote>
+
+<p>The many functions and classes used in the hangman game could be abstracted in the program to manage the overall complexity of the game.</p>
 
 <h2 id="row-5-algorithm-implementation">
 <a class="anchor" href="#row-5-algorithm-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Row 5: Algorithm Implementation</h2>
@@ -173,7 +177,8 @@ The <code class="language-plaintext highlighter-rouge">print_data</code> functio
 An algorithm is a methodology or a logical path that a computer follows to properly,</p>
 </blockquote>
 
-<p>Ex: The percentage of the score in the quiz was an example of an algorithm</p>
+<p>Ex: The percentage of the score in the quiz was an example of an algorithm
+Some algorithms that could be implemented in this project could be a way of keeping track of total number of attempts taken or checking if a game has been won, (e.g. all of the spaces have been filled out with letters)</p>
 
 <h2 id="row-6-testing">
 <a class="anchor" href="#row-6-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Row 6: Testing</h2>
@@ -182,11 +187,13 @@ An algorithm is a methodology or a logical path that a computer follows to prope
 Testing is running over all the processes in a program and ensuring that everything works. The ability to find, detect, and fix any bugs apparent in the program.</p>
 </blockquote>
 
+<p>Some testing that could be done on the project could be testing for accepting inputs from the user (subsituting a letter in when it’s found to be correct), or testing the proper game end and game start events.</p>
+
 <h2 id="how-to-get-a-five">
 <a class="anchor" href="#how-to-get-a-five" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Get a Five</h2>
 <h3 id="review-past-notes-from-class">
 <a class="anchor" href="#review-past-notes-from-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>REVIEW PAST NOTES FROM CLASS</h3>
-<p>Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then</p>
+<p>Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then consult the internet. If the problems still remains unsolved, consult the teacher about it.</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
