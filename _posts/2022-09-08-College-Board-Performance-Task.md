@@ -11,6 +11,10 @@ comments: true
 
 # College Board Create Performance Task
 
+
+## Plan and Ideas
+A calculator program to calculate a student's GPA
+
 ## Row 1: Program Purpose and Function
 > Assesses students’ ability to explain how a code segment or program functions.
 Know the difference between program **purpose** and **function**
@@ -44,6 +48,5 @@ Testing is running over all the processes in a program and ensuring that everyth
 
 
 ## How to Get a Five
-Use Khan academy to review on the topics that might show up on the exam.
-
-Some problems that can be found on the internet, research on my own.
+### REVIEW PAST NOTES FROM CLASS
+Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then
