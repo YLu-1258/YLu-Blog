@@ -19,12 +19,17 @@ A program that creates a hang-man game for the user.
 > Assesses students’ ability to explain how a code segment or program functions.
 Know the difference between program **purpose** and **function**
 > The purpoes and function is what the program was meant to do
+Examples: 
 The purpose of the **Quiz** program: To assess knowledge on a topic.
 The purpose of **InfoDb**:           To store and access user information.
+
+The purpose of this game is to create a word guessing game, where the user guesses certain letters, and the program will automatically fill in any letters present in the target word that the user inputs. After a given amount of tries, if the user hasn't guessed the word, the game will fail itself.
 
 ## Row 2: Data Abstraction
 > Assesses students’ ability to use abstraction to manage complexity in a program.
 The Abstraction and storage of data in a generalized container, e.g. variables, lists, dictionaries
+
+The hangman game will predominantly use lists and variables to store the necessary data for the game. The variables could hold the different "stages" of the hangman ascii-art. On the otherhand, lists could be used to keep track of the already used letters and the letters 
 
 ## Row 3: Managing Complexity
 > Assesses students’ ability to explain how abstraction manages complexity.
