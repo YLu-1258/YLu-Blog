@@ -61,3 +61,6 @@ Some testing that could be done on the project could be testing for accepting in
 ## How to Get a Five
 ### REVIEW PAST NOTES FROM CLASS
 Be sure to be clear on the vocab and content taught in the class. Be parepared to be able to properly define each vocabulary and provide examples to each vocab. Any questions that cannot be answered with my notes, ask the teammates first and then consult the internet. If the problems still remains unsolved, consult the teacher about it. 
+
+### LOOK AT PREVIOUS COLLEGEBOARD SUBMISSIONS AND ASSIGNMENTS
+Learn from the past submissions of other people, plan ahead of time what to consider and what to add to my project.
