@@ -12,3 +12,15 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 __pycache__
+_notebooks/2020-02-20-test.ipynb
+_notebooks/2022-08-20-example-post.ipynb
+_notebooks/2022-08-23-alex-quiz.ipynb
+_notebooks/2022-08-24-Numpy-for-Beginners.ipynb
+_notebooks/2022-08-25-Pandas-for-Beginners.ipynb
+_notebooks/2022-08-26-bash-checks.ipynb
+_notebooks/2022-08-29-Lecture-Data-Abstraction.ipynb
+_notebooks/2022-08-29-Summer-Research-ML-results.ipynb
+_notebooks/2022-09-07-Lecture-code-org-applab.ipynb
+
+_word/Alex Lu - Lab #1_ Measurements and Graphical Analysis .docx
+_word/An Empirical Study on Performance Measures of Collaborative Filtering Recommendation Algorithms.docx
