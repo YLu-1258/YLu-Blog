@@ -96,11 +96,18 @@ window.onload = wrap_img;
   
     <li><a href="#week 2">week 2</a></li>
   
+    <li><a href="#week 4">week 4</a></li>
+  
   </ul>
 
   
       <h3 id ="APCSP"><i class="fas fa-tags category-tags-icon"></i></i> APCSP</h3>
       <a name="APCSP"></a>
+      
+        <article class="archive-item">
+          <p class="post-meta post-meta-title"><a class="page-meta" href="/YLu-Blog/jupyter/apcsp/week%204/2022/09/21/JavaScript-Tutorial.html">JavaScript Writeup</a>  • Sep 21, 2022</p>
+        </article>
+        
       
         <article class="archive-item">
           <p class="post-meta post-meta-title"><a class="page-meta" href="/YLu-Blog/markdown/apcsp/human_day/2022/09/15/Psychology-and-a-good-life.html">Psychology and a Good Life</a>  • Sep 15, 2022</p>
@@ -197,6 +204,11 @@ window.onload = wrap_img;
   
       <h3 id ="jupyter"><i class="fas fa-tags category-tags-icon"></i></i> jupyter</h3>
       <a name="jupyter"></a>
+      
+        <article class="archive-item">
+          <p class="post-meta post-meta-title"><a class="page-meta" href="/YLu-Blog/jupyter/apcsp/week%204/2022/09/21/JavaScript-Tutorial.html">JavaScript Writeup</a>  • Sep 21, 2022</p>
+        </article>
+        
       
         <article class="archive-item">
           <p class="post-meta post-meta-title"><a class="page-meta" href="/YLu-Blog/jupyter/interests/2022/08/29/Summer-Research-ML-results.html">Summer Recommender System Algo Research</a>  • Aug 29, 2022</p>
@@ -350,9 +362,85 @@ window.onload = wrap_img;
         
       
   
+      <h3 id ="week 4"><i class="fas fa-tags category-tags-icon"></i></i> week 4</h3>
+      <a name="week 4"></a>
+      
+        <article class="archive-item">
+          <p class="post-meta post-meta-title"><a class="page-meta" href="/YLu-Blog/jupyter/apcsp/week%204/2022/09/21/JavaScript-Tutorial.html">JavaScript Writeup</a>  • Sep 21, 2022</p>
+        </article>
+        
+      
+  
 
 
 
+<style>
+    button {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: rgb(63, 74, 79);
+      color: white;
+      transition: all .2s ease-in;
+      cursor: pointer;
+      padding: 15px;
+      width: 3rem;
+      height: 3rem;
+      border-radius:50%;
+      -moz-border-radius:50%;
+      -webkit-border-radius:50%;
+    }
+    #Top {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: rgb(63, 74, 79);
+      color: white;
+      transition: all .2s ease-in;
+      cursor: pointer;
+      padding: 15px;
+      width: 3rem;
+      height: 3rem;
+      border-radius:50%;
+      -moz-border-radius:50%;
+      -webkit-border-radius:50%;
+      
+    }
+    
+    button:hover {
+      background-color: rgb(0, 221, 255);
+    }
+    #Top:hover {
+        background-color: rgb(0, 221, 255);
+    }
+  </style>
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
 
 </div>
       </div>
