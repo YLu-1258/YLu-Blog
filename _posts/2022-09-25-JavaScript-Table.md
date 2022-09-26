@@ -22,11 +22,186 @@ layout: notebook
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Defining the Period Function</p>
+<p>Defining the Class Object and Classes array</p>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">Class</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">period</span><span class="p">,</span> <span class="nx">timeStart</span><span class="p">,</span> <span class="nx">timeEnd</span><span class="p">,</span> <span class="nx">teacher</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">period</span> <span class="o">=</span> <span class="nx">period</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timeStart</span> <span class="o">=</span> <span class="nx">timeStart</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timeEnd</span> <span class="o">=</span> <span class="nx">timeEnd</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">grade</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Class</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">set_grade</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grade</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">grade</span> <span class="o">=</span> <span class="nx">grade</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">Classes</span> <span class="o">=</span> <span class="p">[</span><span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="s2">&quot;AP Physics C: Mechanics&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;8:35&quot;</span><span class="p">,</span> <span class="s2">&quot;9:44&quot;</span><span class="p">,</span> <span class="s2">&quot;Mr. Liao&quot;</span><span class="p">),</span> 
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="s2">&quot;AP Calculus BC&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;9:49&quot;</span><span class="p">,</span> <span class="s2">&quot;10:58&quot;</span><span class="p">,</span> <span class="s2">&quot;Mrs. Lanzi&quot;</span><span class="p">),</span> 
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="s2">&quot;US History&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;11:13&quot;</span><span class="p">,</span> <span class="s2">&quot;12:22&quot;</span><span class="p">,</span> <span class="s2">&quot;Mr. Smith&quot;</span><span class="p">),</span> 
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="s2">&quot;AP Computer Science: Principles&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;12:57&quot;</span><span class="p">,</span> <span class="s2">&quot;2:06&quot;</span><span class="p">,</span> <span class="s2">&quot;Mr. Mort (the goat)&quot;</span><span class="p">),</span> 
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="s2">&quot;AP Physics C: Mechanics&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;2:36&quot;</span><span class="p">,</span> <span class="s2">&quot;3:45&quot;</span><span class="p">,</span> <span class="s2">&quot;Mrs. Dafoe&quot;</span><span class="p">)];</span>
+
+<span class="nx">Classes</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">set_grade</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="nx">Classes</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">set_grade</span><span class="p">(</span><span class="s2">&quot;B+&quot;</span><span class="p">)</span>
+<span class="nx">Classes</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">set_grade</span><span class="p">(</span><span class="s2">&quot;A+&quot;</span><span class="p">)</span>
+<span class="nx">Classes</span><span class="p">[</span><span class="mf">3</span><span class="p">].</span><span class="nx">set_grade</span><span class="p">(</span><span class="s2">&quot;A+&quot;</span><span class="p">)</span>
+<span class="nx">Classes</span><span class="p">[</span><span class="mf">4</span><span class="p">].</span><span class="nx">set_grade</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Classes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[ Class {
+    name: &#39;AP Physics C: Mechanics&#39;,
+    period: &#39;1&#39;,
+    timeStart: &#39;8:35&#39;,
+    timeEnd: &#39;9:44&#39;,
+    teacher: &#39;Mr. Liao&#39;,
+    grade: &#39;A&#39; },
+  Class {
+    name: &#39;AP Calculus BC&#39;,
+    period: &#39;2&#39;,
+    timeStart: &#39;9:49&#39;,
+    timeEnd: &#39;10:58&#39;,
+    teacher: &#39;Mrs. Lanzi&#39;,
+    grade: &#39;B+&#39; },
+  Class {
+    name: &#39;US History&#39;,
+    period: &#39;3&#39;,
+    timeStart: &#39;11:13&#39;,
+    timeEnd: &#39;12:22&#39;,
+    teacher: &#39;Mr. Smith&#39;,
+    grade: &#39;A+&#39; },
+  Class {
+    name: &#39;AP Computer Science: Principles&#39;,
+    period: &#39;4&#39;,
+    timeStart: &#39;12:57&#39;,
+    timeEnd: &#39;2:06&#39;,
+    teacher: &#39;Mr. Mort (the goat)&#39;,
+    grade: &#39;A+&#39; },
+  Class {
+    name: &#39;AP Physics C: Mechanics&#39;,
+    period: &#39;5&#39;,
+    timeStart: &#39;2:36&#39;,
+    timeEnd: &#39;3:45&#39;,
+    teacher: &#39;Mrs. Dafoe&#39;,
+    grade: &#39;A&#39; } ]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Constructing a table from the Classes Array</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">toHtml</span> <span class="p">(</span><span class="nx">Classes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// HTML Style is build using inline structure</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
+      <span class="s2">&quot;background-color: rgb(8, 0, 124);&quot;</span> <span class="o">+</span>
+      <span class="s2">&quot;border-color: rgb(115, 255, 0);&quot;</span> <span class="o">+</span>
+      <span class="s2">&quot;color: rgb(220, 220, 220);&quot;</span>
+    <span class="p">);</span>
+  
+    <span class="c1">// HTML Body of Table is build as a series of concatenations (+=)</span>
+    <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+    <span class="c1">// Heading for Array Columns</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Class&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Period #&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Starting Time&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Ending Time&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Teacher&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;strong&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Grade&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/strong&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">;</span>
+    <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">Classes</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// tr for each row, a new line</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
+      <span class="c1">// td for each column of data</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">period</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">timeStart</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">timeEnd</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">grade</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
+      <span class="c1">// tr to end line</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+  
+     <span class="c1">// Build and HTML fragment of div, table, table body</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="s2">&quot;&lt;div style=&#39;&quot;</span> <span class="o">+</span> <span class="nx">style</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;table&gt;&quot;</span> <span class="o">+</span>
+          <span class="nx">body</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;/table&gt;&quot;</span> <span class="o">+</span>
+      <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+    <span class="p">);</span>
+  
+  <span class="p">};</span>
+  
+  <span class="c1">// IJavaScript HTML processor receive parameter of defined HTML fragment</span>
+  <span class="nx">$$</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">toHtml</span><span class="p">(</span><span class="nx">Classes</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style='background-color: rgb(8, 0, 124);border-color: rgb(115, 255, 0);color: rgb(220, 220, 220);'><table><tr><th><strong>Class</strong></th><th><strong>Period #</strong></th><th><strong>Starting Time</strong></th><th><strong>Ending Time</strong></th><th><strong>Teacher</strong></th><th><strong>Grade</strong></th></tr><tr><td>AP Physics C: Mechanics</td><td>1</td><td>8:35</td><td>9:44</td><td>Mr. Liao</td><td>A</td><tr><tr><td>AP Calculus BC</td><td>2</td><td>9:49</td><td>10:58</td><td>Mrs. Lanzi</td><td>B+</td><tr><tr><td>US History</td><td>3</td><td>11:13</td><td>12:22</td><td>Mr. Smith</td><td>A+</td><tr><tr><td>AP Computer Science: Principles</td><td>4</td><td>12:57</td><td>2:06</td><td>Mr. Mort (the goat)</td><td>A+</td><tr><tr><td>AP Physics C: Mechanics</td><td>5</td><td>2:36</td><td>3:45</td><td>Mrs. Dafoe</td><td>A</td><tr></table></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 
