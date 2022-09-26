@@ -134,62 +134,13 @@ window.onload = wrap_img;
         async>
 </script><a class="u-url" href="/YLu-Blog/markdown/apcsp/week%202/2022/09/03/HTML-writeup.html" hidden></a>
 
-  <style>
-    button {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: rgb(63, 74, 79);
-      color: white;
-      transition: all .2s ease-in;
-      cursor: pointer;
-      padding: 15px;
-      width: 3rem;
-      height: 3rem;
-      border-radius:50%;
-      -moz-border-radius:50%;
-      -webkit-border-radius:50%;
-    }
-    #Top {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: rgb(63, 74, 79);
-      color: white;
-      transition: all .2s ease-in;
-      cursor: pointer;
-      padding: 15px;
-      width: 3rem;
-      height: 3rem;
-      border-radius:50%;
-      -moz-border-radius:50%;
-      -webkit-border-radius:50%;
-      
-    }
-    
-    button:hover {
-      background-color: rgb(0, 221, 255);
-    }
-    #Top:hover {
-        background-color: rgb(0, 221, 255);
-    }
-  </style>
   <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
   <script>
     var mybutton = document.getElementById("Top");
     window.onscroll = function() {scrollFunction()};
     function scrollFunction() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
         mybutton.style.display = "block";
     } 
     else {

@@ -429,11 +429,11 @@ pre code { font-size: 15px !important; }
 
 h1, h2, p, h3, h4 { color: white !important; }
 
-html, input, textarea, select, button { color: white !important; background-color: #01001d !important; }
+html, input, textarea, select { color: white !important; background-color: #01001d !important; }
 
 body { color: white !important; background-color: #01001d !important; cursor: url("https://www.flaticon.com/free-icons/cursor"), auto; }
 
-button { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 18px; border: none; outline: none; background-color: #3f4a4f; color: white; transition: all .2s ease-in; cursor: pointer; padding: 15px; width: 3rem; height: 3rem; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; }
+button { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 18px; border: none; outline: none; background-color: #3f4a4f; color: white; transition: all .2s ease-in; cursor: pointer; padding: 15px; width: 3rem; height: 3rem; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); transform: translateX(-50%); }
 
 button:hover { background-color: #00ddff; }
 
@@ -473,9 +473,13 @@ table td { background-color: #08007c; border-color: #73ff00; color: gainsboro; }
 
 canvas { filter: invert(100%); }
 
-pre, code { border-color: gainsboro; background-color: #464646; }
+pre { border-color: #464646 !important; background-color: #464646; }
+
+code { background-color: #464646 !important; border-color: #464646 !important; color: #ffc800; font-family: inherit; overflow-wrap: break-word; white-space: pre-wrap; }
 
 .flash { color: #464646 !important; filter: brightness(80%); }
+
+footer { z-index: 99999; }
 
 @keyframes rainbow_animation { 0%, 100% { background-position: 0 0; }
   50% { background-position: 100% 0; } }
