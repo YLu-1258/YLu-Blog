@@ -1,6 +1,6 @@
 ---
 keywords: fastai
-description: What is the idea behind our Project?
+description: How do we rapidly create table without wasting time on HTML?
 title: Project Details
 toc: true
 author: Alex Lu
