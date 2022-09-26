@@ -44,8 +44,6 @@ layout: notebook
 <li>Morever, using an object to represent an individual cell in the board would provide greater functionalities than just using a single variable  </li>
 </ol>
 </li>
-</ol>
-<ol>
 <li><p>Use Enumerated types with the python <code>enum</code> module to create different values for the type and status of each node. Each of these types could then be bound to a constant value which could then be printed on the screen</p>
 </li>
 <li><p>Use Recursion to create an algorithm to recursively detect adjacent cells that are safe (AKA not mines). This algorithm would work in the following format</p>
