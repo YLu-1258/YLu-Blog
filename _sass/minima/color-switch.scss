@@ -2,7 +2,7 @@ h1, h2, p, h3, h4 {
     color:rgb(255, 255, 255) !important;      
 }
 
-html, input, textarea, select, button {
+html, input, textarea, select {
     color: white !important;
     background-color: rgb(1, 0, 29) !important;
 }
@@ -32,6 +32,10 @@ button {
     border-radius:50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 button:hover {
@@ -157,9 +161,17 @@ canvas {
     filter: invert(100%);
 }
 
-pre, code {
-    border-color: rgb(220,220,220);
+pre{
+    border-color: rgb(70,70,70) !important;
     background-color: rgb(70, 70, 70);
+}
+code {
+    background-color: rgb(70,70,70) !important;
+    border-color: rgb(70,70,70) !important;
+    color: rgb(255, 200, 0);
+    font-family:inherit;
+    overflow-wrap:break-word;
+    white-space:pre-wrap
 }
 
 .flash {
@@ -167,6 +179,9 @@ pre, code {
     filter: brightness(80%);
 }
 
+footer {
+    z-index: 99999;
+}
 
 @keyframes rainbow_animation {
     0%,100% {
