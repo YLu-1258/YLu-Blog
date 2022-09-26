@@ -1,7 +1,7 @@
 ---
 keywords: fastai
 description: How do we rapidly create table without wasting time on HTML?
-title: Project Details
+title: Javascript Table Generator
 toc: true
 author: Alex Lu
 badges: true
@@ -135,7 +135,7 @@ layout: notebook
     <span class="c1">// HTML Style is build using inline structure</span>
     <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
       <span class="s2">&quot;background-color: rgb(8, 0, 124);&quot;</span> <span class="o">+</span>
-      <span class="s2">&quot;border-color: rgb(115, 255, 0);&quot;</span> <span class="o">+</span>
+      <span class="s2">&quot;border-color: rgb(220, 220, 220);&quot;</span> <span class="o">+</span>
       <span class="s2">&quot;color: rgb(220, 220, 220);&quot;</span>
     <span class="p">);</span>
   
