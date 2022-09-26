@@ -6,4 +6,4 @@ author: Alex Lu
 permalink: /submenu/
 ---
 
-| ![]({{site.baseurl}}/images/JS.png "https://github.com/YLu-1258/YLu-Blog/") | JS Kernel | JS Table |
+| ![]({{site.baseurl}}/images/JS.png "https://github.com/YLu-1258/YLu-Blog/") | JS Kernel | JS Tables |
