@@ -106,7 +106,16 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#ayo-what-is-this">Ayo what is this</a></li>
-</ul><h2 id="ayo-what-is-this">
+</ul><table>
+    <tr>
+        <td><image src="/YLu-Blog/images/smallJs.png" height="150" title="Javascript Submenu" alt="javascript"></image></td>
+        <td><a href="https://ylu-1258.github.io/YLu-Blog/jupyter/apcsp/week%204/2022/09/21/JavaScript-Tutorial.html"> Javascript Kernel Usage</a></td>
+        <td><a href="https://ylu-1258.github.io/YLu-Blog/jupyter/apcsp/week%205/2022/09/25/JavaScript-Table.html"> Javascript Table Generator</a></td>
+        <td><a href="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/week%205/2022/09/28/coinflip.html"> Coin Flip</a></td>
+    </tr>
+</table>
+
+<h2 id="ayo-what-is-this">
 <a class="anchor" href="#ayo-what-is-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayo what is this</h2>
 <p>Having trouble deciding on something? Why not try this coin flip!</p>
 
@@ -125,25 +134,24 @@ window.onload = wrap_img;
 &lt;/table&gt;
 
 <script>
-var heads = 0
-var tails = 0
-const headOrTails = ["Head", "Tails"]
-function coinFlip() {
-    var index=Math.floor(Math.random() *2)
-    console.log(headOrTails[index])
-    if (headOrTails[index] == "Head") {
-        heads++
-        var file_name = "coin_heads.png"
+    var heads = 0
+    var tails = 0
+    const headOrTails = ["Head", "Tails"]
+    function coinFlip() {
+        var index=Math.floor(Math.random() *2)
+        console.log(headOrTails[index])
+        if (headOrTails[index] == "Head") {
+            heads++
+            var file_name = "coin_heads.png"
+        }
+        else {
+            tails++
+            var file_name = "coin_tails.png"
+        }
+        document.getElementById("result").src = "/YLu-Blog/images/" + file_name
+        document.getElementById("heads").innerHTML = "<strong>" + heads + "</strong>"
+        document.getElementById("tails").innerHTML = "<strong>" + tails + "</strong>"
     }
-    else {
-        tails++
-        var file_name = "coin_tails.png"
-    }
-    document.getElementById("result").src = "/YLu-Blog/images/" + file_name
-    document.getElementById("heads").innerHTML = "<strong>" + heads + "</strong>"
-    document.getElementById("tails").innerHTML = "<strong>" + tails + "</strong>"
-}
-
 </script>
 </tr>
 </table>
