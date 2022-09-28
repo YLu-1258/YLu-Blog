@@ -104,9 +104,7 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#ayo-what-is-this">Ayo what is this</a></li>
-</ul><table>
+    <table>
     <tr>
         <td><image src="/YLu-Blog/images/smallJs.png" height="150" title="Javascript Submenu" alt="javascript"></image></td>
         <td><a href="https://ylu-1258.github.io/YLu-Blog/jupyter/apcsp/week%204/2022/09/21/JavaScript-Tutorial.html"> Javascript Kernel Usage</a></td>
@@ -115,13 +113,12 @@ window.onload = wrap_img;
     </tr>
 </table>
 
-<h2 id="ayo-what-is-this">
-<a class="anchor" href="#ayo-what-is-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayo what is this</h2>
+<h2 id="ayo-what-is-this">Ayo what is this</h2>
 <p>Having trouble deciding on something? Why not try this coin flip!</p>
 
 <p><button onclick="coinFlip()" style="border-radius:9px">Flip A Coin!</button></p>
 <image src="/YLu-Blog/images/placeholder.png" height="150" title="" alt="coin" id="result"></image>
-<table>
+<table style="table-layout: fixed; width: 500px;">
     <tr>
         <th style="font-size:2em"><strong>Heads: </strong></th>
         <th style="font-size:2em"><strong>Tails: </strong></th>
@@ -129,8 +126,7 @@ window.onload = wrap_img;
     <tr>
         <td id="heads" style="font-size:5em; text-align:center"> </td>
         <td id="tails" style="font-size:5em; text-align:center"> </td>
-    </tr>
-<tr>
+    <tr>
 &lt;/table&gt;
 
 <script>
@@ -153,8 +149,7 @@ window.onload = wrap_img;
         document.getElementById("tails").innerHTML = "<strong>" + tails + "</strong>"
     }
 </script>
-</tr>
-</table>
+</tr></tr></table>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
