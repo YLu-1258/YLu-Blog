@@ -1,7 +1,7 @@
 ---
 keywords: fastai
 description: How do we rapidly create table without wasting time on HTML?
-title: Javascript Table Generator
+title: Javascript Table Generator.
 toc: true
 author: Alex Lu
 badges: true
@@ -20,6 +20,13 @@ layout: notebook
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>{%- include js_submenu.html -%}</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Defining the Class Object and Classes array</p>

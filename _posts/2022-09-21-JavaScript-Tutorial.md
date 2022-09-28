@@ -22,6 +22,13 @@ layout: notebook
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>{%- include js_submenu.html -%}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-is-Javascript?">What is Javascript?<a class="anchor-link" href="#What-is-Javascript?"> </a></h2><p>Javascript is a fronend programming language that drives the web and internet. Every interaction on a website could be traced back to javascript and its functionalities.</p>
 <p>Resources:<br>
 <a href="https://www.w3schools.com/js/">W3Schools</a><br>
