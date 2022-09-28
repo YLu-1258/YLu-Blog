@@ -112,8 +112,18 @@ window.onload = wrap_img;
 
 <p><button onclick="coinFlip()" style="border-radius:9px">Flip A Coin!</button></p>
 <image src="/YLu-Blog/images/placeholder.png" height="150" title="" alt="coin" id="result"></image>
-<p id="heads"><strong>Heads: </strong></p>
-<p id="tails"><strong>Tails: </strong></p>
+<table>
+    <tr>
+        <th style="font-size:2em"><strong>Heads: </strong></th>
+        <th style="font-size:2em"><strong>Tails: </strong></th>
+    </tr>
+    <tr>
+        <td id="heads" style="font-size:5em; text-align:center"> </td>
+        <td id="tails" style="font-size:5em; text-align:center"> </td>
+    </tr>
+<tr>
+&lt;/table&gt;
+
 <script>
 var heads = 0
 var tails = 0
@@ -130,12 +140,13 @@ function coinFlip() {
         var file_name = "coin_tails.png"
     }
     document.getElementById("result").src = "/YLu-Blog/images/" + file_name
-    document.getElementById("heads").innerHTML = "<strong>Heads: " + heads + "</strong>"
-    document.getElementById("tails").innerHTML = "<strong>Tails: " + tails + "</strong>"
+    document.getElementById("heads").innerHTML = "<strong>" + heads + "</strong>"
+    document.getElementById("tails").innerHTML = "<strong>" + tails + "</strong>"
 }
 
 </script>
-
+</tr>
+</table>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
