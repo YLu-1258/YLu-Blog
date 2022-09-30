@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: Project Purpoes and Scrum Methodology
+description: Project Purpose and Scrum Methodology
 categories: [markdown, APCSP, week 5]
 title: Project Purpoes and Scrum Methodology
 author: Alex Lu
@@ -13,14 +13,14 @@ comments: true
 
 Our team wishes to build a minesweeper game with a python backend that could consistently communicate with our front-end website to bring a new degree of sophistication and aesthetic to this classic Game. This project would be split into two main portions each with it's own challenge. The first portion would be making the game engine in python, while the latter portion would be to design and create an aesthetically pleasing and functional frontend to display the Game Status
 
-![]({{site.baseurl}}/images/minesweeper_diagram.png " ")
+![]({{site.baseurl}}/images/minesweeper_diagram.png "Minesweeper design methodology and interactions")
 
 ## The Frontend
 The frontend aspect of this project should preferably display a grid of the game and incorporate some aspect of user input. Preliminary testing and experimentation could be done through textbox inputs of coordinate values, while prospective functions could include individual buttons on the Grid itself to provide a GUI for the user to interact with. In both cases, the frontend should be able to communicate with the python backend through JSON data to send and receive data.  
 
 More aspects about the Frontend aspects will be added with additional planning in the future.
 
-![]({{site.baseurl}}/images/minesweeper_diagram.png "Minesweeper design methodology and interactions")
+
 
 ## The Backend
 Arguably the more challenging half of this project, the backend would primarily serve to be the game engine of the minesweeper game. Additionally, the backend would also control and organize the various pages and menus on the website. In this writeup, we will only be focusing on the main goals and challenges faced by the Backend team.
