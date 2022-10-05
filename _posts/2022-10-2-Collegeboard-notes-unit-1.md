@@ -60,3 +60,32 @@ Every event in a program is associated with an action that supplies an input to 
 A program is a collection of software statements that collectively serves a specific use and performs a certain task.
 
 The program works for a variety of inputs and situations. (Think of it like a function)
+
+## 1.3: Program Design and Development
+**Learning Objectives**
+CRD - 2.E - *Develop a program using a development process.*
+CRD - 2.F - *Design a program and its user interface*
+CRD - 2.E.1 - *A development process can be ordered and intentional, or exploratory in nature.*  
+CRD - 2.E.2 - *There are multiple development processes. The following phases are commonly used when developing a program:*  
+- *Investigating and reflecting*  
+- *Designing*  
+- *Prototyping*  
+- *Testing*
+
+CRD - 2.E.3 - *A development process that is iterative requires refinement and revision based on feedback, testing, or reflection throughout the process. This may require revisiting earlier phases of the process.*  
+CRD - 2.F.1 - *The design of a program incorporates investigation to determine its requirements.*
+CRD - 2.F.2 - *Investigation in a development process is useful for understanding and identifying the program constraints, as well as the concerns and interests of the people who will use the program.*  
+CRD - 2.F.3 - *Some ways investigation can be performed are as follows:*
+- *Collecting data through surveys*
+- *User testing*  
+- *Interviews*  
+
+CRD - 2.F.4 - *Program requirements describe how a program functions and may include a description of user interactions that a program must provide.*  
+CRD - 2.F.5 - *A program's specification defines the requirements for the program.*  
+CRD - 2.F.6 - *In a development process, the design phase outlines how to accomplish a given program specification.*  
+CRD - 2.F.7 - *The design phase of a program may include:*
+- *Brainstorming*
+- *Planning and storyboarding*
+- *Organizing the program into modules and functional components*  
+- *Creation of diagrams that represent the layouts of the user interface*  
+- *Development of a testing strategy for the program*  
