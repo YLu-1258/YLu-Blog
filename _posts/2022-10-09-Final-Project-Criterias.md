@@ -45,3 +45,8 @@ What are we aiming to accomplish?
     - **Hard part is detecting a nearby "safe grid" for each mine clicked, while subsequently revealing all the mines in the safe grid**
     - We have decided to use a **recursive** approach to resolve this problem. The recursive approach will store a list of safe mines. It will first append the mine clicked by the user (assuming that the mine passes the safe check). Following this, the algorithm will then check the `(r+1,c), (r+1,c-1), (r+1,c+1), (r,c-1), (r,c+1), (r-1,c), (r-1,c-1), and (r-1,c+1)` coordinates to determine wether or not surrouding cells are safe or not. Recursively execute the same process for each the 8 mines adjacent to the initial cell and stop until an "edge-mine" is reached.
 - Communiate user input and program output via JSON queries between the python backend and the HTML/CSS/JS frontend.
+
+### Testing Code
+- For testing our code, we will primarily experiment with our code either in linux for python programs, or in the browser for frontend testing.
+- We will make use of `print()` and `Console.log()` statements to help with debugging.
+- Certain events in python could be made easier if we used `try/except` exceptions to catch errors.
