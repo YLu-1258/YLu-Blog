@@ -1,14 +1,10 @@
 ---
 keywords: fastai
 description: Practice with identifying and correcting code blocks
-title: Big Idea 1 'Identifying and Correcting Errors'
+title: 1.4 Identifying and Correcting Errors
 layout: default
-badges: false
-permalink: /collegeboard/error
-image: /images/apcsp.png
-categories: [1.B, 4.C]
-type: ap
-week: 7
+badges: true
+categories: [week 7, jupyter, APCSP]
 nb_path: _notebooks/2022-10-03-AP-error_testing.ipynb
 layout: notebook
 ---
