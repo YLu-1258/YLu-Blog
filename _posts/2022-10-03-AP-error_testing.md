@@ -352,10 +352,11 @@ layout: notebook
 <span class="c1">#shows the user the menu and prompts them to select an item</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menu&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="s2">&quot;  $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="c1">#why does v have &quot;str&quot; in front of it?</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="s2">&quot;  $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="c1">#why does v have &quot;str&quot; in front of it? Because each key value in the menu is actually an integer type.</span>
 
 <span class="c1">#ideally the code should prompt the user multiple times</span>
 <span class="n">num_of_items</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many items do you wish to buy? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now ordering </span><span class="si">{0}</span><span class="s2"> items&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_of_items</span><span class="p">))</span>
 <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">shopping_cart</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;burger&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;fries&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;drink&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">num_of_items</span><span class="p">:</span>
@@ -363,9 +364,10 @@ layout: notebook
     <span class="k">try</span><span class="p">:</span>
         <span class="n">total</span><span class="o">+=</span><span class="n">menu</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
         <span class="n">shopping_cart</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing order for </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
         <span class="n">counter</span><span class="o">+=</span><span class="mi">1</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid Input Type, please try again&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Product </span><span class="se">\&quot;</span><span class="si">{0}</span><span class="se">\&quot;</span><span class="s2"> is not on our menu, please try again...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 <span class="c1">#code should add the price of the menu items selected by the user </span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You bought </span><span class="si">{0}</span><span class="s2"> burgers, </span><span class="si">{1}</span><span class="s2"> fries, and </span><span class="si">{2}</span><span class="s2"> drinks for a total of </span><span class="si">{3}</span><span class="s2">$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shopping_cart</span><span class="p">[</span><span class="s2">&quot;burger&quot;</span><span class="p">],</span><span class="n">shopping_cart</span><span class="p">[</span><span class="s2">&quot;fries&quot;</span><span class="p">],</span><span class="n">shopping_cart</span><span class="p">[</span><span class="s2">&quot;drink&quot;</span><span class="p">],</span><span class="nb">round</span><span class="p">(</span><span class="n">total</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
 </pre></div>
@@ -384,8 +386,14 @@ layout: notebook
 burger  $3.99
 fries  $1.99
 drink  $0.99
-Invalid Input Type, please try again
-You bought 2 burgers, 2 fries, and 2 drinks for a total of 13.94$
+Now ordering 5 items
+Processing order for burger
+Processing order for burger
+Processing order for fries
+Processing order for drink
+Product &#34;ice cream&#34; is not on our menu, please try again...
+Processing order for fries
+You bought 2 burgers, 2 fries, and 1 drinks for a total of 12.95$
 </pre>
 </div>
 </div>
