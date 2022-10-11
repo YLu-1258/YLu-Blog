@@ -19,6 +19,9 @@ Quiz 1.2 Program Function and Purpose:
 Quiz 1.3 Program Design and Development:
 ![]({{site.baseurl}}/images/1-3_quiz.png " ")
 
+Quiz 1.4 Identifying and Correcting Errors:
+![]({{site.baseurl}}/images/1-4_quiz.png " ")
+
 ## Notes from Collegeboard videos   
 
 ### 1.1 Collaboration
