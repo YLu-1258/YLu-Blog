@@ -22,7 +22,7 @@ layout: notebook
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>{%- include js_submenu.html -%}</p>
+<p>{%- include api_submenu.html -%}</p>
 
 </div>
 </div>
