@@ -92,3 +92,19 @@ CRD - 2.F.7 - *The design phase of a program may include:*
 - *Organizing the program into modules and functional components*  
 - *Creation of diagrams that represent the layouts of the user interface*  
 - *Development of a testing strategy for the program*  
+
+## 1.4: Identifying and Correcting Errors
+**Learning Objectives**
+CRD-2.I.1 - *A logic error is a mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly.*  
+CRD-2.I.2 - *A syntax error is a mistake in the program where the rules of the programming language are not followed.*  
+CRD-2.I.3 - *A run-time error is a mistake in the program that occurs during the execution of a program. Programming languages define their own runtime errors.*  
+CRD-2.I.4 - *An overflow error is an error that occurs when a computer attempts to handle a number that is outside of the defined range of values.*
+CRD-2.I.5 - *The following are effective ways to find and correct errors:*
+- **test cases**  
+- **hand tracing**
+- **visualizations**
+- **debuggers**
+- **adding extra output statement(s)**
+CRD-2.J.1 - *In the development process, testing uses defined inputs to ensure that an algorithm or program is producing the expected outcomes. Programmers use the results from testing to revise their algorithms or programs.*  
+CRD-2.J.2 - *Defined inputs used to test a program should demonstrate the different expected outcomes that are at or just beyond the extremes (minimum and maximum) of input data.*
+CRD-2.J.3 - *Program requirements are needed to identify appropriate defined inputs for testing.*
