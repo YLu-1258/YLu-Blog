@@ -65,9 +65,9 @@ A program is a collection of software statements that collectively serves a spec
 The program works for a variety of inputs and situations. (Think of it like a function)
 
 ## 1.3: Program Design and Development
-**Learning Objectives**
-CRD - 2.E - *Develop a program using a development process.*
-CRD - 2.F - *Design a program and its user interface*
+**Learning Objectives**  
+CRD - 2.E - *Develop a program using a development process.*  
+CRD - 2.F - *Design a program and its user interface*  
 CRD - 2.E.1 - *A development process can be ordered and intentional, or exploratory in nature.*  
 CRD - 2.E.2 - *There are multiple development processes. The following phases are commonly used when developing a program:*  
 - *Investigating and reflecting*  
@@ -104,7 +104,7 @@ CRD-2.I.5 - *The following are effective ways to find and correct errors:*
 - **hand tracing**
 - **visualizations**
 - **debuggers**
-- **adding extra output statement(s)**
+- **adding extra output statement(s)**  
 CRD-2.J.1 - *In the development process, testing uses defined inputs to ensure that an algorithm or program is producing the expected outcomes. Programmers use the results from testing to revise their algorithms or programs.*  
-CRD-2.J.2 - *Defined inputs used to test a program should demonstrate the different expected outcomes that are at or just beyond the extremes (minimum and maximum) of input data.*
-CRD-2.J.3 - *Program requirements are needed to identify appropriate defined inputs for testing.*
+CRD-2.J.2 - *Defined inputs used to test a program should demonstrate the different expected outcomes that are at or just beyond the extremes (minimum and maximum) of input data.*  
+CRD-2.J.3 - *Program requirements are needed to identify appropriate defined inputs for testing.*  
