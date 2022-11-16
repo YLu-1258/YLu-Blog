@@ -1,8 +1,8 @@
 ---
 toc: false
-title: Binary Math
+title: Binary Calculator
 layout: default
-description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
+description: A Binary Calculator application using HTML, Liquid, and JavaScript.
 categories: [markdown, APCSP]
 tags: [html, liquid, javascript]
 ---
