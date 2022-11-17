@@ -36,7 +36,7 @@
     
         ,"post3": {
             "title": "Binary Math",
-            "content": "Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Character Minus . +1 | 00000000 | 0 | 0 | 0 | NULL | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Plus Binary Hexadecimal RGB Minus . +1 | 00000000 | 0 | 0 | -1 | . +1 | 00000000 | 0 | 0 | -1 | . +1 | 00000000 | 0 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | .",
+            "content": "Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Character Minus . +1 | 00000000 | 0 | 0 | 0 | NULL | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Plus Binary Hexadecimal RGB Minus . +1 | 00000000 | 00 | 0 | -1 | . +1 | 00000000 | 00 | 0 | -1 | . +1 | 00000000 | 00 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | .",
             "url": "https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/2022/11/15/Binary.html",
             "relUrl": "/markdown/apcsp/2022/11/15/Binary.html",
             "date": " • Nov 15, 2022"
