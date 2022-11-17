@@ -457,7 +457,7 @@ window.onload = wrap_img;
         // Octal conversion
         document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
         // Hexadecimal conversion
-        document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16).padStart(2, '0');
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
 
@@ -468,7 +468,7 @@ window.onload = wrap_img;
         // R values
         document.getElementById('bin1').innerHTML = binary;
         // Hexadecimal conversion
-        document.getElementById('hex1').innerHTML = parseInt(binary, 2).toString(16);
+        document.getElementById('hex1').innerHTML = parseInt(binary, 2).toString(16).padStart(2, '0');
         // RGB value conversion
         document.getElementById('R').innerHTML = parseInt(binary, 2).toString();
         document.getElementById('color_box').style.backgroundColor = setRGB();
@@ -478,7 +478,7 @@ window.onload = wrap_img;
         // G values
         document.getElementById('bin2').innerHTML = binary;
         // Hexadecimal conversion
-        document.getElementById('hex2').innerHTML = parseInt(binary, 2).toString(16);
+        document.getElementById('hex2').innerHTML = parseInt(binary, 2).toString(16).padStart(2, '0');
         // Decimal conversion
         document.getElementById('G').innerHTML = parseInt(binary, 2).toString();
         document.getElementById('color_box').style.backgroundColor = setRGB();
@@ -489,7 +489,7 @@ window.onload = wrap_img;
         // B values
         document.getElementById('bin3').innerHTML = binary;
         // Hexadecimal conversion
-        document.getElementById('hex3').innerHTML = parseInt(binary, 2).toString(16);
+        document.getElementById('hex3').innerHTML = parseInt(binary, 2).toString(16).padStart(2, '0');
         // Decimal conversion
         document.getElementById('B').innerHTML = parseInt(binary, 2).toString(); 
         document.getElementById('color_box').style.backgroundColor = setRGB();
