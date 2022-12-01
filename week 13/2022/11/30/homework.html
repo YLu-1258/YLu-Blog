@@ -185,12 +185,11 @@ window.onload = wrap_img;
             <span class="n">sub_res</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">**</span> <span class="n">digits</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">sub_res</span><span class="o">+=</span><span class="mi">1</span>
-                <span class="n">num</span> <span class="o">-=</span> <span class="mi">8</span> <span class="o">**</span> <span class="n">digits</span>
-            <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span>    
+                <span class="n">num</span> <span class="o">-=</span> <span class="mi">8</span> <span class="o">**</span> <span class="n">digits</span>  
             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_res</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span>
             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="s2">"0"</span>
+        <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span> 
     <span class="k">return</span> <span class="n">res</span>
 
 <span class="k">def</span> <span class="nf">DecimalToHex</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -219,12 +218,11 @@ window.onload = wrap_img;
             <span class="n">sub_res</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">16</span> <span class="o">**</span> <span class="n">digits</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">sub_res</span><span class="o">+=</span><span class="mi">1</span>
-                <span class="n">num</span> <span class="o">-=</span> <span class="mi">16</span> <span class="o">**</span> <span class="n">digits</span>
-            <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span>    
+                <span class="n">num</span> <span class="o">-=</span> <span class="mi">16</span> <span class="o">**</span> <span class="n">digits</span>  
             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hex_correlation</span><span class="p">[</span><span class="n">sub_res</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span>
             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="s2">"0"</span>
+        <span class="n">digits</span><span class="o">-=</span><span class="mi">1</span>  
     <span class="k">return</span> <span class="n">res</span>
 
 <span class="c1"># function to reverse the string</span>
@@ -252,9 +250,9 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Binary of num 161 is: 10000101
-Binary of character H is: 0001001
-Octal representation of number 18296 is: 00043570
+<pre>Binary of num 1398 is: 01101110101
+Binary of character K is: 1101001
+Octal representation of number 64 is: 00000100
 Hexadecimal representation of number 65535 is: 0000FFFF
 </pre>
 </div>
