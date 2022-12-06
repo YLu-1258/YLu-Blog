@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lists and Iteration Homework | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Lists and Iteration Homework" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Try to complete this to show understanding! Copy this into your notebook so you can also take notes as we lecture. Make a copy of this notebook to your own repository to take notes, do the class challenges, and to access the homework." />
+<meta property="og:description" content="Try to complete this to show understanding! Copy this into your notebook so you can also take notes as we lecture. Make a copy of this notebook to your own repository to take notes, do the class challenges, and to access the homework." />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/homework/" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/homework/" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-26T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lists and Iteration Homework" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-26T00:00:00-06:00","datePublished":"2022-11-26T00:00:00-06:00","description":"Try to complete this to show understanding! Copy this into your notebook so you can also take notes as we lecture. Make a copy of this notebook to your own repository to take notes, do the class challenges, and to access the homework.","headline":"Lists and Iteration Homework","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/homework/"},"url":"https://ylu-1258.github.io/YLu-Blog/homework/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/submenu/">Javascript Submenu</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Lists and Iteration Homework</h1><p class="page-description">Try to complete this to show understanding! Copy this into your notebook so you can also take notes as we lecture. Make a copy of this notebook to your own repository to take notes, do the class challenges, and to access the homework.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-26T00:00:00-06:00" itemprop="datePublished">
+        Nov 26, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/YLu-1258/SEAL/tree/master/_notebooks/2022-11-26-listanditerationhomework.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/YLu-Blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/YLu-1258/SEAL/master?filepath=_notebooks%2F2022-11-26-listanditerationhomework.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/YLu-1258/SEAL/blob/master/_notebooks/2022-11-26-listanditerationhomework.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FYLu-1258%2FSEAL%2Fblob%2Fmaster%2F_notebooks%2F2022-11-26-listanditerationhomework.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Overview-and-Notes:--3.10---Lists">Overview and Notes:  3.10 - Lists </a></li>
+<li class="toc-entry toc-h2"><a href="#Overview-and-Notes:--3.8---Iteration">Overview and Notes:  3.8 - Iteration </a></li>
+<li class="toc-entry toc-h2"><a href="#Homework-Assignment">Homework Assignment </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Hacks">Hacks </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Challenges">Challenges </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#3.10-Challenge">3.10 Challenge </a></li>
+<li class="toc-entry toc-h3"><a href="#3.8-Challenge">3.8 Challenge </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-26-listanditerationhomework.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview-and-Notes:--3.10---Lists">
+<a class="anchor" href="#Overview-and-Notes:--3.10---Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview and Notes:  3.10 - Lists<a class="anchor-link" href="#Overview-and-Notes:--3.10---Lists"> </a>
+</h2>
+<ul>
+<li>Make sure you complete the challenge in the challenges section while we present the lesson! </li>
+</ul>
+<p>Add your <mark>OWN</mark> Notes for 3.10 here:</p>
+<ol>
+<li>Lists are a collection of related data and are incredibly useful in storing large amounts of data.</li>
+<li>lists have indexes which represents the location of an element in the list. Most programming languages use 0-based indexing, but others could use 1-based indexing. FYI, Collegeboard uses 1-based indexing.</li>
+</ol>
+<p>Fill out the empty boxes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Pseudocode Operation</th>
+<th>Python Syntax</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">aList[i]</td>
+<td>aList[i]</td>
+<td style="text-align:center"><em>Accesses the element of aList at index i</em></td>
+</tr>
+<tr>
+<td style="text-align:center">x ← aList[i]</td>
+<td>x = aList[i]</td>
+<td style="text-align:center"><em>Assigns the element of aList at index i <br>to a variable 'x'</em></td>
+</tr>
+<tr>
+<td style="text-align:center">aList[i] ← x</td>
+<td>aList[i] = x</td>
+<td style="text-align:center"><em>Assigns the value of a variable 'x' to <br>the element of a List at index i</em></td>
+</tr>
+<tr>
+<td style="text-align:center">aList[i] ← aList[j]</td>
+<td>aList[i] = aList[j]</td>
+<td style="text-align:center"><em>Assigns value of aList[j] to aList[i]</em></td>
+</tr>
+<tr>
+<td style="text-align:center">INSERT(aList, i, value)</td>
+<td>aList.insert(i, value)</td>
+<td style="text-align:center"><em>value is placed at index i in aList. Any <br>element at an index greater than i will shift<br>one position to the right. </em></td>
+</tr>
+<tr>
+<td style="text-align:center">APPEND(aList, value)</td>
+<td>aList.append(value)</td>
+<td style="text-align:center">Value is appended as an element to the end of the list.</td>
+</tr>
+<tr>
+<td style="text-align:center">REMOVE(aList, i)</td>
+<td>aList.pop(i)<br>OR<br>aList.remove(value)</td>
+<td style="text-align:center"><em>Removes item at index i and any values at <br>indices greater than i shift to the left. <br>Length of aList decreased by 1. </em></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Overview-and-Notes:--3.8---Iteration">
+<a class="anchor" href="#Overview-and-Notes:--3.8---Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview and Notes:  3.8 - Iteration<a class="anchor-link" href="#Overview-and-Notes:--3.8---Iteration"> </a>
+</h2>
+<p>Add your <mark>OWN</mark> Notes for 3.8 here:</p>
+<ol>
+<li>Iteration is repetition: repeating a set of actions based on a set of conditions.</li>
+<li>Make sure that you don't have a dead loop, so that the program doesn't keep repeating</li>
+<li>We want to automate certain process with loops, this way we reduce unprofessional, repetitive, and duplicate code.</li>
+<li>For loops are an example of an iterative loop that could be used to check values within a list, we can establish a variable in a for loop to pass values to the rest of our code,</li>
+<li>We can print multi-dimensional lists:
+<code>
+petlist = [("Dogs",1),("Cats", 2), ("Fish", 0)]
+for pet , number in petlist:
+ print(pet + " : " + number)
+</code> </li>
+<li>We can have nested loops inside of a loop.</li>
+<li>We can also loop with recursion, if we call a function within itself.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework-Assignment">
+<a class="anchor" href="#Homework-Assignment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework Assignment<a class="anchor-link" href="#Homework-Assignment"> </a>
+</h2>
+<p>Instead of us making a quiz for you to take, we would like YOU to make a quiz about the material we reviewed.</p>
+<p>We would like you to <mark>input questions into a list</mark>, and use some sort of iterative system to print the questions, detect an input, and determine if you answered correctly. There should be <em>at least</em> <mark>five questions</mark>, each with <em>at least</em> <mark>three possible answers</mark>.</p>
+<p>You may use the template below as a framework for this assignment.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"What is a list?"</span><span class="p">,</span>
+    <span class="s2">"A) A data structure that could store large amounts of data."</span><span class="p">,</span> 
+    <span class="s2">"B) A FIFO structure that outputs the first value that was inputted."</span><span class="p">,</span> 
+    <span class="s2">"C) Your Grocery list for shopping on saturday night."</span><span class="p">,</span> 
+    <span class="s2">"A"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"How does a while loop work?"</span><span class="p">,</span>
+    <span class="s2">"A) Recursively executes a function within it's self."</span><span class="p">,</span> 
+    <span class="s2">"B) Checks for a certain condition and executes a block of code."</span><span class="p">,</span> 
+    <span class="s2">"C) Iterates over each element in a list by assigning each element a variable."</span><span class="p">,</span> 
+    <span class="s2">"B"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"What is a list index?"</span><span class="p">,</span>
+    <span class="s2">"A) A representation of the location of a given list element."</span><span class="p">,</span> 
+    <span class="s2">"B) The location of the list in the computer memory"</span><span class="p">,</span> 
+    <span class="s2">"C) A general term for the elements in a list"</span><span class="p">,</span> 
+    <span class="s2">"A"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"What list indexing convention is typically used for most programming languages?"</span><span class="p">,</span>
+    <span class="s2">"A) 1 based indexing"</span><span class="p">,</span> 
+    <span class="s2">"B) keyword indexing"</span><span class="p">,</span> 
+    <span class="s2">"C) 0 based indexing"</span><span class="p">,</span> 
+    <span class="s2">"C"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"What list indexing convention is typically used for collegeboard's lists?"</span><span class="p">,</span>
+    <span class="s2">"A) pseudo indexing"</span><span class="p">,</span> 
+    <span class="s2">"B) 1 based indexing"</span><span class="p">,</span> 
+    <span class="s2">"C) 0 based indexing"</span><span class="p">,</span> 
+    <span class="s2">"B"</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">shuffle</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">printQuestion</span><span class="p">(</span><span class="n">tup</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">questionloop</span><span class="p">():</span>
+    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)):</span>
+        <span class="n">printQuestion</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your answer? "</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct! Nice Job!"</span><span class="p">)</span>
+            <span class="n">correct</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Try again next time"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">correct</span>
+
+<span class="n">correct</span> <span class="o">=</span> <span class="n">questionloop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You got a total of </span><span class="si">{0}</span><span class="s2"> out of </span><span class="si">{1}</span><span class="s2"> problems right!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">correct</span><span class="p">,</span> <span class="n">total</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What list indexing convention is typically used for most programming languages?
+A) 1 based indexing
+B) keyword indexing
+C) 0 based indexing
+Correct! Nice Job!
+How does a while loop work?
+A) Recursively executes a function within it's self.
+B) Checks for a certain condition and executes a block of code.
+C) Iterates over each element in a list by assigning each element a variable.
+Correct! Nice Job!
+What is a list?
+A) A data structure that could store large amounts of data.
+B) A FIFO structure that outputs the first value that was inputted.
+C) Your Grocery list for shopping on saturday night.
+Correct! Nice Job!
+What list indexing convention is typically used for collegeboard's lists?
+A) pseudo indexing
+B) 1 based indexing
+C) 0 based indexing
+Try again next time
+What is a list index?
+A) A representation of the location of a given list element.
+B) The location of the list in the computer memory
+C) A general term for the elements in a list
+Try again next time
+You got a total of 3 out of 5 problems right!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Extra things I did</p>
+<ol>
+<li>I randomized the quiz questions so that the order is different each time</li>
+<li>I displayed the user's score out of 5 at the very end.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h3>
+<p>Here are some ideas of things you can do to make your program even cooler. Doing these will raise your grade if done correctly.</p>
+<ul>
+<li>Add more than five questions with more than three answer choices</li>
+<li>Randomize the order in which questions/answers are output</li>
+<li>At the end, display the user's score and determine whether or not they passed</li>
+</ul>
+<h2 id="Challenges">
+<a class="anchor" href="#Challenges" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenges<a class="anchor-link" href="#Challenges"> </a>
+</h2>
+<p><mark>Important!</mark> You don't have to complete these challenges completely perfectly, but you will be marked down if you don't show evidence of at least having tried these challenges in the time we gave during the lesson.</p>
+<h3 id="3.10-Challenge">
+<a class="anchor" href="#3.10-Challenge" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.10 Challenge<a class="anchor-link" href="#3.10-Challenge"> </a>
+</h3>
+<p>Follow the instructions in the code comments.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grocery_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apples'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">'oranges'</span><span class="p">,</span> <span class="s1">'carrots'</span><span class="p">,</span> <span class="s1">'cucumbers'</span><span class="p">]</span>
+
+<span class="c1"># Print the fourth item in the list</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">grocery_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># Now, assign the fourth item in the list to a variable, x and then print the variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">grocery_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Add these two items at the end of the list : umbrellas and artichokes</span>
+
+<span class="n">grocery_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"umbrellas"</span><span class="p">)</span>
+<span class="n">grocery_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"artichokes"</span><span class="p">)</span>
+
+<span class="c1"># Insert the item eggs as the third item of the list </span>
+<span class="n">grocery_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"eggs"</span><span class="p">)</span>
+
+<span class="c1"># Remove milk from the list </span>
+<span class="n">grocery_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"milk"</span><span class="p">)</span>
+
+<span class="c1"># Assign the element at the end of the list to index 2. Print index 2 to check</span>
+<span class="n">grocery_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">grocery_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grocery_list</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Print the entire list, does it match ours ? </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grocery_list</span><span class="p">)</span>
+
+
+<span class="c1"># Expected output</span>
+<span class="c1"># carrots</span>
+<span class="c1"># carrots</span>
+<span class="c1"># artichokes</span>
+<span class="c1"># ['apples', 'eggs', 'artichokes', 'carrots', 'cucumbers', 'umbrellas', 'artichokes']</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>carrots
+carrots
+artichokes
+['apples', 'eggs', 'artichokes', 'carrots', 'cucumbers', 'umbrellas', 'artichokes']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.8-Challenge">
+<a class="anchor" href="#3.8-Challenge" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.8 Challenge<a class="anchor-link" href="#3.8-Challenge"> </a>
+</h3>
+<p>Create a loop that <mark>converts 8-bit binary values</mark> from the provided list into <mark>decimal numbers</mark>. Then, after the value is determined, <mark>remove all the values greater than 100</mark> from the list using a list-related function you've been taught before. <mark>Print the new list</mark> when done.</p>
+<p>Once you've done this with one of the types of loops discussed in this lesson, create a function that does the same thing with a <em>different</em> type of loop.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">binarylist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"01001001"</span><span class="p">,</span> <span class="s2">"10101010"</span><span class="p">,</span> <span class="s2">"10010110"</span><span class="p">,</span> <span class="s2">"00110111"</span><span class="p">,</span> <span class="s2">"11101100"</span><span class="p">,</span> <span class="s2">"11010001"</span><span class="p">,</span> <span class="s2">"10000001"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">binary_convert</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">binary</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">+=</span><span class="mi">2</span><span class="o">**</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+        <span class="n">N</span><span class="o">-=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">res</span>
+    <span class="c1">#use this function to convert every binary value in binarylist to decimal</span>
+    <span class="c1">#afterward, get rid of the values that are greater than 100 in decimal</span>
+
+<span class="c1">#when done, print the results</span>
+<span class="n">binarylist</span> <span class="o">=</span> <span class="p">[</span><span class="n">binary_convert</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">binarylist</span> <span class="k">if</span> <span class="n">binary_convert</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">binarylist</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[73, 55]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    </script>
+  </div><a class="u-url" href="/YLu-Blog/homework/" hidden></a>
+
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script> 
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/YLu-1258 “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
