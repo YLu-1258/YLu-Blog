@@ -4,6 +4,7 @@ title: Guest Speaker on 12/13/2022
 layout: default
 description: Guest Speaker on 12/13/2022
 categories: [markdown, APCSP, Tri2]
+tags: [markdown, APCSP, Tri2]
 ---
 
 ## Kathyleen Beveridge
