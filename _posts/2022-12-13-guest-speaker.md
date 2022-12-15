@@ -77,3 +77,6 @@ tags: [markdown, APCSP, Tri2]
 
 ### Biggest challenge in tech industry
 > Interviews are pretty intense now, especially for silicon valley tech companies. Especially stressful as they give you a limited amount of time to pass a certain problem.
+
+## Reflections:
+Through this experience, I realized that there was much more to the tech industry than just learning how to code. Because technology changes rapidly over time, I will need to be able to continuously learn from my experiences and also from those around me in order to keep up with the trends. It is only through a skillset such as this that I may remain of good use to the company and thrive in the corporate scenario. It was also intruiging to learn about the many challenges and experiences of these tech workers, and I particularly enjoyed the part where they introduced how the agile methodology was applied in their workplace as well as their interviewing experiences. Finally, it was also enlightening to learn about the violatile job market, in order to remain employed, I must be able to look to the future and predict when would be a good time to prepare to change jobs. Overall, this was a very enlightening experience and I would love to discuss this topic with others!
