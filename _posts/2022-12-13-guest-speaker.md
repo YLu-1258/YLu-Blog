@@ -1,5 +1,5 @@
 ---
-toc: false
+toc: true
 title: Guest Speaker on 12/13/2022
 layout: default
 description: Guest Speaker on 12/13/2022
