@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -290,6 +290,14 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
         <span class="s1">&#39;DelNorte&#39;</span><span class="p">:</span><span class="mi">50</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="n">dataset_graph</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">45</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
 </pre></div>
 
     </div>
@@ -299,6 +307,13 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Heuristic-Approach">Heuristic Approach<a class="anchor-link" href="#Heuristic-Approach"> </a></h2><p>This solution takes the most optimal step at each point. Although the overall algorithm is a greedy approach, it is not the most optimal as additional distance could be reduced if certain positions were revisted to travel a short cut to other positions</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -351,6 +366,127 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Optimal-Approach">Optimal Approach<a class="anchor-link" href="#Optimal-Approach"> </a></h2><p>From one look at the problem, we can deduce that it is likely testing graph theory. The data in the data set dictionary could be converted into an undirected weighted graph, where each position is linked to the other with a weighted path, where the weight is the assigned distance. We can then attempt to find the MST (Mean Spanning Tree) of the graph through a BFS approach</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">undirectedWeightedGraph</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">vertices</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">)]</span>
+        
+    
+    <span class="k">def</span> <span class="nf">addVertice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span> <span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">d</span><span class="p">,</span><span class="n">weight</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">printGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Location</span><span class="se">\t</span><span class="s2">Edges&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">):</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+    
+
+<span class="k">def</span> <span class="nf">shortestPathLength</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">ending_mask</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">queue</span> <span class="o">=</span> <span class="p">[(</span><span class="n">node</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+
+        <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+            <span class="n">next_queue</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)):</span>
+                <span class="n">node</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">queue</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+                    <span class="n">next_mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">|</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">neighbor</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">next_mask</span> <span class="o">==</span> <span class="n">ending_mask</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">steps</span>
+                    
+                    <span class="k">if</span> <span class="p">(</span><span class="n">neighbor</span><span class="p">,</span> <span class="n">next_mask</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+                        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">neighbor</span><span class="p">,</span> <span class="n">next_mask</span><span class="p">))</span>
+                        <span class="n">next_queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">neighbor</span><span class="p">,</span> <span class="n">next_mask</span><span class="p">))</span>
+            
+            <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">queue</span> <span class="o">=</span> <span class="n">next_queue</span>
+
+<span class="n">locations</span> <span class="o">=</span> <span class="n">undirectedWeightedGraph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">locations</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">dataset_graph</span>
+
+<span class="n">locations</span><span class="o">.</span><span class="n">printGraph</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shortestPathLength</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">graph</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Location	Edges
+0		0 15 20 35 50
+1		15 0 35 25 45
+2		20 35 0 40 30
+3		35 25 40 0 15
+4		50 45 30 15 0
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [24], line 50</span>
+<span class="ansi-green-intense-fg ansi-bold">     47</span> locations.graph = dataset_graph
+<span class="ansi-green-intense-fg ansi-bold">     49</span> locations.printGraph()
+<span class="ansi-green-fg">---&gt; 50</span> print(shortestPathLength(locations.graph))
+
+Cell <span class="ansi-green-fg">In [24], line 34</span>, in <span class="ansi-cyan-fg">shortestPathLength</span><span class="ansi-blue-fg">(graph)</span>
+<span class="ansi-green-intense-fg ansi-bold">     32</span> for i in range(len(queue)):
+<span class="ansi-green-intense-fg ansi-bold">     33</span>     node, mask = queue[i]
+<span class="ansi-green-fg">---&gt; 34</span>     for neighbor in graph[node]:
+<span class="ansi-green-intense-fg ansi-bold">     35</span>         next_mask = mask | (1 &lt;&lt; neighbor)
+<span class="ansi-green-intense-fg ansi-bold">     36</span>         if next_mask == ending_mask:
+
+<span class="ansi-red-fg">IndexError</span>: list index out of range</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have created a graph for our schools, we can move on to using djikstra's algorithm to find the most optimal path</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Grading:">Grading:<a class="anchor-link" href="#Grading:"> </a></h3><table>
