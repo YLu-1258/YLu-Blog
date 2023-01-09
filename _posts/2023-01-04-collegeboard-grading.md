@@ -7,10 +7,10 @@ categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]
 ---
 
-## Cross-grading of submission 1
+## Cross-grading of submission 1  
 The theme of this submission was to create a program that returns the type of a triangle based on it's side lengths, as well as the various trigonometric ratios of the triangle's 3 angles.
 
-### Analysis:
+### Analysis:  
 | Row | Score | Explaination |
 | - | - | - |
 | **Program Function and Purpose** | 0/1 | The video response does a good job of showing the input, functionality, and output of the program, and while the written response explains the functionality of the program (What the program does), it does not explina the purpose of the program (Why the progra was created or the problem it intends to solve) |
@@ -20,10 +20,10 @@ The theme of this submission was to create a program that returns the type of a 
 | **Algorithm Implementation** | 1/1 | The algorithm indicates the proper use of a for-loop to iterate over a range of integers, while selecting specific values from a premade list to output triangle types in the code. The code also follows a clear sequence, where each line is dependent on data or manipulation made in previous lines |
 | **Testing** | 1/1 | The written response clearly shows the inputting of two different input sets, one of integers and one of floats. The written response then goes over the conditional in the `ratioCalculate` function, which analyzes the the numbers to see if any are factors of others. Finally, the code returns the correct expected outputs, even having the floats converted into an integer ratio. |
 
-## Cross-grading of submission 1
+## Cross-grading of submission 1  
 The theme of this submission was to create a program that can simulate conway's game of life, using the scratch block coding language to achieve their goal.
 
-### Analysis:
+### Analysis:  
 | Row | Score | Explaination |
 | - | - | - |
 | **Program Function and Purpose** | 1/1 | The video response does a good job of showing the input, functionality, and output of the program, which was the user inputed set of pixels, and a set of conditionals to execute the necessary operations, and a final replacement of the previous board as the output of the program. Moreover the function and purpose was clearly stated in the written response, which was to create a program to simulate conway's game of life for the user's entertainment |
