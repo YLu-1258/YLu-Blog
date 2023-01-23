@@ -179,7 +179,7 @@ The theme of this submission was to create a program that simulates a fishing ga
     <td><strong>Data Abstraction</strong></td>
     <td>1/1</td>
     <td>The program and response does include the usage of a list, it's name (<code>fishtypes</code>), and the purpose it serves. The list is in the form of an array that stores the total amount of fish caught by the user. Later, the list is also shown to be used to output the total number of fish of each type caught.</td>
-    <td><td>
+    <td></td>
   </tr>
   <tr>
     <td><strong>Managing Complexity</strong></td>
