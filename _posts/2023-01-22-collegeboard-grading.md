@@ -78,7 +78,7 @@ The theme of this submission was to create a program that intakes certain words 
   <tr>
     <td><strong>Data Abstraction</strong></td>
     <td>1/1</td>
-    <td>The program and response does include the usage of a list, it's name, and the purpose it serves. The list is in the form of an array that stores the inputs of words from the user, including words descritive of trees, oceans, and the sky. Moreover, the type of data was clearly stated and the name of the array <code>nounList</code> was clearly specified.</td>. Additionally, the program also does a good job of utilizing this word list to eventually select words to use in the poem.
+    <td>The program and response does include the usage of a list, it's name, and the purpose it serves. The list is in the form of an array that stores the inputs of words from the user, including words descritive of trees, oceans, and the sky. Moreover, the type of data was clearly stated and the name of the array <code>nounList</code> was clearly specified. Additionally, the program also does a good job of utilizing this word list to eventually select words to use in the poem.</td>
     <td></td>
   </tr>
   <tr>
