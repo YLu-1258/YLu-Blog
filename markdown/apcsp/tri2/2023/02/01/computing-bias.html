@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Computing Bias | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Computing Bias" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Providing an overview of the effects and implications of computing bias and crowdsourcing data." />
+<meta property="og:description" content="Providing an overview of the effects and implications of computing bias and crowdsourcing data." />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/tri2/2023/02/01/computing-bias.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/tri2/2023/02/01/computing-bias.html" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Computing Bias" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T00:00:00-06:00","datePublished":"2023-02-01T00:00:00-06:00","description":"Providing an overview of the effects and implications of computing bias and crowdsourcing data.","headline":"Computing Bias","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/tri2/2023/02/01/computing-bias.html"},"url":"https://ylu-1258.github.io/YLu-Blog/markdown/apcsp/tri2/2023/02/01/computing-bias.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/submenu/">Javascript Submenu</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Computing Bias</h1><p class="page-description">Providing an overview of the effects and implications of computing bias and crowdsourcing data.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-01T00:00:00-06:00" itemprop="datePublished">
+        Feb 1, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#markdown">markdown</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#APCSP">APCSP</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/YLu-Blog/categories/#Tri2">Tri2</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#big-idea-53-computing-bias">Big Idea 5.3 Computing Bias</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#discussion-1">Discussion 1:</a></li>
+<li class="toc-entry toc-h3"><a href="#discussion-2">Discussion 2:</a></li>
+<li class="toc-entry toc-h3"><a href="#discussion-3">Discussion 3:</a></li>
+<li class="toc-entry toc-h3"><a href="#as-pairs">As pairs</a></li>
+<li class="toc-entry toc-h3"><a href="#summary">Summary:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#big-idea-54-crowdsourcing">Big Idea 5.4 Crowdsourcing</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#discusssion-1">Discusssion 1:</a></li>
+<li class="toc-entry toc-h3"><a href="#discussion-2-1">Discussion 2:</a></li>
+<li class="toc-entry toc-h3"><a href="#discussion-3-1">Discussion 3:</a></li>
+</ul>
+</li>
+</ul><h2 id="big-idea-53-computing-bias">
+<a class="anchor" href="#big-idea-53-computing-bias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big Idea 5.3 Computing Bias</h2>
+
+<h3 id="discussion-1">
+<a class="anchor" href="#discussion-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion 1:</h3>
+<blockquote>
+  <p>Google “What age groups use Facebook” vs “… TikTok”? What does the data say? Is there purposeful exclusion in these platforms? Is it harmful? Should it be corrected? Is it good business?</p>
+</blockquote>
+
+<p>There is a clear distinction between the age gap of Tiktok versus facebook users. The age gap shows that a majority of face book users are above the age of 25, while the majority of tiktok useres are below the age of twentity-five. Although there isn’t purposeful exclusion within these platforms, it’s obvious that both platforms advertise and appeal to a different set of the population. I do not believe that this is inherently harmful to society as both demographics still are able to acquire the platform that they wish to speak on. On the otherhand, having such an approach is certainly one viable business model, as it allows for better targeting and curation of a particular group’s demands.</p>
+
+<h3 id="discussion-2">
+<a class="anchor" href="#discussion-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion 2:</h3>
+<blockquote>
+  <p>Why do virtual assistants have female voices? Amazon, Alexa Google, Apple Siri. Was this purposeful? Is it harmful? Should it be corrected? Is it good business?</p>
+</blockquote>
+
+<p>I feel like most virtual assistants have female voices because of a trend that started out with the first few assistents, such as Apple siri or amazon Alexa. However, although one can argue that such a decision could result in the perpetuation of the idea that women should be in a subservient position, (such as acting as secretary figures), I do not believe that it is as large as a problem now, especially as many companies are producing more assistants with different voices (some including male ones)</p>
+
+<h3 id="discussion-3">
+<a class="anchor" href="#discussion-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion 3:</h3>
+<blockquote>
+  <p>Talk about an algorithm that influences your decisions, think about these companies (ie FAANG - Facebook, Amazon, Apple,Netflix, Google)</p>
+</blockquote>
+
+<p>One large algorithm that influences my decisions is the google search engine. The search engine relies on a complicated network of big data and machine learning algorithms in order to quickly and effectively return a set of website links for a certain query that I enter. Thus, depending on the output of this algorithm, it could very well change the information that I consume or learn on the internet. Moreover, such algorithms could also impact our experience of internet entertainment. For example, the netflix platform, which is commonly used for streaming movies and TV shows, uses a similar idea where it implements are reccomendation engine or something of the sort to reccomend shows to users based on the current trends or the watch history of the user themselves.</p>
+
+<h3 id="as-pairs">
+<a class="anchor" href="#as-pairs" aria-hidden="true"><span class="octicon octicon-link"></span></a>As pairs</h3>
+<blockquote>
+  <p>Come up with some thoughts on the video and be ready to discuss them as I call on you. Here are some ideas…</p>
+</blockquote>
+
+<ol>
+  <li>Does the owner of the computer think this was intentional?<br>
+I do not believe that the owner of the computer thought that this was intentional.</li>
+  <li>If yes or no, justify you conclusion.<br>
+The overall video had a pretty humourous tone, and it didn’t seem like the owner was really agitated in any way. However, had he been more concerned with the quality of the product, he likely would’ve brought it up in a more official way, by filling out a ticket or sending an email to customer support directly.</li>
+  <li>How do you think this happened?<br>
+I think that this likely happened because of a lack of training data for the computer to work with, as if the computer is only trained to recognize people or lighter skin tones, it might not necessarily work as well for people of other skin tones.</li>
+  <li>Is this harmful? Was it intended to be harmful or exclude?<br>
+Such mistakes are certainly harmful, althought their might not be intended to be harmful or to exclude. These mistakes allow for an entire demographic to miss out on a particular technology or trend.</li>
+  <li>Should it be corrected?<br>
+Yes, I believe that this issue should be corrected in order to incoporate and embrace a much larger group of consumers</li>
+  <li>What would you or should you do to produce a better outcome?<br>
+I believe that if the company could use more training data (i.e. getting more people from different races and skin tones to test out the computer), performance would gradually increase to include other people as well.</li>
+</ol>
+
+<h3 id="summary">
+<a class="anchor" href="#summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary:</h3>
+<p>Computing Bias could have great implications in our world, weather it be in our day to day lives, or in the commercial/business realm. For instance, the Hewlett-Packard motion assisted camera demonstrated how a narrowed minded training set could neglect other forms of data and consumers, such as those with different skin tones or clothing. This is why testing our algorithms are so important, because it allows us to identify for possible biases in our programs to detect wether or not a particular type of people are being excluded from using the application. Thus, I should be careful to test my algorithms in the CPT project such that it treats all users fairly and equally.</p>
+
+<h2 id="big-idea-54-crowdsourcing">
+<a class="anchor" href="#big-idea-54-crowdsourcing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big Idea 5.4 Crowdsourcing</h2>
+
+<h3 id="discusssion-1">
+<a class="anchor" href="#discusssion-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discusssion 1:</h3>
+<blockquote>
+  <p>CompSci has 150 ish principles students. Describe a crowdsource idea and how you might initiate it in our environment?</p>
+</blockquote>
+
+<p>One example of a crowdsource idea that I can use is to have people enter data on a website frontend that I create, and eventually store the data in the backend. An example of this could be a program used to compare the school schedules of two users, which would be impossible without user input, but extremely efficient for students to compare with other students. Thus, if everyone can contribute their schedule to such a program, it would become an incredibly effective and efficient tool for all students.</p>
+
+<h3 id="discussion-2-1">
+<a class="anchor" href="#discussion-2-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion 2:</h3>
+<blockquote>
+  <p>What about Del Norte crowdsourcing? Could your project be better with crowdsourcing?</p>
+</blockquote>
+
+<p>The project can certainly be improved with a a more direct approach to Del Norte crowdsourcing. For example, instead of only focusing on the AP CSP class, we can add in other classes from around campus too, this would overall open our project up to a greater range of people and ultimately imrpove the overall quality of the pgoram as users now can have access to a greater amount of information as to who is in their classes.</p>
+
+<h3 id="discussion-3-1">
+<a class="anchor" href="#discussion-3-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion 3:</h3>
+<blockquote>
+  <p>What kind of data could you capture at N@tM to make evening interesting? Perhaps use this data to impress Teachers during finals week.</p>
+</blockquote>
+
+<p>At N@TM, I can capture specific data related to the individual schedules of each student in order to gradually build up the userbase of the program. By storing these data into a backend database, we can keep it persistently running at all times, so that more and more people could eventually add to and contribute to the program functionality as a whole. This would improve the overall quality of hte pgoram as it would then have a broader range of an audience, as well as more potential data to display.</p>
+
+
+  </div><a class="u-url" href="/YLu-Blog/markdown/apcsp/tri2/2023/02/01/computing-bias.html" hidden></a>
+
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script> 
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://ylu-1258.github.io/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/YLu-1258 “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
