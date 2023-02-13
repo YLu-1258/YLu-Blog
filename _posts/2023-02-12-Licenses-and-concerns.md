@@ -1,8 +1,8 @@
 ---
 toc: true
-title: Computing Bias
+title: Big topic 5.5 and 5.6
 layout: post
-description: Providing an overview of the effects and implications of computing bias and crowdsourcing data.
+description: Providing an overview of Licenses and Legal/Ethical concerns
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]
 ---
