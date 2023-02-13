@@ -60,5 +60,23 @@ The project can certainly be improved with a a more direct approach to Del Norte
 
 At N@TM, I can capture specific data related to the individual schedules of each student in order to gradually build up the userbase of the program. By storing these data into a backend database, we can keep it persistently running at all times, so that more and more people could eventually add to and contribute to the program functionality as a whole. This would improve the overall quality of hte pgoram as it would then have a broader range of an audience, as well as more potential data to display.
 
+## Big Idea 5.5 Legal and Ethical Concerns
 
+### Types of Licences
+There are two main types of Licenses that one can choose to use:
+1. **Open Source Licences**: Allow for other people to view, access, and download the source code for a program. permissions may vary amongst some licenses but overalll idea would be the same. Some Open source licenses allow for closed source distribution, others do not.
+2. **Closed Source Licences**: Does not allow for other people to access a project or program's source code. Typically the marketer of such a program will release a closed version to the public, and keep the source code for their own development.
+
+### Examples of Licenses
+1. Creative Commons Zero v1.0 Universal: Grants most unrestricted usage and rights, for the public domain and the author waives all copyrights to the product.
+2. Open Source MIT License: Allows other consumers to freely use the code produced and also release closed source versions. However, in these products, people commonly would be required by the License to give credit to the original author.
+3. Open Source GPL License: Allows for viewing and access and most other rights to a project, with the exception of releasing or distributing a closed sourced version of it
+
+### Personal Summary:
+- As an individual, I believe that protecting a user's intellectual rights to something that they've made is highly important in ensuring that the right people receive credit for their works. Thus, licenses are really important tools to outline the rights of the creator, as well as the rights of the user to use and access code made by someone else.
+- Because of our projected-based learning curriculum, I feel like students should be able to make their projects open-sourced so that other students can view and see what particular edits or changes may be added to address a specfic issue. Moreover, these licenses should also restrict the usage rights of other students, such that they can still view the source code, but not copy it directly and release it for their own work.
+- Because many large companies distribute their products amongst a userbase, it is important to create a license to outline the consumer rights of their product, such that they can stil protect their patent rights and earn money.
+
+### Team Selection:
+As a team, we decided to pick the GNU GPLv3 License for our project. This is because the license not only allows other students to access our project if they need help, but it also prevents them from directly copying or stealing the code for themselves. We determined that this would thus be the best license type to use for such a school based project.
 
