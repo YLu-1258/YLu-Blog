@@ -80,3 +80,4 @@ There are two main types of Licenses that one can choose to use:
 ### Team Selection:
 As a team, we decided to pick the GNU GPLv3 License for our project. This is because the license not only allows other students to access our project if they need help, but it also prevents them from directly copying or stealing the code for themselves. We determined that this would thus be the best license type to use for such a school based project.
 
+## Big Idea 5.6 Legal and Ethical Concerns
