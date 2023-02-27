@@ -17,6 +17,8 @@ The first project that I saw was a country guessing game, which provided the use
 
 ## Second Project: 
 ![]({{site.baseurl}}/images/2_purrdle.png " ")
+The second project that I saw was Drew's group's purrdle game. The overaching project had a nice theme to it, being a website designed for a cat cafe business. The overall theme was very nice and the frontend had a great deal of work and effort put into it. The overall project works, having both frontend and backend functional and able to connect with one another. Overall, the program worked well, and was able to met most of the requirements.
 
 ## Third Project: 
 ![]({{site.baseurl}}/images/3_wordle.png " ")
+The third project that I saw was a wordle game. Although the idea is unoriginal, the overall website works fine, and the frontend has well designed CSS to mimic the original game. The project is functional overall, and both the frontend and backend were able to connect and remain up througout the duration of the event.
