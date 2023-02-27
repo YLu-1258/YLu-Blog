@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Individual project Overview
-layout: default
+layout: base
 description: Providing an overview of the aspects and purpose of my part of the group's CPT plan
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]

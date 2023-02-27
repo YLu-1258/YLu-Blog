@@ -2,7 +2,7 @@
 keywords: fastai
 description: Practice with identifying and correcting code blocks
 title: 1.4 Identifying and Correcting Errors
-layout: default
+layout: base
 badges: true
 categories: [week 7, jupyter, APCSP]
 nb_path: _notebooks/2022-10-03-AP-error_testing.ipynb

@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Digital Divides and Effects 
-layout: default
+layout: base
 description: Providing an overview of the various negative and beneficial effects of computing, as well as the potential division that it could cause in our world.
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]

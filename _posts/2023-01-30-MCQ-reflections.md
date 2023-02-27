@@ -1,7 +1,7 @@
 ---
 toc: true
 title: MCQ Reflections
-layout: default
+layout: base
 description: Providing an overview of the problems that I answered incorrectly on the Collegeboard MCQ.
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]

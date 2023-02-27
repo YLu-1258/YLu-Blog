@@ -1,7 +1,7 @@
 ---
 toc: false
 title: BVariables Assignments, and Data Abstraction
-layout: default
+layout: base
 description: Unit 3 Sections 1-2
 categories: [markdown, APCSP, Tri2]
 ---

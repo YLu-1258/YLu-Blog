@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Collegeboard Grading part 3
-layout: default
+layout: base
 description: Grading the collegeboard create performance tasks
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]

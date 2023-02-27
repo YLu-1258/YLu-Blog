@@ -1,7 +1,7 @@
 ---
 toc: false
 title: Binary Calculator
-layout: default
+layout: base
 description: A Binary Calculator application using HTML, Liquid, and JavaScript.
 categories: [markdown, APCSP]
 tags: [html, liquid, javascript]
