@@ -1,6 +1,6 @@
 ---
 toc: true
-title: ight at the museum overview
+title: Night at the museum overview
 layout: post
 description: Providing an overview of Licenses and Legal/Ethical concerns
 categories: [markdown, APCSP, Tri2]
