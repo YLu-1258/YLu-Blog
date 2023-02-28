@@ -24,13 +24,11 @@ tags: [markdown, APCSP, Tri2]
     <td><strong>Data Abstraction</strong></td>
     <td>1/1</td>
     <td>One method of abstraction used is a database which I used to store user entries along with their relevant information. Examples of data stored can be the user's username, password, user id, and number of each grade point they've achieved.</td>
-    <td></td>
   </tr>
   <tr>
     <td><strong>Managing Complexity</strong></td>
     <td>1/1</td>
     <td>My program manages the overall complexity in the frontend by creating an array that the program continuously updates with data from the backend. This list is then used to perform certain operations such as sorting and searching in order to provide an effcient way for comparison.</td>
-    <td></td>
   </tr>
   <tr>
     <td><strong>Procedural Abstraction</strong></td>
@@ -41,13 +39,11 @@ tags: [markdown, APCSP, Tri2]
     <td><strong>Algorithm Implementation</strong></td>
     <td>1/1</td>
     <td>The program uses a quicksort algorithm in order to iterate and sort the list that is generated in order to transform it into a form that is more easily traversible to extract necessary data such as student position, and ranking.</td>
-    <td></td>
   </tr>
   <tr>
     <td><strong>Testing</strong></td>
     <td>1/1</td>
     <td>The program includes an authentication system that properly returns different outcomes. For instance, inputting an incorrect username/password combination would result in the application being unable to authenticate the user and making changes. On the other hand, if a valid match has been found, the application will then authenticate the user and grant them access to their data.</td>
-    <td></td>
   </tr>
 </table>
 
