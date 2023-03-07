@@ -9,7 +9,7 @@ tags: [markdown, APCSP, Tri2]
 
 # My N@TM Experience
 
-The night at the museum event was definitely a fun activity for this tri. I was able to witness other group's projects and designs and were able to see my friend's improvements over time. This time around, everyone else were all more professional and experienced in the field of computer science, and the systems that many of us designed were more intricate and complicated. Moreover, I personally also felt more experienced and involved this time around because my skills also improved from last tri. This tri, I could explain my projects and algorithms much better than what I could've done last tri, and was able to properly explain the project to parents and other students alike. We also got various praises and constructive criticism from parents and students alike, making the experience worthwhile yet enjoyable.
+The night at the museum event was definitely a fun activity for this tri. I was able to witness other group's projects and designs and were able to see my friend's improvements over time. This time around, everyone else were all more professional and experienced in the field of computer science, and the systems that many of us designed were more intricate and complicated. Moreover, I personally also felt more experienced and involved this time around because my skills also improved from last tri. This tri, I could explain my projects and algorithms much better than what I could've done last tri, and was able to properly explain the project to parents and other students alike. We also got various praises and constructive criticism from parents and students alike, making the experience worthwhile yet enjoyable..
 
 ## First Project: 
 ![]({{site.baseurl}}/images/1_country_guessing.png " ")
