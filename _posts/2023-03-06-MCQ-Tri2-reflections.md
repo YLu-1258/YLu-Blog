@@ -1,7 +1,7 @@
 ---
 toc: true
 title: Tri 2 MCQ Reflections
-layout: base
+layout: post
 description: Providing an overview of the problems that I answered incorrectly on the Collegeboard MCQ.
 categories: [markdown, APCSP, Tri2]
 tags: [markdown, APCSP, Tri2]
