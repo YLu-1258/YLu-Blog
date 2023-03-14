@@ -788,6 +788,13 @@ Name: sector, dtype: int64
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also try to locate what the largest increase or decrease in compay rank were.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -921,7 +928,7 @@ Name: state, dtype: int64
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>Example:</em></p>
-<p>find the company that employs the most people in California in the dataset.</p>
+<p>find the company in California that employs the most people  in the dataset.</p>
 <p>I can use the <code>DataFrame.sort_values()</code> method to sort the rows on the employees column</p>
 
 </div>
