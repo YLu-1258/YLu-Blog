@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -124,6 +124,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?">-  Compore create() in both SQL lessons.  What is better or worse in the two implementations? </a></li>
 <li class="toc-entry toc-h2"><a href="#Updating-a-User-in-table-in-Sqlite.db">Updating a User in table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
 </ul>
@@ -194,7 +195,8 @@ window.onload = wrap_img;
 | String | VARCHAR(size) | Stores are variable length string. |
 | String | TEXT(size) | Holds a string with a maximum size of 65,535 bytes |
 | | | |
-| Numeric | INTEGER(size) | Stores a signed integer (-2147483648 to 2147483647) or unsigned integer (0 to 4294967295) |</p>
+| Numeric | INTEGER(size) | Stores a signed integer (-2147483648 to 2147483647) or unsigned integer (0 to 4294967295) |
+| Numeric | FLOAT(p) or DOUBLE() | Stores a floating point number, double can store more bits than FLOAT |</p>
 
 </div>
 </div>
@@ -275,10 +277,13 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?<ul>
-<li><strong> Looking at the VSCode debugger, we can see that these objects contain certain special varialbles function variables and class variables for the Connection object. We can also see that it represents many of the methods we use to modifiy the database, such as <code>execute()</code> and accessing data <code>fetchall()</code></strong></li>
+<li><strong>Looking at the VSCode debugger, we can see that these objects contain certain special variables function variables and class variables for the Connection object. We can also see that it represents many of the methods we use to modifiy the database, such as <code>execute()</code> and accessing data <code>fetchall()</code></strong></li>
 </ul>
 </li>
-<li>Is "results" an object?  How do you know?</li>
+<li>Is "results" an object?  How do you know?<ul>
+<li><strong>"results" is an object because we can see that it contains many attributes and methods of it's own in the debug menu</strong></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -353,8 +358,10 @@ window.onload = wrap_img;
 </h2>
 <blockquote>
 <p>Uses SQL INSERT to add row</p>
+<h2 id="---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?">
+<a class="anchor" href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?" aria-hidden="true"><span class="octicon octicon-link"></span></a>-  Compore create() in both SQL lessons.  What is better or worse in the two implementations?<a class="anchor-link" href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?"> </a>
+</h2>
 <ul>
-<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?</li>
 <li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
 </ul>
 </blockquote>

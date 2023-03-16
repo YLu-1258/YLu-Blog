@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -123,6 +123,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Imports-and-Flask-Objects">Imports and Flask Objects </a></li>
 <li class="toc-entry toc-h2"><a href="#Model-Definition">Model Definition </a></li>
+<li class="toc-entry toc-h2"><a href="#create,-read,-update,-delete-methods">create, read, update, delete methods </a></li>
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Check-for-given-Credentials-in-users-table-in-sqlite.db">Check for given Credentials in users table in sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
@@ -183,8 +184,14 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on where you have observed these working?  Provide a defintion of purpose.<ol>
-<li>Flask app object</li>
-<li>SQLAlchemy db object</li>
+<li>Flask app object<ol>
+<li><strong>I saw the Flask app object in our CPT project, where it managed many if not all operations that we wanted to perform with flask</strong></li>
+</ol>
+</li>
+<li>SQLAlchemy db object<ol>
+<li><strong>The db object was also created in our CPT project, where it was used to establish a connection and perform database operatoins and manipulations on our data</strong></li>
+</ol>
+</li>
 </ol>
 </li>
 </ul>
@@ -244,14 +251,27 @@ window.onload = wrap_img;
 <li>
 <p>Comment on these items in the class, purpose and defintion.</p>
 <ul>
-<li>class User</li>
-<li>db.Model inheritance</li>
-<li>
-<em>init</em> method</li>
-<li>
-<code>@property</code>, <code>@&lt;column&gt;.setter</code>
+<li>class User<ul>
+<li><strong>The creates an abstractiion for our User, and contains all the attributes of the user (info such as uid and name) to potential methods such as create, add delete and update. It serves the purpose of containing all of our necessary operations and information under one name, which we can use to easily edit users and update their entry later on in our program.</strong></li>
+</ul>
 </li>
-<li>create, read, update, delete methods</li>
+<li>db.Model inheritance<ul>
+<li><strong>This inherits all the methods and attributes from the <code>db.Model</code> class. Doing this enables us to use datatypes for our DB schema along with the other operations for CRUD</strong></li>
+</ul>
+</li>
+<li>
+<em>init</em> method<ul>
+<li><strong>This is our class constructor, it serves to instantiate the attributes of our user upon the creation of our object, and then allows us to use this data later on in our operations</strong></li>
+</ul>
+</li>
+<li>
+<code>@property</code>, <code>@&lt;column&gt;.setter</code><ul>
+<li><strong>These decorators are used to establish the getters and setters within a class or object, it serves to create references for us to use to reference clas methods and attributes outside of the class</strong></li>
+</ul>
+</li>
+<li><h2 id="create,-read,-update,-delete-methods">
+<a class="anchor" href="#create,-read,-update,-delete-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>create, read, update, delete methods<a class="anchor-link" href="#create,-read,-update,-delete-methods"> </a>
+</h2></li>
 </ul>
 </li>
 <li>
