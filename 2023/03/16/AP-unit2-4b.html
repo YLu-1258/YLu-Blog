@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      10 min read
     
 </span></p>
 
@@ -124,7 +124,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?">-  Compore create() in both SQL lessons.  What is better or worse in the two implementations? </a></li>
 <li class="toc-entry toc-h2"><a href="#Updating-a-User-in-table-in-Sqlite.db">Updating a User in table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
 </ul>
@@ -194,7 +193,7 @@ window.onload = wrap_img;
 | String | CHAR(size) | Stores a fixed length of strings. Default length is 1 |
 | String | VARCHAR(size) | Stores are variable length string. |
 | String | TEXT(size) | Holds a string with a maximum size of 65,535 bytes |
-| | | |
+|  |  |  |
 | Numeric | INTEGER(size) | Stores a signed integer (-2147483648 to 2147483647) or unsigned integer (0 to 4294967295) |
 | Numeric | FLOAT(p) or DOUBLE() | Stores a floating point number, double can store more bits than FLOAT |</p>
 
@@ -358,11 +357,15 @@ window.onload = wrap_img;
 </h2>
 <blockquote>
 <p>Uses SQL INSERT to add row</p>
-<h2 id="---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?">
-<a class="anchor" href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?" aria-hidden="true"><span class="octicon octicon-link"></span></a>-  Compore create() in both SQL lessons.  What is better or worse in the two implementations?<a class="anchor-link" href="#---Compore-create()-in-both-SQL-lessons.--What-is-better-or-worse-in-the-two-implementations?"> </a>
-</h2>
 <ul>
-<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
+<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?<ul>
+<li><strong>In the OOP lesson, the create() object relies on the instantiated object to extract data to upload to the database. However, in the Imperitive approach, we directly edit the Database with SQL queries. From a logistic point of view, the OOP method should be better than imperative approach since it could share attributes and arguments with the other CRUD elements as well.</strong></li>
+</ul>
+</li>
+<li>Explain purpose of SQL INSERT. Is this the same as User __init__?<ul>
+<li><strong>SQL INSERT serves to create a new database entry within the table. On the otherhand, User.__init__() in the OOP approach serves to instantiate an object to be added to the database. They are not the same things</strong></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
@@ -439,9 +442,18 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL UPDATE to modify password</p>
 <ul>
-<li>What does the hacked part do?</li>
-<li>Explain try/except, when would except occur?</li>
-<li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
+<li>What does the hacked part do?<ul>
+<li><strong>The hacked part essentially serves a joke warning against the user when they create an insecure password lesser than 2 characters. Additionally, it also sets a new password for the user</strong></li>
+</ul>
+</li>
+<li>Explain try/except, when would except occur?<ul>
+<li><strong>An except would occur if our UPDATE query were to fail to execute. While completing the hacks, I have encountered such a case where my database was locked, thus preventing me from updating and invoking the except block.</strong></li>
+</ul>
+</li>
+<li>What code seems to be repeated in each of these examples to point, why is it repeated?<ul>
+<li><strong>Within every code block, we are repeating the initializaion of the connection and cursor objects. This is repeated because of a programming idea called "scope". Each time we define these objects, they only exist within the function, and not elsewhere, so we must redefine them if we wish to use them again.</strong></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
@@ -508,8 +520,14 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses a delete function to remove a user based on a user input of the id.</p>
 <ul>
-<li>Is DELETE a dangerous operation?  Why?</li>
-<li>In the print statemements, what is the "f" and what does {uid} do?</li>
+<li>Is DELETE a dangerous operation?  Why?<ul>
+<li><strong>DELETE could be a dangerous function. This is because it contains the ability to drop entire database entries with no recovery. This is especially dangerous in certain attacks, such as SQL Injects, where a malicious attacker could potentially inject SQL fragments to delete other uninteded entries, causing havoc.</strong></li>
+</ul>
+</li>
+<li>In the print statemements, what is the "f" and what does {uid} do?<ul>
+<li><strong>The f represents a formatted a string, while {uid} documents a variable to be inserted into the string, where uid is the name of the variable</strong></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
@@ -569,8 +587,14 @@ window.onload = wrap_img;
 <blockquote>
 <p>CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.</p>
 <ul>
-<li>Why does the menu repeat?</li>
-<li>Could you refactor this menu?  Make it work with a List?</li>
+<li>Why does the menu repeat?<ul>
+<li><strong>This menu repeats itself until the escape key is pressed because it calls itself again repeatedly via recursion</strong></li>
+</ul>
+</li>
+<li>Could you refactor this menu?  Make it work with a List?<ul>
+<li><strong>We could refactor this menu, by changing it such that we include a list of possible options that the user could select from, instead of having repeated if and elif statements.</strong></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 

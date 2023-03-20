@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      12 min read
     
 </span></p>
 
@@ -450,9 +450,18 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on how these work?<ol>
-<li>Create All Tables from db Object</li>
-<li>User Object Constructors</li>
-<li>Try / Except </li>
+<li>Create All Tables from db Object<ol>
+<li>calls the <code>create_all()</code> method from the db object created in the model class. I assume that takes the Object properties and generates the table with the object entries.</li>
+</ol>
+</li>
+<li>User Object Constructors<ol>
+<li>defined with <code>__init__()</code>, takes in the inputted data and assigns it to class variables for future operations such as adding to database.</li>
+</ol>
+</li>
+<li>Try / Except <ol>
+<li>Attempts a specific database operation. If it works, do nothing. If it fails, remove the current session to prevent futhur errors. </li>
+</ol>
+</li>
 </ol>
 </li>
 </ul>
@@ -509,12 +518,12 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Created new uid toby
-Created new uid niko
-Created new uid lex
-Created new uid whit
-Created new uid indi
-Created new uid raven
+<pre>Records exist uid toby, or error.
+Records exist uid niko, or error.
+Records exist uid lex, or error.
+Records exist uid whit, or error.
+Records exist uid indi, or error.
+Records exist uid raven, or error.
 </pre>
 </div>
 </div>
@@ -538,8 +547,14 @@ Created new uid raven
 <li>
 <p>Comment on purpose of following</p>
 <ol>
-<li>User.query.filter_by</li>
-<li>user.password</li>
+<li>User.query.filter_by<ol>
+<li><strong>Locates the first entry in the database where the value of the _uid coloumn is equal to a specific UID. Used to search for the object of a user to update.</strong></li>
+</ol>
+</li>
+<li>user.password<ol>
+<li><strong>accesses the password of the user.</strong></li>
+</ol>
+</li>
 </ol>
 </li>
 <li>
@@ -593,10 +608,23 @@ Created new uid raven
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>user.find_by_uid() and try/except</li>
-<li>user = User(...)</li>
-<li>user.dob and try/except</li>
-<li>user.create() and try/except</li>
+<li>user.find_by_uid() and try/except<ol>
+<li><strong>Locates and stores the object of the user in question. Try printing the user information to check if the user has been created, if NotFound error, we continue with the rest of the function</strong></li>
+</ol>
+</li>
+<li>user = User(...)<ol>
+<li><strong>Creates the user object with the inputted parameters</strong></li>
+</ol>
+</li>
+<li>user.dob and try/except<ol>
+<li><strong>Set the date of birth of our user. Try to format the date into a standard format, if an invalid input is detected, autofill with today's date</strong></li>
+</ol>
+</li>
+<li>user.create() and try/except<ol>
+<li>
+<strong>creates the user object instantiated in the <code>create()</code> function with it's method in the Model class. This inserts our object into the database.</strong> </li>
+</ol>
+</li>
 </ol>
 </li>
 </ul>
@@ -661,7 +689,7 @@ Created new uid raven
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Created
- {'id': 7, 'name': 'alex', 'uid': '', 'dob': '01-01-1940', 'age': 83}
+ {'id': 8, 'name': 'Jonah', 'uid': '4567', 'dob': '08-12-2007', 'age': 15}
 </pre>
 </div>
 </div>
@@ -683,8 +711,14 @@ Created new uid raven
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>User.query.all</li>
-<li>json_ready assignment, google List Comprehension</li>
+<li>User.query.all<ol>
+<li><strong>Grabs a list/iterable of all user entries in the database provided</strong></li>
+</ol>
+</li>
+<li>json_ready assignment, google List Comprehension<ol>
+<li><strong>Json formatted data. Uses list comprehension which takes all data from a prexisting list and moifies it to a copy that we later use.</strong></li>
+</ol>
+</li>
 </ol>
 </li>
 </ul>
@@ -718,23 +752,43 @@ Created new uid raven
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">c:\Alex\vscode\ylu-blog\_notebooks\2023-03-13-AP-unit2-4a.ipynb Cell 14</span> in <span class="ansi-cyan-fg">8
-</span><span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span>     json_ready = [user.read() for user in table] # "List Comprehensions", for each user add user.read() to list
-<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=5'&gt;6&lt;/a&gt;</span>     return json_ready
-<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=7'&gt;8&lt;/a&gt;</span> read()
 
-<span class="ansi-green-intense-fg ansi-bold">c:\Alex\vscode\ylu-blog\_notebooks\2023-03-13-AP-unit2-4a.ipynb Cell 14</span> in <span class="ansi-cyan-fg">3
-</span><span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=1'&gt;2&lt;/a&gt;</span> def read():
-<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=2'&gt;3&lt;/a&gt;</span>     with app.app_context():
-<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=3'&gt;4&lt;/a&gt;</span>         table = User.query.all()
-<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span>     json_ready = [user.read() for user in table] # "List Comprehensions", for each user add user.read() to list
 
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name 'app' is not defined</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[{'id': 1,
+  'name': 'Thomas Edison',
+  'uid': 'toby',
+  'dob': '02-11-1847',
+  'age': 176},
+ {'id': 2,
+  'name': 'Nikola Tesla',
+  'uid': 'niko',
+  'dob': '03-19-2023',
+  'age': 0},
+ {'id': 3,
+  'name': 'Alexander Graham Bell',
+  'uid': 'lex',
+  'dob': '03-19-2023',
+  'age': 0},
+ {'id': 4,
+  'name': 'Eli Whitney',
+  'uid': 'whit',
+  'dob': '03-19-2023',
+  'age': 0},
+ {'id': 5,
+  'name': 'Indiana Jones',
+  'uid': 'indi',
+  'dob': '10-21-1920',
+  'age': 102},
+ {'id': 6,
+  'name': 'Marion Ravenwood',
+  'uid': 'raven',
+  'dob': '10-21-1921',
+  'age': 101},
+ {'id': 7, 'name': 'alex', 'uid': '1', 'dob': '03-19-2023', 'age': 0},
+ {'id': 8, 'name': 'Jonah', 'uid': '4567', 'dob': '08-12-2007', 'age': 15}]</pre>
 </div>
+
 </div>
 
 </div>
@@ -751,15 +805,38 @@ Created new uid raven
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What user ID would you like to update?"</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter desired new name: "</span><span class="p">)</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter desired new id: "</span><span class="p">)</span>
+    <span class="n">new_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter desired new password: "</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
-        <span class="n">table</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
-    <span class="k">return</span> <span class="n">json_ready</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">new_password</span><span class="p">)</span>   
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Updated</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object not created</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Unknown error uid </span><span class="si">{uid}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span>
 
-<span class="n">read</span><span class="p">()</span>
+<span class="n">update</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Updated
+ {'id': 8, 'name': 'Jonahs', 'uid': '4567', 'dob': '08-12-2007', 'age': 15}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -773,15 +850,40 @@ Created new uid raven
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">():</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What user ID would you like to delete?"</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Deleted</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object not created</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Unknown error uid </span><span class="si">{uid}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span>
+
     <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
     <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
     <span class="k">return</span> <span class="kc">None</span>
 
-<span class="c1">#delete()</span>
+<span class="n">delete</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Deleted
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
