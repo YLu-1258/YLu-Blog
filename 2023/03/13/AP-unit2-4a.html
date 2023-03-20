@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -123,7 +123,6 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Imports-and-Flask-Objects">Imports and Flask Objects </a></li>
 <li class="toc-entry toc-h2"><a href="#Model-Definition">Model Definition </a></li>
-<li class="toc-entry toc-h2"><a href="#create,-read,-update,-delete-methods">create, read, update, delete methods </a></li>
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Check-for-given-Credentials-in-users-table-in-sqlite.db">Check for given Credentials in users table in sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
@@ -269,9 +268,10 @@ window.onload = wrap_img;
 <li><strong>These decorators are used to establish the getters and setters within a class or object, it serves to create references for us to use to reference clas methods and attributes outside of the class</strong></li>
 </ul>
 </li>
-<li><h2 id="create,-read,-update,-delete-methods">
-<a class="anchor" href="#create,-read,-update,-delete-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>create, read, update, delete methods<a class="anchor-link" href="#create,-read,-update,-delete-methods"> </a>
-</h2></li>
+<li>create, read, update, delete methods<ul>
+<li><strong>These are certain data base operations that we can use to edit, access, and retrieve data from our database. We can achieve this through OOP with SQLAlchemy, or  imperatively with sqlite3</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -718,44 +718,70 @@ Created new uid raven
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">c:\Alex\vscode\ylu-blog\_notebooks\2023-03-13-AP-unit2-4a.ipynb Cell 14</span> in <span class="ansi-cyan-fg">8
+</span><span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span>     json_ready = [user.read() for user in table] # "List Comprehensions", for each user add user.read() to list
+<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=5'&gt;6&lt;/a&gt;</span>     return json_ready
+<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=7'&gt;8&lt;/a&gt;</span> read()
 
+<span class="ansi-green-intense-fg ansi-bold">c:\Alex\vscode\ylu-blog\_notebooks\2023-03-13-AP-unit2-4a.ipynb Cell 14</span> in <span class="ansi-cyan-fg">3
+</span><span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=1'&gt;2&lt;/a&gt;</span> def read():
+<span class="ansi-green-intense-fg ansi-bold">----&gt; &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=2'&gt;3&lt;/a&gt;</span>     with app.app_context():
+<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=3'&gt;4&lt;/a&gt;</span>         table = User.query.all()
+<span class="ansi-green-fg">      &lt;a href='vscode-notebook-cell:/c%3A/Alex/vscode/ylu-blog/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X16sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span>     json_ready = [user.read() for user in table] # "List Comprehensions", for each user add user.read() to list
 
-<div class="output_text output_subarea output_execute_result">
-<pre>[{'id': 1,
-  'name': 'Thomas Edison',
-  'uid': 'toby',
-  'dob': '02-11-1847',
-  'age': 176},
- {'id': 2,
-  'name': 'Nikola Tesla',
-  'uid': 'niko',
-  'dob': '03-15-2023',
-  'age': 0},
- {'id': 3,
-  'name': 'Alexander Graham Bell',
-  'uid': 'lex',
-  'dob': '03-15-2023',
-  'age': 0},
- {'id': 4,
-  'name': 'Eli Whitney',
-  'uid': 'whit',
-  'dob': '03-15-2023',
-  'age': 0},
- {'id': 5,
-  'name': 'Indiana Jones',
-  'uid': 'indi',
-  'dob': '10-21-1920',
-  'age': 102},
- {'id': 6,
-  'name': 'Marion Ravenwood',
-  'uid': 'raven',
-  'dob': '10-21-1921',
-  'age': 101},
- {'id': 7, 'name': 'alex', 'uid': '', 'dob': '01-01-1940', 'age': 83}]</pre>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name 'app' is not defined</pre>
+</div>
 </div>
 
 </div>
+</div>
 
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
+    <span class="k">return</span> <span class="n">json_ready</span>
+
+<span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1">#delete()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

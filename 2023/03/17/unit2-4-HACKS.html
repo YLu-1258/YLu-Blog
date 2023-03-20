@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 2.4b Databases Hacks | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unit 2.4b Databases Hacks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My hacks fr othe 2.4b lesson, making my own database imperatively" />
+<meta property="og:description" content="My hacks fr othe 2.4b lesson, making my own database imperatively" />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/2023/03/17/unit2-4-HACKS.html" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/2023/03/17/unit2-4-HACKS.html" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unit 2.4b Databases Hacks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-17T00:00:00-05:00","datePublished":"2023-03-17T00:00:00-05:00","description":"My hacks fr othe 2.4b lesson, making my own database imperatively","headline":"Unit 2.4b Databases Hacks","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/2023/03/17/unit2-4-HACKS.html"},"url":"https://ylu-1258.github.io/YLu-Blog/2023/03/17/unit2-4-HACKS.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/submenu/">Javascript Submenu</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.4b Databases Hacks</h1><p class="page-description">My hacks fr othe 2.4b lesson, making my own database imperatively</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-17T00:00:00-05:00" itemprop="datePublished">
+        Mar 17, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/YLu-1258/SEAL/tree/master/_notebooks/2023-03-17-unit2-4-HACKS.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/YLu-Blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/YLu-1258/SEAL/master?filepath=_notebooks%2F2023-03-17-unit2-4-HACKS.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/YLu-1258/SEAL/blob/master/_notebooks/2023-03-17-unit2-4-HACKS.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FYLu-1258%2FSEAL%2Fblob%2Fmaster%2F_notebooks%2F2023-03-17-unit2-4-HACKS.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/YLu-Blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-03-17-unit2-4-HACKS.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">tabulate</span> <span class="k">as</span> <span class="nn">tb</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span> <span class="k">as</span> <span class="n">IO</span>
+
+<span class="c1"># Grab User input</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What name do you want your database to be?"</span><span class="p">)</span>
+<span class="n">table_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What name do you want your table to be?"</span><span class="p">)</span>
+
+<span class="c1"># Create path for database </span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'instance/'</span> <span class="o">+</span> <span class="n">db_name</span> <span class="o">+</span> <span class="s2">".db"</span>
+
+<span class="c1"># Useful queries to use</span>
+<span class="n">create_table_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""CREATE TABLE </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> ( id INTEGER PRIMARY KEY AUTOINCREMENT, task TEXT NOT NULL, location TEXT, complete_by DATE, time Text, AMPM Text);"""</span>
+<span class="n">check_table_exists_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT count(name) FROM sqlite_master WHERE type='table' AND name='</span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2">'; """</span>
+<span class="n">create_entry_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""INSERT INTO </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> (task, location, complete_by, time, AMPM) VALUES (?, ?, ?, ?, ?);"""</span>
+<span class="n">check_duplicate_entry_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT count(*) FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE (task=? AND location=? AND complete_by=? AND time=? AND AMPM=?)"""</span>
+<span class="n">drop_table_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""DROP TABLE </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2">;"""</span>
+<span class="n">select_all_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT * FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2">"""</span>
+
+<span class="n">get_task_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT task FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id=?"""</span>
+<span class="n">get_location_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT location FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id=?"""</span>
+<span class="n">get_complete_by_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT complete_by FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id=?"""</span>
+<span class="n">get_time_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT time FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id=?"""</span>
+<span class="n">get_ampm_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT AMPM FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id=?"""</span>
+
+<span class="n">update_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""UPDATE </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> SET task = ?, location = ?, complete_by = ?, time = ?, AMPM = ? WHERE id = ?"""</span>
+
+<span class="n">delete_row_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""DELETE FROM </span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> WHERE id = ?"""</span>
+
+<span class="c1"># Other variables</span>
+<span class="n">affirmatives</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"ye"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="s2">"ok"</span><span class="p">,</span> <span class="s2">"sure"</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">init_table</span><span class="p">():</span>
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL queries</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="c1"># Execute table creation query we made earlier</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">check_table_exists_query</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span> <span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_query</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">yn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Table already exists, override?"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">yn</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">affirmatives</span><span class="p">:</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">drop_table_query</span><span class="p">)</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_query</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Updated Schema, All data wiped"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Stopping..."</span><span class="p">)</span>
+            <span class="k">return</span>
+
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">init_table</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Updated Schema, All data wiped
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">schema</span><span class="p">():</span>
+    
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL queries</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    
+    <span class="c1"># Fetch results of Schema</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"PRAGMA table_info('todo')"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+    <span class="c1"># Print the results</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="c1"># Close the database connection</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+<span class="c1">#schema()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">am_pm</span><span class="p">):</span>
+    
+    
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL queries</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    
+    <span class="c1"># Fetch results of Schema</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">check_duplicate_entry_query</span><span class="p">,</span> <span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">am_pm</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">unique</span><span class="p">:</span>
+        <span class="n">yn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Duplicate entry detected with task: </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="se">\n</span><span class="s2"> location: </span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="se">\n</span><span class="s2"> complete by date: </span><span class="si">{</span><span class="n">complete_by</span><span class="si">}</span><span class="se">\n</span><span class="s2"> time: </span><span class="si">{</span><span class="n">time</span><span class="si">}{</span><span class="n">am_pm</span><span class="si">}</span><span class="se">\n</span><span class="s2"> Still Add task?"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">yn</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">affirmatives</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Not adding duplicate entry."</span><span class="p">)</span>
+            <span class="k">return</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Execute an SQL command to insert data into a table, date is in form of 'YYYY-MM-DD'</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_entry_query</span><span class="p">,</span> <span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">am_pm</span><span class="p">))</span>
+            
+            <span class="c1"># Commit the changes to the database</span>
+            <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A new task </span><span class="si">{</span><span class="n">task</span><span class="si">}</span><span class="s2"> has been created"</span><span class="p">)</span>
+                    
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error while executing the INSERT:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+
+    <span class="c1"># Close the database connection</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+<span class="n">create</span><span class="p">(</span><span class="s2">"Finish USH Poster Project"</span><span class="p">,</span> <span class="s2">"Home"</span><span class="p">,</span> <span class="s2">"2023-03-17"</span><span class="p">,</span> <span class="s2">"7:00"</span><span class="p">,</span> <span class="s2">"AM"</span><span class="p">)</span>
+<span class="n">create</span><span class="p">(</span><span class="s2">"Start Homework"</span><span class="p">,</span> <span class="s2">"Home"</span><span class="p">,</span> <span class="s2">"2023-03-18"</span><span class="p">,</span> <span class="s2">"4:15"</span><span class="p">,</span> <span class="s2">"PM"</span><span class="p">)</span>
+<span class="c1">#create("Bring out Trash cans", "Home", "2023-03-18", "5:00", "PM")</span>
+<span class="c1">#create("Cook Dinner", "Home", "2023-03-18", "6:00", "PM")</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A new task Finish USH Poster Project has been created
+A new task Start Homework has been created
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">import_csv</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'|'</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
+    <span class="n">tasks</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">locations</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">complete_by</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ampms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+        <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">complete_by</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">ampms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)):</span>
+        <span class="n">create</span><span class="p">(</span><span class="n">tasks</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">locations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">complete_by</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">times</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ampms</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1">#import_csv("""Finish Research Literature Review, Home, 2023-03-20, 8:00, PM</span>
+<span class="c1">#Go to Gym, LA Fitness, 2023-03-21, 6:00, PM</span>
+<span class="c1">#Teach Sister Piano, Home, 2023-03-21, 8:00, PM""")</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL queries</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    
+    <span class="c1"># Execute a SELECT statement to retrieve data from a table</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select_all_query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+    <span class="c1"># Print the results</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Table is empty"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">temp_arr</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">data</span> <span class="o">=</span> <span class="n">temp_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">temp_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'text-align'</span><span class="p">:</span> <span class="s1">'left'</span><span class="p">})</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># Close the cursor and connection objects</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+<span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 Finish USH Poster Project Home 2023-03-17 7:00 AM
+2            Start Homework Home 2023-03-18 4:15 PM
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL commands</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="n">read</span><span class="p">()</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter task id to update"</span><span class="p">)</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated task (Esc to keep default):"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">get_task_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated location (Esc to keep default):"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">get_location_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">complete_by</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated date of completion in YYYY-MM-DD format (Esc to keep default):"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">get_complete_by_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated time (Esc to keep default):"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">get_time_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ampm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter AM or PM (Esc to keep default):"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">get_ampm_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">ampm</span><span class="p">)</span>
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL commands</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Execute an SQL command to update data in a table</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">update_query</span><span class="p">,</span> <span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">ampm</span><span class="p">,</span> <span class="nb">id</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># The id was not found in the table</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Task id </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> was not found in the table"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Task </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> has been updated"</span><span class="p">)</span>
+            <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error while executing the UPDATE:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        
+    
+    <span class="c1"># Close the cursor and connection objects</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#update()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">():</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter task number to delete"</span><span class="p">)</span>
+
+    <span class="c1"># Connect to the database file</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="p">)</span>
+
+    <span class="c1"># Create a cursor object to execute SQL commands</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">delete_row_query</span><span class="p">,</span> <span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># The uid was not found in the table</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Task </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> was not found in the table"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># The uid was found in the table and the row was deleted</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Task </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> was successfully deleted"</span><span class="p">)</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error while executing the DELETE:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        
+    <span class="c1"># Close the cursor and connection objects</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#delete()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Please select an operation:</span><span class="se">\n\t</span><span class="s2"> 1) Add new entries </span><span class="se">\n\t</span><span class="s2"> 2) Import CSV entries </span><span class="se">\n\t</span><span class="s2"> 3) View Tasks </span><span class="se">\n\t</span><span class="s2"> 4) Update Task </span><span class="se">\n\t</span><span class="s2"> 5) Delete Task"</span><span class="p">)</span>
+    <span class="n">option</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">option</span><span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Adding New entry</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated task:"</span><span class="p">)</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated location:"</span><span class="p">)</span>
+        <span class="n">complete_by</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated date of completion in YYYY-MM-DD format:"</span><span class="p">)</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated time:"</span><span class="p">)</span>
+        <span class="n">ampm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter AM or PM:"</span><span class="p">)</span>
+        <span class="n">create</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">complete_by</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">ampm</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Importing Entries</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">to_import</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter raw csv data, seperated by commas, split by new line characters"</span><span class="p">)</span>
+        <span class="n">import_csv</span><span class="p">(</span><span class="n">to_import</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"3"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Displaying Entries</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">read</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"4"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Updating Entries</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">update</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"5"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Deleting Entries</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">delete</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"See you next time!"</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">menu</span><span class="p">()</span>
+<span class="n">menu</span><span class="p">()</span>
+
+<span class="c1"># Finish Research Literature Review, Home, 2023-03-20, 8:00, PM|Go to Gym, LA Fitness, 2023-03-21, 6:00, PM|Teach Sister Piano, Home, 2023-03-21, 8:00, PM</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Adding New entry
+
+A new task Cooking dinner has been created
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Importing Entries
+
+A new task Finish Research Literature Review has been created
+A new task Go to Gym has been created
+A new task Teach Sister Piano has been created
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Displaying Entries
+
+1         Finish USH Poster Project        Home  2023-03-17  7:00  AM
+2                    Start Homework        Home  2023-03-18  4:15  PM
+3                    Cooking dinner        Home  2023-03-19  7:00  PM
+4 Finish Research Literature Review        Home  2023-03-20  8:00  PM
+5                         Go to Gym  LA Fitness  2023-03-21  6:00  PM
+6                Teach Sister Piano        Home  2023-03-21  8:00  PM
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Displaying Entries
+
+1         Finish USH Poster Project        Home  2023-03-17  7:00  AM
+2                    Start Homework        Home  2023-03-18  4:15  PM
+3                    Cooking dinner        Home  2023-03-19  7:00  PM
+4 Finish Research Literature Review        Home  2023-03-20  8:00  PM
+5                         Go to Gym  LA Fitness  2023-03-21  6:00  PM
+6                Teach Sister Piano        Home  2023-03-21  8:00  PM
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Updating Entries
+
+1         Finish USH Poster Project        Home  2023-03-17  7:00  AM
+2                    Start Homework        Home  2023-03-18  4:15  PM
+3                    Cooking dinner        Home  2023-03-19  7:00  PM
+4 Finish Research Literature Review        Home  2023-03-20  8:00  PM
+5                         Go to Gym  LA Fitness  2023-03-21  6:00  PM
+6                Teach Sister Piano        Home  2023-03-21  8:00  PM
+3 Cooking dinner Home 2023-03-19 8:00 PM
+Task 3 has been updated
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+
+Deleting Entries
+
+Task 4 was successfully deleted
+Please select an operation:
+	 1) Add new entries 
+	 2) Import CSV entries 
+	 3) View Tasks 
+	 4) Update Task 
+	 5) Delete Task
+See you next time!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    </script>
+  </div><a class="u-url" href="/YLu-Blog/2023/03/17/unit2-4-HACKS.html" hidden></a>
+
+  <button onclick="scrollToTop()" id="Top" title="Go to top">↑</button>
+  <script>
+    var mybutton = document.getElementById("Top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      var docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+      if ((document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) && (1300 + document.documentElement.scrollTop < docHeight)) {
+        mybutton.style.display = "block";
+    } 
+    else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script> 
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://ylu-1258.github.io/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/YLu-1258 “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
