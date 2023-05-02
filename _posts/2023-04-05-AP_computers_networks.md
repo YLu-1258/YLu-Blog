@@ -33,7 +33,7 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 - Data File - A file that stores information and data to be used by the computer either for storage, displaying, or other purposes.
 - Inspect Running Code - Allows us to see the current function calls and instantiated objects of a program
 - Inspect Variables - Allows us to see what variables are defined and their respective values during run time.
-![Computer Hardware]({{site.baseurl}}/images/how_a_computer_works.jpeg)
+![How a computer works]({{site.baseurl}}/images/how_a_computer_works.png)
 
 ![Computer Hardware]({{site.baseurl}}/images/cpu.jpeg)
 
@@ -132,7 +132,10 @@ Fault tolerance for a network means being able to properly function and facillit
 
 - What is naturally Distributed in Frontend/Backend archeticture?  
 
+    The number of clients is distributed in the frontend/backend archetecture as the site contains may algorithms and scripts run on the frontend sites, which is run on the client's computer
+
 - Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options are options in this command for parallel computing within the server that runs python/gunicorn.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
+  - The number of workers in this command specifies options for parallel computing. This allows for more processes to handle HTTP requests from the server.
 
 
 > Last week we discussed parallel computing on local machine.  There are many options.  Here is something to get parallel computing work with a tool called Ray.
