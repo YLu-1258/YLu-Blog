@@ -62,6 +62,14 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 > Watch/review College Board Daily Video 4.1.2
 
 - Complete True of False Questions
+1. True, open standards and protocols ensure that all manufacturers and developers could build hardware and software that can communicate with others so long as they follow the rules established
+2. False, The role of the IETF is to ensure that the internet is an open and collaborative space. They manage the development of open, standard protocols.
+3. False, Routes are not determined statically, but instead dynamically. Protocols such as OSPF and RIP serve to generate routing routes for networks.
+4. True, protocols specify the formatting and rules that facillitates the effective use of a system.
+5. False, Although UDP is faster, it does not guarantee transfers as certain packets might be lost in the process
+6. Flase, The World Wide Web is not the internet. It is only a part of the internet that contains a selection of webpages.
+7. True, HTTP is a protocol used by the World Wide Web in order to transfer data back and forth
+
 
 - Essential Knowledge
     - The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.
