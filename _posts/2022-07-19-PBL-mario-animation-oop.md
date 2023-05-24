@@ -1574,7 +1574,6 @@
   </tbody>
 </table>
 
-<p dir="auto">{% include nav_frontend.html %}</p>
 <p dir="auto">{% assign sprite_file = site.baseurl | append: page.image %}  &lt;!--- Liquid concatentation ---&gt;
 {% assign hash = site.data.mario_metadata %}  &lt;!--- Liquid list variable created from file containing mario metatdata for sprite ---&gt;
 {% assign pixels = 256 %} &lt;!--- Liquid integer assignment ---&gt;</p>
