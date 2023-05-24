@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mario Sprite Sheet | Alex Lu</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Mario Sprite Sheet" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Use JavaScript without external libararies to display all the animations in a sprite sheet." />
+<meta property="og:description" content="Use JavaScript without external libararies to display all the animations in a sprite sheet." />
+<link rel="canonical" href="https://ylu-1258.github.io/YLu-Blog/frontend/mario" />
+<meta property="og:url" content="https://ylu-1258.github.io/YLu-Blog/frontend/mario" />
+<meta property="og:site_name" content="Alex Lu" />
+<meta property="og:image" content="https://ylu-1258.github.io/YLu-Blog/images/mario_animation.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-19T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://ylu-1258.github.io/YLu-Blog/images/mario_animation.png" />
+<meta property="twitter:title" content="Mario Sprite Sheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"Use JavaScript without external libararies to display all the animations in a sprite sheet.","headline":"Mario Sprite Sheet","image":"https://ylu-1258.github.io/YLu-Blog/images/mario_animation.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://ylu-1258.github.io/YLu-Blog/frontend/mario"},"url":"https://ylu-1258.github.io/YLu-Blog/frontend/mario"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/YLu-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ylu-1258.github.io/YLu-Blog/feed.xml" title="Alex Lu" /><link rel="shortcut icon" type="image/x-icon" href="/YLu-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/YLu-Blog/">Alex Lu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/YLu-Blog/search/">Search</a><a class="page-link" href="/YLu-Blog/categories/">Tags</a><a class="page-link" href="/YLu-Blog/vocab/">Vocab</a><a class="page-link" href="/YLu-Blog/notes/">Lecture Notes</a><a class="page-link" href="/YLu-Blog/submenu/">Javascript Submenu</a><a class="page-link" href="/YLu-Blog/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- Hack 1: find your own sprite -->
+<!-- Hack 2: make you own sprite display -->
+<!-- Hack 3: come up with a new event or sequence, reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event-->
+
+<!---
+Sprite files are a collection of animations that are combined into a single file. The _data/mario.yml file has metadata description for the sprit file.  Each sprite is seperated by pixels horizontally and veritically.
+-->
+<p><!--- Liquid concatentation --->
+  <!--- Liquid list variable created from file containing mario metatdata for sprite--->
+ <!--- Liquid integer assignment ---></p>
+
+<!---
+This <div> class "container" has rows and columns.  Each row/col is a frame and has metadata like ID (rest, walk, etc), a default image, and an animation sequence triggered by mouse over.
+-->
+<div class="container">
+  <!---
+  Loop over the 'hash' list to generate repeating HTML lines for animations.
+  -->
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+    <div class="row"> <!--- cycle row start on 0 --->  
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Rest" onmousedown="startAnimate('Rest', (0 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Rest')">Rest</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="RestL" onmousedown="startAnimate('RestL', (1 * 256), (0 * 256), 15)" onmouseover="stopAnimate('RestL')">RestL</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Walk" onmousedown="startAnimate('Walk', (2 * 256), (0 * 256), 8)" onmouseover="stopAnimate('Walk')">Walk</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Tada" onmousedown="startAnimate('Tada', (2 * 256), (11 * 256), 3)" onmouseover="stopAnimate('Tada')">Tada</p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+    <div class="row"> <!--- cycle row start on 0 --->  
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="WalkL" onmousedown="startAnimate('WalkL', (3 * 256), (0 * 256), 8)" onmouseover="stopAnimate('WalkL')">WalkL</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="TadaL" onmousedown="startAnimate('TadaL', (3 * 256), (11 * 256), 3)" onmouseover="stopAnimate('TadaL')">TadaL</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Run1" onmousedown="startAnimate('Run1', (4 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Run1')">Run1</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Run1L" onmousedown="startAnimate('Run1L', (5 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Run1L')">Run1L</p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+    <div class="row"> <!--- cycle row start on 0 --->  
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Run2" onmousedown="startAnimate('Run2', (6 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Run2')">Run2</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Run2L" onmousedown="startAnimate('Run2L', (7 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Run2L')">Run2L</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Puff" onmousedown="startAnimate('Puff', (8 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Puff')">Puff</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="PuffL" onmousedown="startAnimate('PuffL', (9 * 256), (0 * 256), 15)" onmouseover="stopAnimate('PuffL')">PuffL</p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+    <div class="row"> <!--- cycle row start on 0 --->  
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Cheer" onmousedown="startAnimate('Cheer', (10 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Cheer')">Cheer</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="CheerL" onmousedown="startAnimate('CheerL', (11 * 256), (0 * 256), 15)" onmouseover="stopAnimate('CheerL')">CheerL</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="Flip" onmousedown="startAnimate('Flip', (12 * 256), (0 * 256), 15)" onmouseover="stopAnimate('Flip')">Flip</p>
+    </div>
+    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
+      
+    <div class="column"> 
+      <!--- The HTML <p> tags are created for each animation described in metadata
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="FlipL" onmousedown="startAnimate('FlipL', (13 * 256), (0 * 256), 15)" onmouseover="stopAnimate('FlipL')">FlipL</p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+  
+</div>
+
+<!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element visualized --->
+<style>
+  /* CSS style rules for coresponding <p> tag HTML elements
+    Background: .sprite has url reference to sprite file, pixel height and width of frames
+    #FlipL: row/col position of id in sprite file
+    Transform: allows HTML display to be scaled
+    Text: contains properties for title
+  */
+  .sprite {
+    background-image: url('/YLu-Blog/images/mario_animation.png');
+    background-repeat: no-repeat;
+    height: 256px;
+    width: 256px;
+    transform: scale(0.5);  /* scales the display size of sprite frame in HTML */
+    font-size: 2em;
+    text-align: center;
+  }
+
+  /* Liquid for loop is used to generate CSS from Jekyll animations list
+     ID: #id[0] associate this CSS with id=id[0] in HTML
+     Col, Row: background-position position of frame in sprite
+  */
+  
+    
+
+    #Rest {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(0 * 256 * -1px);
+  }
+  
+    
+
+    #RestL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(1 * 256 * -1px);
+  }
+  
+    
+
+    #Walk {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(2 * 256 * -1px);
+  }
+  
+    
+
+    #Tada {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(11 * 256 * -1px) calc(2 * 256 * -1px);
+  }
+  
+    
+
+    #WalkL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(3 * 256 * -1px);
+  }
+  
+    
+
+    #TadaL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(11 * 256 * -1px) calc(3 * 256 * -1px);
+  }
+  
+    
+
+    #Run1 {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(4 * 256 * -1px);
+  }
+  
+    
+
+    #Run1L {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(5 * 256 * -1px);
+  }
+  
+    
+
+    #Run2 {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(6 * 256 * -1px);
+  }
+  
+    
+
+    #Run2L {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(7 * 256 * -1px);
+  }
+  
+    
+
+    #Puff {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(8 * 256 * -1px);
+  }
+  
+    
+
+    #PuffL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(9 * 256 * -1px);
+  }
+  
+    
+
+    #Cheer {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(10 * 256 * -1px);
+  }
+  
+    
+
+    #CheerL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(11 * 256 * -1px);
+  }
+  
+    
+
+    #Flip {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(12 * 256 * -1px);
+  }
+  
+    
+
+    #FlipL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(13 * 256 * -1px);
+  }
+  
+
+</style>
+
+<!--- Embedded executable code--->
+<script>
+  var intervalIDs = {}; // Object to store interval IDs
+  const pixels = 256; //size of each frame in the sprite, set by liquid constant
+  const interval = 100; //animation time interval
+
+  function startAnimate(id, row, col1, frames) {
+      var col = col1;  //start at 1st column/frame in series of frames
+      
+      // Use the animation ID as the key for storing the interval ID
+      intervalIDs[id] = setInterval ( () => {
+        /* Each pass set the CSS backgroundPosition property to point to next background frame
+         * Formula: row stays the same, but column is mutated "+ pixels" each interval
+         * Modulo Operator: frames * pixels is upper bound
+         *                  col + pixels is increment
+         *                  remainder is the col position
+         * Offset: "col1" is offset of 1st image in series, col1 can start in middle of page
+        */
+        document.getElementById(id).style.backgroundPosition = `-${col}px -${row}px`;
+        col -= col1; // remove 1st frame offset, temporarily
+        col = (col + pixels) % (frames * pixels);  // use modulo operator to cycle through sequence
+        col += col1; // restore 1st frame offset
+      }
+      , interval ); //time of interval
+  }
+
+  function stopAnimate(id) {  //stop animate task ID
+    clearInterval(intervalIDs[id]);
+  } 
+</script>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/YLu-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://ylu-1258.github.io/YLu-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Alex&#39;s personal blogging site</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/YLu-1258 “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/YLu-Blog/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
